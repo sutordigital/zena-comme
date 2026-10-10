@@ -1,0 +1,251 @@
+{% liquid
+  assign landing_product = section.settings.product
+  assign current_variant = landing_product.selected_or_first_available_variant
+  assign form_id = 'ZcPetPortraitForm-' | append: section.id
+  assign product_ready = false
+  if landing_product != blank and current_variant != blank and current_variant.available and current_variant.price > 0
+    assign product_ready = true
+  endif
+
+  assign hero_image = landing_product.featured_media.preview_image
+  assign story_image = section.settings.story_image
+  if story_image == blank and landing_product.media.size > 5
+    assign story_image = landing_product.media[5].preview_image
+  endif
+  assign process_image = section.settings.process_image
+  if process_image == blank and landing_product.media.size > 4
+    assign process_image = landing_product.media[4].preview_image
+  endif
+  assign fabric_image = section.settings.fabric_image
+  if fabric_image == blank and landing_product.media.size > 3
+    assign fabric_image = landing_product.media[3].preview_image
+  endif
+%}
+
+<section id="ZcPetLanding-{{ section.id }}" class="zc-pet-landing">
+  <div class="zc-hero" id="zc-purchase-{{ section.id }}">
+    <div class="zc-gallery" data-gallery>
+      <div class="zc-gallery__main">
+        {% if hero_image != blank %}
+          {{ hero_image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '480, 720, 960, 1200, 1400', sizes: '(min-width: 900px) 52vw, 100vw', alt: hero_image.alt | default: landing_product.title }}
+        {% else %}
+          {{ 'product-1' | placeholder_svg_tag: 'zc-placeholder' }}
+        {% endif %}
+      </div>
+      {% if landing_product.media.size > 1 %}
+        <div class="zc-gallery__thumbs" aria-label="Product images">
+          {% for media in landing_product.media limit: 6 %}
+            {% if media.preview_image != blank %}
+              <button class="zc-gallery__thumb{% if forloop.first %} is-active{% endif %}" type="button" data-gallery-thumb data-src="{{ media.preview_image | image_url: width: 1400 }}" data-srcset="{{ media.preview_image | image_url: width: 480 }} 480w, {{ media.preview_image | image_url: width: 720 }} 720w, {{ media.preview_image | image_url: width: 960 }} 960w, {{ media.preview_image | image_url: width: 1400 }} 1400w" aria-label="Show product image {{ forloop.index }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">
+                {{ media.preview_image | image_url: width: 180 | image_tag: loading: 'lazy', widths: '90, 140, 180', sizes: '84px', alt: media.alt | default: landing_product.title }}
+              </button>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="zc-offer">
+      <p class="zc-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1>{{ section.settings.heading }}</h1>
+      <div class="zc-lead rte">{{ section.settings.subheading }}</div>
+      <ul class="zc-benefits" role="list">
+        <li>Your pet transformed into wearable art</li>
+        <li>Choose black or white</li>
+        <li>Front, back or sleeve placement</li>
+        <li>Made for everyday life with pets</li>
+      </ul>
+
+      <div class="zc-price" aria-live="polite">
+        {% if landing_product == blank or current_variant.price == 0 %}
+          Price to be set
+        {% else %}
+          {{ current_variant.price | money }}
+        {% endif %}
+      </div>
+
+      {% if landing_product != blank %}
+        {% form 'product', landing_product, id: form_id, class: 'zc-product-form', enctype: 'multipart/form-data' %}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+
+          <fieldset class="zc-fieldset">
+            <legend>Shirt color</legend>
+            <div class="zc-choice-row">
+              <input class="zc-choice-input" type="radio" id="ZcColorBlack-{{ section.id }}" name="properties[Shirt color]" value="Black" checked>
+              <label for="ZcColorBlack-{{ section.id }}">Black</label>
+              <input class="zc-choice-input" type="radio" id="ZcColorWhite-{{ section.id }}" name="properties[Shirt color]" value="White">
+              <label for="ZcColorWhite-{{ section.id }}">White</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="zc-fieldset">
+            <legend>Portrait placement</legend>
+            <div class="zc-choice-row">
+              <input class="zc-choice-input" type="radio" id="ZcPlacementFront-{{ section.id }}" name="properties[Portrait placement]" value="Front" checked>
+              <label for="ZcPlacementFront-{{ section.id }}">Front</label>
+              <input class="zc-choice-input" type="radio" id="ZcPlacementBack-{{ section.id }}" name="properties[Portrait placement]" value="Back">
+              <label for="ZcPlacementBack-{{ section.id }}">Back</label>
+              <input class="zc-choice-input" type="radio" id="ZcPlacementSleeve-{{ section.id }}" name="properties[Portrait placement]" value="Sleeve">
+              <label for="ZcPlacementSleeve-{{ section.id }}">Sleeve</label>
+            </div>
+          </fieldset>
+
+          <div class="zc-upload">
+            <label for="ZcPetPhoto-{{ section.id }}">Upload your pet photo</label>
+            <input id="ZcPetPhoto-{{ section.id }}" type="file" name="properties[Pet photo]" accept="image/jpeg,image/png,image/webp" {% if product_ready %}required{% endif %}>
+            <p>Use a clear, well-lit photo showing your pet’s face.</p>
+          </div>
+
+          <button class="zc-cta" type="submit" {% unless product_ready %}disabled aria-disabled="true"{% endunless %}>
+            {% if product_ready %}Personalize yours{% else %}Product setup required{% endif %}
+          </button>
+          <p class="zc-microcopy">
+            {% if product_ready %}Made to order · Secure checkout{% else %}Set a price and inventory before accepting orders.{% endif %}
+          </p>
+        {% endform %}
+      {% else %}
+        <p class="zc-setup-note">Select a product in the Theme Editor to activate purchasing.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="zc-story zc-split">
+    <div class="zc-copy">
+      <p class="zc-eyebrow">THE PET-PARENT UNIFORM</p>
+      <h2>{{ section.settings.story_heading }}</h2>
+      <p>A custom portrait turns the pet you love into a considered piece of everyday style—not a one-time novelty shirt.</p>
+      <p>The smooth fabric is designed for the realities of living with pets, while the artwork makes every shirt personal to its wearer.</p>
+    </div>
+    <div class="zc-media">
+      {% if story_image != blank %}
+        {{ story_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1200', sizes: '(min-width: 900px) 45vw, 100vw', alt: story_image.alt | default: 'Pet parents wearing personalized Zena Comme shirts' }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="zc-process">
+    <p class="zc-eyebrow">THREE SIMPLE STEPS</p>
+    <h2>{{ section.settings.process_heading }}</h2>
+    <div class="zc-process__grid">
+      <article><span>01</span><h3>Upload a clear photo</h3><p>Choose a well-lit image that captures your pet’s personality.</p></article>
+      <article><span>02</span><h3>Choose your style</h3><p>Select black or white and place the portrait on the front, back or sleeve.</p></article>
+      <article><span>03</span><h3>We create your portrait</h3><p>Your artwork is prepared and printed as a one-of-one piece.</p></article>
+    </div>
+    {% if process_image != blank %}
+      <div class="zc-process__image">
+        {{ process_image | image_url: width: 1600 | image_tag: loading: 'lazy', widths: '600, 900, 1200, 1600', sizes: '(min-width: 900px) 84vw, 100vw', alt: process_image.alt | default: 'Zena Comme custom pet portrait ordering process' }}
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="zc-fabric zc-split">
+    <div class="zc-media">
+      {% if fabric_image != blank %}
+        {{ fabric_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1200', sizes: '(min-width: 900px) 45vw, 100vw', alt: fabric_image.alt | default: 'Zena Comme smooth anti-static fabric features' }}
+      {% endif %}
+    </div>
+    <div class="zc-copy">
+      <p class="zc-eyebrow">DESIGNED FOR LIFE WITH PETS</p>
+      <h2>{{ section.settings.fabric_heading }}</h2>
+      <p>The smooth, anti-static synthetic fabric is designed to help reduce loose pet hair, dander and lint clinging to the garment, so loose fur is easier to brush away.</p>
+      <p class="zc-disclaimer">Pet-hair resistant does not mean fur-proof, and results vary.</p>
+    </div>
+  </div>
+
+  <div class="zc-comparison">
+    <p class="zc-eyebrow">WHY ZENA COMME</p>
+    <h2>{{ section.settings.comparison_heading }}</h2>
+    <div class="zc-comparison__table" role="table" aria-label="Zena Comme product comparison">
+      <div role="row"><strong role="cell">Thoughtful portrait placement</strong><span role="cell">Zena Comme ✓</span><span role="cell">Generic tee —</span></div>
+      <div role="row"><strong role="cell">Pet-hair-resistant fabric</strong><span role="cell">Zena Comme ✓</span><span role="cell">Ordinary cotton —</span></div>
+      <div role="row"><strong role="cell">Black and white options</strong><span role="cell">Zena Comme ✓</span><span role="cell">Varies</span></div>
+      <div role="row"><strong role="cell">Made to feel wearable</strong><span role="cell">Zena Comme ✓</span><span role="cell">Often novelty-led</span></div>
+    </div>
+  </div>
+
+  <div class="zc-policy-grid">
+    <article>
+      <p class="zc-eyebrow">MADE TO ORDER</p>
+      <h2>Clear expectations, from upload to delivery</h2>
+      <p>Personalized products usually require 6–10 business days to prepare, followed by an estimated 7–10 business days for delivery after dispatch.</p>
+      <p>Free standard shipping to all 50 U.S. states.</p>
+    </article>
+    <article>
+      <p class="zc-eyebrow">PERSONALIZED RETURNS</p>
+      <h2>Created uniquely for you</h2>
+      <p>Personalized items are not eligible for change-of-mind returns.</p>
+      <p>If an order arrives damaged, defective or incorrect, contact <a href="mailto:info@zena-c.com">info@zena-c.com</a> with photographs within 30 days after delivery.</p>
+    </article>
+  </div>
+
+  <div class="zc-faq">
+    <h2>{{ section.settings.faq_heading }}</h2>
+    <details open><summary>What kind of photo works best?</summary><p>A clear, well-lit image with your pet facing the camera gives the strongest portrait reference.</p></details>
+    <details><summary>Can I choose where the portrait appears?</summary><p>Yes. Choose front, back or sleeve placement when you personalize the shirt.</p></details>
+    <details><summary>Is the shirt fur-proof?</summary><p>No. The fabric is designed to help reduce loose fur, dander and lint clinging to the garment, but results vary.</p></details>
+    <details><summary>How long will my order take?</summary><p>Preparation usually takes 6–10 business days. Estimated delivery is another 7–10 business days after dispatch.</p></details>
+    <details><summary>Can I return a personalized shirt?</summary><p>Change-of-mind returns are not available for personalized items. Damaged, defective or incorrect orders can be reported within 30 days after delivery.</p></details>
+  </div>
+
+  <div class="zc-final">
+    <p class="zc-eyebrow">YOUR PET. YOUR SHIRT.</p>
+    <h2>{{ section.settings.final_heading }}</h2>
+    <a class="zc-cta" href="#zc-purchase-{{ section.id }}">Personalize yours</a>
+  </div>
+
+  <div class="zc-sticky" data-sticky-bar>
+    <div><strong>{{ landing_product.title | default: 'Custom pet portrait tee' }}</strong><span>{% if current_variant.price > 0 %}{{ current_variant.price | money }}{% else %}Price to be set{% endif %}</span></div>
+    <a href="#zc-purchase-{{ section.id }}">Personalize</a>
+  </div>
+</section>
+
+{% stylesheet %}
+  .zc-pet-landing{--zc-cream:#f5f1ea;--zc-ink:#20201e;--zc-sage:#78806b;--zc-sand:#dbd0c5;--zc-white:#fff;background:var(--zc-cream);color:var(--zc-ink)}
+  .zc-pet-landing *{box-sizing:border-box}.zc-pet-landing img{display:block;width:100%;height:auto}.zc-pet-landing h1,.zc-pet-landing h2,.zc-pet-landing h3{font-family:var(--font-heading--family);font-style:var(--font-heading--style);font-weight:var(--font-heading--weight);letter-spacing:-.035em;margin:0}.zc-pet-landing h1{font-size:clamp(3.5rem,6vw,7.2rem);line-height:1.02}.zc-pet-landing h2{font-size:clamp(3rem,4.5vw,5.4rem);line-height:1.1}.zc-pet-landing h3{font-size:2rem;line-height:1.25}.zc-pet-landing p{line-height:1.65}.zc-eyebrow{color:var(--zc-sage);font-size:1.1rem;font-weight:600;letter-spacing:.16em;margin:0 0 1.4rem;text-transform:uppercase}.zc-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);background:var(--zc-white)}.zc-gallery__main{aspect-ratio:1/1;overflow:hidden}.zc-gallery__main img{height:100%;object-fit:cover}.zc-gallery__thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;padding:.4rem;background:var(--zc-cream)}.zc-gallery__thumb{appearance:none;border:0;background:none;padding:0;opacity:.68;aspect-ratio:1/1;overflow:hidden}.zc-gallery__thumb.is-active{opacity:1;outline:2px solid var(--zc-ink);outline-offset:-2px}.zc-gallery__thumb img{height:100%;object-fit:cover}.zc-offer{display:flex;flex-direction:column;justify-content:center;padding:7% 8%}.zc-lead{font-size:1.7rem;line-height:1.6;margin-top:1.5rem}.zc-benefits{display:grid;gap:.7rem;margin:1.8rem 0;padding-left:2rem}.zc-price{color:var(--zc-sage);font-family:var(--font-heading--family);font-size:2.4rem;margin-bottom:1.8rem}.zc-fieldset{border:0;margin:0 0 1.6rem;padding:0}.zc-fieldset legend,.zc-upload>label{font-size:1.3rem;font-weight:600;margin-bottom:.8rem}.zc-choice-row{display:flex;flex-wrap:wrap;gap:.7rem}.zc-choice-input{position:absolute;opacity:0;pointer-events:none}.zc-choice-row label{border:1px solid var(--zc-sand);border-radius:.3rem;cursor:pointer;font-size:1.3rem;min-height:4.4rem;padding:1.1rem 1.5rem}.zc-choice-input:checked+label{background:var(--zc-ink);border-color:var(--zc-ink);color:var(--zc-white)}.zc-choice-input:focus-visible+label{outline:2px solid var(--zc-sage);outline-offset:2px}.zc-upload{margin:0 0 1.6rem}.zc-upload label{display:block}.zc-upload input{border:1px solid var(--zc-sand);border-radius:.3rem;display:block;max-width:100%;padding:1rem;width:100%}.zc-upload p,.zc-microcopy,.zc-disclaimer{color:#5e5d56;font-size:1.2rem}.zc-cta{align-items:center;background:var(--zc-ink);border:0;border-radius:.3rem;color:var(--zc-white);display:inline-flex;font-size:1.4rem;font-weight:600;justify-content:center;min-height:5.2rem;padding:1.4rem 2rem;text-align:center;text-decoration:none;width:100%}.zc-cta[disabled]{cursor:not-allowed;opacity:.5}.zc-microcopy{text-align:center}.zc-split{align-items:center;display:grid;gap:7%;grid-template-columns:1fr 1fr;padding:8%}.zc-copy p:not(.zc-eyebrow){font-size:1.6rem}.zc-media img{aspect-ratio:4/3;object-fit:cover}.zc-process{background:var(--zc-white);padding:8%;text-align:center}.zc-process__grid{display:grid;gap:2rem;grid-template-columns:repeat(3,1fr);margin:4rem 0;text-align:left}.zc-process__grid article{border-top:1px solid var(--zc-sand);padding-top:2rem}.zc-process__grid span{color:var(--zc-sage);display:block;font-size:1.3rem;margin-bottom:2.5rem}.zc-process__image img{max-height:58rem;object-fit:cover}.zc-fabric{background:var(--zc-sage);color:var(--zc-white)}.zc-fabric .zc-eyebrow,.zc-fabric .zc-disclaimer{color:var(--zc-cream)}.zc-comparison{padding:8%;text-align:center}.zc-comparison__table{border-top:1px solid var(--zc-sand);margin:4rem auto 0;max-width:90rem;text-align:left}.zc-comparison__table>div{border-bottom:1px solid var(--zc-sand);display:grid;gap:2rem;grid-template-columns:1.5fr 1fr 1fr;padding:1.6rem 0}.zc-comparison__table span:nth-child(2){color:var(--zc-sage);font-weight:600}.zc-policy-grid{background:var(--zc-sand);display:grid;gap:1px;grid-template-columns:1fr 1fr}.zc-policy-grid article{background:var(--zc-white);padding:8%}.zc-policy-grid a{color:inherit}.zc-faq{margin:0 auto;max-width:95rem;padding:8%}.zc-faq details{border-bottom:1px solid var(--zc-sand);padding:1.8rem 0}.zc-faq summary{cursor:pointer;font-size:1.6rem;font-weight:600;min-height:4.4rem}.zc-final{background:var(--zc-sand);padding:9%;text-align:center}.zc-final .zc-cta{margin-top:3rem;max-width:28rem}.zc-sticky{align-items:center;background:var(--zc-white);border-top:1px solid var(--zc-sand);bottom:0;box-shadow:0 -8px 24px rgba(32,32,30,.12);display:none;gap:1rem;justify-content:space-between;padding:1rem 1.4rem;position:sticky;z-index:4}.zc-sticky div{display:flex;flex-direction:column;min-width:0}.zc-sticky strong{font-size:1.2rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.zc-sticky span{color:#5e5d56;font-size:1.1rem}.zc-sticky a{background:var(--zc-ink);border-radius:.3rem;color:var(--zc-white);font-size:1.2rem;font-weight:600;min-height:4.4rem;padding:1.3rem 1.6rem;text-decoration:none}
+  @media(max-width:899px){.zc-hero,.zc-split,.zc-policy-grid{grid-template-columns:1fr}.zc-gallery__thumbs{grid-template-columns:repeat(4,1fr)}.zc-offer,.zc-split,.zc-process,.zc-comparison,.zc-policy-grid article,.zc-faq,.zc-final{padding:4rem 2.2rem}.zc-pet-landing h1{font-size:4.2rem}.zc-pet-landing h2{font-size:3.1rem}.zc-process__grid{grid-template-columns:1fr;margin:3rem 0}.zc-process__grid span{margin-bottom:1.2rem}.zc-comparison__table>div{font-size:1.2rem;gap:1rem;grid-template-columns:1.3fr 1fr 1fr}.zc-sticky{display:flex}.zc-story .zc-media{grid-row:1}.zc-story .zc-copy{grid-row:2}}
+{% endstylesheet %}
+
+<script>
+  (() => {
+    const root = document.getElementById('ZcPetLanding-{{ section.id }}');
+    if (!root) return;
+    const mainImage = root.querySelector('.zc-gallery__main img');
+    root.querySelectorAll('[data-gallery-thumb]').forEach((button) => {
+      button.addEventListener('click', () => {
+        if (!mainImage) return;
+        mainImage.src = button.dataset.src;
+        mainImage.srcset = button.dataset.srcset;
+        root.querySelectorAll('[data-gallery-thumb]').forEach((item) => {
+          const active = item === button;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Zena pet portrait landing",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "eyebrow", "label": "Hero eyebrow", "default": "PERSONALIZED FOR YOUR PET" },
+    { "type": "text", "id": "heading", "label": "Hero heading", "default": "Wear Your Pet. Not Their Fur." },
+    { "type": "richtext", "id": "subheading", "label": "Hero copy", "default": "<p>A polished custom portrait tee made with smooth, anti-static fabric designed to help loose pet hair brush away more easily.</p>" },
+    { "type": "image_picker", "id": "story_image", "label": "Story image" },
+    { "type": "text", "id": "story_heading", "label": "Story heading", "default": "Personal enough to mean something. Polished enough to wear anywhere." },
+    { "type": "image_picker", "id": "process_image", "label": "Process image" },
+    { "type": "text", "id": "process_heading", "label": "Process heading", "default": "From favorite photo to favorite tee" },
+    { "type": "image_picker", "id": "fabric_image", "label": "Fabric image" },
+    { "type": "text", "id": "fabric_heading", "label": "Fabric heading", "default": "Smoother fabric. Less cling. More of the pet you love." },
+    { "type": "text", "id": "comparison_heading", "label": "Comparison heading", "default": "More than a novelty pet shirt" },
+    { "type": "text", "id": "faq_heading", "label": "FAQ heading", "default": "Questions before you create?" },
+    { "type": "text", "id": "final_heading", "label": "Final heading", "default": "Create something only you could wear." }
+  ],
+  "presets": [{ "name": "Zena pet portrait landing" }]
+}
+{% endschema %}

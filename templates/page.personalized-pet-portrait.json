@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "zc-pet-portrait-landing",
+      "settings": {
+        "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
+        "eyebrow": "PERSONALIZED FOR YOUR PET",
+        "heading": "Wear Your Pet. Not Their Fur.",
+        "subheading": "<p>A polished custom portrait tee made with smooth, anti-static fabric designed to help loose pet hair brush away more easily.</p>",
+        "story_heading": "Personal enough to mean something. Polished enough to wear anywhere.",
+        "process_heading": "From favorite photo to favorite tee",
+        "fabric_heading": "Smoother fabric. Less cling. More of the pet you love.",
+        "comparison_heading": "More than a novelty pet shirt",
+        "final_heading": "Create something only you could wear."
+      }
+    }
+  },
+  "order": ["main"]
+}
