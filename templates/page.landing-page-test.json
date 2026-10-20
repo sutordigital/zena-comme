@@ -60,17 +60,6 @@
     },
     "1792474198c7a7eb46": {
       "type": "_blocks",
-      "blocks": {
-        "zepto_product_personalizer_product_personalizer_page_pNLkYc": {
-          "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
-          "settings": {
-            "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant"
-          }
-        }
-      },
-      "block_order": [
-        "zepto_product_personalizer_product_personalizer_page_pNLkYc"
-      ],
       "settings": {
         "content_direction": "column",
         "vertical_on_mobile": true,
@@ -195,6 +184,12 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "zepto_product_personalizer_product_personalizer_page_qpxPiD": {
+                  "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
+                  "settings": {
+                    "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant"
+                  }
+                },
                 "product_title_kMAQjP": {
                   "type": "product-title",
                   "name": "t:names.title",
@@ -245,6 +240,7 @@
                 }
               },
               "block_order": [
+                "zepto_product_personalizer_product_personalizer_page_qpxPiD",
                 "product_title_kMAQjP",
                 "price_9JtfyD"
               ]
@@ -261,12 +257,6 @@
                 "alignment": "left"
               },
               "blocks": {}
-            },
-            "zepto_product_personalizer_product_personalizer_page_XXddRW": {
-              "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
-              "settings": {
-                "product": "{{closest.product}}"
-              }
             },
             "variant_picker_FNNNRx": {
               "type": "variant-picker",
@@ -356,7 +346,6 @@
           "block_order": [
             "group_neARGT",
             "review_4EnXWe",
-            "zepto_product_personalizer_product_personalizer_page_XXddRW",
             "variant_picker_FNNNRx",
             "buy_buttons_G8XAxc"
           ]
