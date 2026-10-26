@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "hero_main": {
+      "type": "image-with-text",
+      "settings": {
+        "image_position": "left",
+        "image_width": "60%",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      },
+      "blocks": {
+        "hero_text_group": {
+          "type": "group",
+          "settings": {
+            "content_alignment": "left"
+          },
+          "blocks": {
+            "hero_subheading": {
+              "type": "text",
+              "settings": {
+                "text": "<p style='color: #8b6b4a; font-weight: bold; letter-spacing: 2px;'>PERSONALIZED PET TEE · PET HAIR RESISTANT FABRIC</p>"
+              }
+            },
+            "hero_heading": {
+              "type": "heading",
+              "settings": {
+                "heading": "Finally, a Custom Pet Tee Made for Life With Your Pet.",
+                "heading_size": "h1"
+              }
+            },
+            "hero_description": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p>"
+              }
+            },
+            "hero_bullets": {
+              "type": "text",
+              "settings": {
+                "text": "<ul><li>✓ Helps keep fur off most everyday surfaces</li><li>✓ Made with premium soft cotton blend</li><li>✓ Every tee is unique, created just for you</li></ul>"
+              }
+            },
+            "hero_price": {
+              "type": "text",
+              "settings": {
+                "text": "<p style='font-size: 24px; font-weight: bold;'>From $49.00 USD</p>"
+              }
+            },
+            "hero_buy_button": {
+              "type": "button",
+              "settings": {
+                "label": "Create Your Custom Tee",
+                "link": "shopify://products/your-product-handle",
+                "style": "primary"
+              }
+            }
+          },
+          "block_order": [
+            "hero_subheading",
+            "hero_heading",
+            "hero_description",
+            "hero_bullets",
+            "hero_price",
+            "hero_buy_button"
+          ]
+        }
+      },
+      "block_order": ["hero_text_group"]
+    },
+    "collage_gallery": {
+      "type": "section",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "collage_group": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "collage_images": {
+              "type": "multicolumn",
+              "settings": {
+                "columns_desktop": 2,
+                "image_ratio": "portrait",
+                "enable_image_zoom": false
+              },
+              "blocks": {
+                "img_1": { "type": "image", "settings": { "image": "shopify://shop_images/pet-collage-1.jpg" } },
+                "img_2": { "type": "image", "settings": { "image": "shopify://shop_images/pet-collage-2.jpg" } },
+                "img_3": { "type": "image", "settings": { "image": "shopify://shop_images/pet-collage-3.jpg" } },
+                "img_4": { "type": "image", "settings": { "image": "shopify://shop_images/pet-collage-4.jpg" } }
+              },
+              "block_order": ["img_1", "img_2", "img_3", "img_4"]
+            },
+            "collage_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2 style='color: #8b6b4a;'>THE PET PARENT PROBLEM</h2><h3>You Love Your Pet. The Fur on Your Clothes? Not So Much.</h3><p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p>"
+              }
+            }
+          },
+          "block_order": ["collage_images", "collage_text"]
+        }
+      },
+      "block_order": ["collage_group"]
+    }
+  },
+  "order": ["hero_main", "collage_gallery"]
+}
