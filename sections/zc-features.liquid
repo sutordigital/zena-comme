@@ -1,0 +1,69 @@
+{% comment %} ZC Features — Smooth fabric difference {% endcomment %}
+<section class="zc-features" id="zc-features-{{ section.id }}" style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="zc-features__inner">
+    <div class="zc-features__header">
+      {% if section.settings.eyebrow != blank %}<p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+      {% if section.settings.heading != blank %}<h2 class="zc-features__heading">{{ section.settings.heading | escape }}</h2>{% endif %}
+      {% if section.settings.body != blank %}<div class="zc-features__intro">{{ section.settings.body }}</div>{% endif %}
+    </div>
+    <div class="zc-features__grid">
+      {% for block in section.blocks %}
+        <article class="zc-features__card" {{ block.shopify_attributes }}>
+          {% if block.settings.number != blank %}<p class="zc-features__num">{{ block.settings.number | escape }}</p>{% endif %}
+          {% if block.settings.title != blank %}<h3 class="zc-features__title">{{ block.settings.title | escape }}</h3>{% endif %}
+          {% if block.settings.text != blank %}<p class="zc-features__text">{{ block.settings.text | escape }}</p>{% endif %}
+        </article>
+      {% endfor %}
+    </div>
+    {% if section.settings.footer != blank %}<p class="zc-features__footer">{{ section.settings.footer | escape }}</p>{% endif %}
+  </div>
+</section>
+{% stylesheet %}
+  .zc-features { background: var(--zc-bg, #faf7f2); padding: var(--zc-pad-top, 64px) 1.25rem var(--zc-pad-bottom, 64px); }
+  .zc-features__inner { max-width: 1000px; margin: 0 auto; }
+  .zc-features__header { text-align: center; max-width: 680px; margin: 0 auto 2rem; }
+  .zc-kicker { margin: 0 0 0.6rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8b6b4a; }
+  .zc-features__heading { margin: 0 0 0.75rem; font-size: clamp(1.45rem, 2.1vw, 1.9rem); color: #1c1917; }
+  .zc-features__intro { color: #57534e; line-height: 1.55; }
+  .zc-features__intro p { margin: 0; }
+  .zc-features__grid { display: grid; gap: 1rem; }
+  @media (min-width: 750px) { .zc-features__grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+  .zc-features__card { background: #fff; border: 1px solid #e7e0d6; border-radius: 14px; padding: 1.35rem 1.2rem; }
+  .zc-features__num { margin: 0 0 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; color: #8b6b4a; font-weight: 600; }
+  .zc-features__title { margin: 0 0 0.4rem; font-size: 1.05rem; color: #1c1917; }
+  .zc-features__text { margin: 0; color: #57534e; font-size: 0.95rem; line-height: 1.5; }
+  .zc-features__footer { margin: 1.5rem 0 0; text-align: center; color: #57534e; font-style: italic; }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "ZC Features",
+  "tag": "section",
+  "class": "zc-section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FAF7F2" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WHY THE FABRIC MATTERS" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "The Smooth-Fabric Difference." },
+    { "type": "richtext", "id": "body", "label": "Intro", "default": "<p>Ordinary custom tees weren't necessarily designed with shedding pets in mind. Ours starts with a different priority: everyday wearability in a real pet home.</p>" },
+    { "type": "text", "id": "footer", "label": "Footer line", "default": "Finally, a custom tee that thinks about the pet hair, too." },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "blocks": [{
+    "type": "feature",
+    "name": "Feature",
+    "settings": [
+      { "type": "text", "id": "number", "label": "Number", "default": "01" },
+      { "type": "text", "id": "title", "label": "Title", "default": "A Smoother Surface" },
+      { "type": "textarea", "id": "text", "label": "Text", "default": "Designed to give loose pet hair fewer places to catch." }
+    ]
+  }],
+  "presets": [{
+    "name": "ZC Features",
+    "blocks": [
+      { "type": "feature", "settings": { "number": "01", "title": "A Smoother Surface", "text": "Designed to give loose pet hair fewer places to catch." } },
+      { "type": "feature", "settings": { "number": "02", "title": "Anti-Static Design", "text": "Designed to help reduce static-related cling." } },
+      { "type": "feature", "settings": { "number": "03", "title": "Personalized, Not Generic", "text": "Your own pet portrait makes it unmistakably yours." } }
+    ]
+  }]
+}
+{% endschema %}

@@ -1,36 +1,83 @@
 {% comment %}
-  Zena Comme — Split hero (collage + product CTA card)
+  Zena Comme — Split hero matching mockup:
+  left collage (main + thumbs) | right product CTA card
 {% endcomment %}
 
-<section class="zc-hero" id="zc-hero-{{ section.id }}" style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
-  <div class="zc-hero__inner">
+<section
+  class="zc-hero"
+  id="zc-hero-{{ section.id }}"
+  style="
+    --zc-bg: {{ section.settings.bg_color }};
+    --zc-pad-top: {{ section.settings.padding_top }}px;
+    --zc-pad-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="zc-hero__inner page-width">
+    {%- comment -%} LEFT: lifestyle collage {%- endcomment -%}
     <div class="zc-hero__media">
-      {% if section.settings.image_main != blank %}
-        {{ section.settings.image_main | image_url: width: 1600 | image_tag: loading: 'eager', class: 'zc-hero__img zc-hero__img--main', alt: section.settings.image_main.alt | default: section.settings.heading }}
-      {% else %}
-        <div class="zc-hero__placeholder">Add main lifestyle image</div>
-      {% endif %}
-      <div class="zc-hero__thumbs">
+      <div class="zc-hero__main-wrap">
+        {% if section.settings.image_main != blank %}
+          {{
+            section.settings.image_main
+            | image_url: width: 1800
+            | image_tag:
+              loading: 'eager',
+              class: 'zc-hero__img zc-hero__img--main',
+              widths: '600,900,1200,1600',
+              sizes: '(min-width: 900px) 55vw, 100vw',
+              alt: section.settings.image_main.alt | default: section.settings.heading
+          }}
+        {% else %}
+          <div class="zc-hero__placeholder zc-hero__placeholder--main">
+            <span>Upload main lifestyle photo<br><small>(man + dog / couple with pets)</small></span>
+          </div>
+        {% endif %}
+      </div>
+
+      {%- assign has_thumbs = false -%}
+      {%- for i in (1..3) -%}
+        {%- assign key = 'image_thumb_' | append: i -%}
+        {%- if section.settings[key] != blank -%}
+          {%- assign has_thumbs = true -%}
+        {%- endif -%}
+      {%- endfor -%}
+
+      <div class="zc-hero__thumbs{% unless has_thumbs %} zc-hero__thumbs--empty{% endunless %}">
         {% for i in (1..3) %}
           {% assign key = 'image_thumb_' | append: i %}
           {% assign img = section.settings[key] %}
-          {% if img != blank %}
-            {{ img | image_url: width: 600 | image_tag: loading: 'lazy', class: 'zc-hero__img', alt: img.alt }}
-          {% endif %}
+          <div class="zc-hero__thumb">
+            {% if img != blank %}
+              {{
+                img
+                | image_url: width: 700
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'zc-hero__img zc-hero__img--thumb',
+                  alt: img.alt
+              }}
+            {% else %}
+              <div class="zc-hero__placeholder zc-hero__placeholder--thumb">Product {{ i }}</div>
+            {% endif %}
+          </div>
         {% endfor %}
       </div>
     </div>
 
+    {%- comment -%} RIGHT: product card {%- endcomment -%}
     <div class="zc-hero__card">
       {% if section.settings.eyebrow != blank %}
         <p class="zc-hero__eyebrow">{{ section.settings.eyebrow | escape }}</p>
       {% endif %}
+
       {% if section.settings.heading != blank %}
         <h1 class="zc-hero__heading">{{ section.settings.heading | escape }}</h1>
       {% endif %}
+
       {% if section.settings.body != blank %}
-        <div class="zc-hero__body">{{ section.settings.body }}</div>
+        <div class="zc-hero__body rte">{{ section.settings.body }}</div>
       {% endif %}
+
       {% if section.settings.bullets != blank %}
         <ul class="zc-hero__bullets">
           {% assign lines = section.settings.bullets | newline_to_br | split: '<br />' %}
@@ -42,17 +89,45 @@
           {% endfor %}
         </ul>
       {% endif %}
-      {% if section.settings.price_label != blank %}
-        <p class="zc-hero__price">
-          <span class="zc-hero__price-name">{{ section.settings.price_label | escape }}</span>
-          {% if section.settings.price != blank %}
-            <span class="zc-hero__price-value">From {{ section.settings.price | escape }}</span>
+
+      {% if section.settings.price_label != blank or section.settings.price != blank %}
+        <div class="zc-hero__price">
+          {% if section.settings.price_label != blank %}
+            <p class="zc-hero__price-name">{{ section.settings.price_label | escape }}</p>
           {% endif %}
-        </p>
+          {% if section.settings.price != blank %}
+            <p class="zc-hero__price-value">From {{ section.settings.price | escape }}</p>
+          {% endif %}
+        </div>
       {% endif %}
+
+      {% if section.settings.show_option_hints %}
+        <div class="zc-hero__hints">
+          <div class="zc-hero__hint">
+            <span class="zc-hero__hint-label">Choose your color</span>
+            <span class="zc-hero__hint-value">Black · White</span>
+          </div>
+          <div class="zc-hero__hint">
+            <span class="zc-hero__hint-label">Choose your size</span>
+            <span class="zc-hero__hint-value">View size guide</span>
+          </div>
+          <div class="zc-hero__hint">
+            <span class="zc-hero__hint-label">Print placement</span>
+            <span class="zc-hero__hint-value">Front · Back</span>
+          </div>
+          <div class="zc-hero__hint">
+            <span class="zc-hero__hint-label">Upload your pet photo</span>
+            <span class="zc-hero__hint-value">On product page</span>
+          </div>
+        </div>
+      {% endif %}
+
       {% if section.settings.button_label != blank %}
-        <a class="zc-btn" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a>
+        <a class="zc-hero__btn" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label | escape }}
+        </a>
       {% endif %}
+
       {% if section.settings.microcopy != blank %}
         <p class="zc-hero__micro">{{ section.settings.microcopy | escape }}</p>
       {% endif %}
@@ -63,132 +138,259 @@
 {% stylesheet %}
   .zc-hero {
     background: var(--zc-bg, #f5f0e8);
-    padding: var(--zc-pad-top, 40px) 1.25rem var(--zc-pad-bottom, 40px);
+    padding: var(--zc-pad-top, 32px) clamp(1rem, 3vw, 2rem) var(--zc-pad-bottom, 48px);
   }
+
   .zc-hero__inner {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
+    align-items: start;
   }
-  @media (min-width: 900px) {
+
+  @media screen and (min-width: 990px) {
     .zc-hero__inner {
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 2.5rem;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 2rem;
+      align-items: stretch;
     }
   }
+
+  /* —— Media column —— */
   .zc-hero__media {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
+    min-width: 0;
   }
+
+  .zc-hero__main-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e8e0d4;
+  }
+
   .zc-hero__img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-    border-radius: 12px;
     object-fit: cover;
   }
+
   .zc-hero__img--main {
     aspect-ratio: 4 / 5;
+    max-height: min(72vh, 720px);
   }
+
+  @media screen and (min-width: 990px) {
+    .zc-hero__img--main {
+      aspect-ratio: 4 / 5;
+      max-height: none;
+    }
+  }
+
   .zc-hero__thumbs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
-  .zc-hero__thumbs .zc-hero__img {
-    aspect-ratio: 1;
-  }
-  .zc-hero__placeholder {
-    aspect-ratio: 4 / 5;
+
+  .zc-hero__thumb {
     border-radius: 12px;
+    overflow: hidden;
     background: #e8e0d4;
+  }
+
+  .zc-hero__img--thumb {
+    aspect-ratio: 1 / 1;
+  }
+
+  .zc-hero__placeholder {
     display: grid;
     place-items: center;
-    color: #7a6f63;
+    text-align: center;
+    color: #8a8076;
     font-size: 0.9rem;
+    line-height: 1.4;
+    background: #e8e0d4;
   }
+
+  .zc-hero__placeholder small {
+    opacity: 0.8;
+    font-size: 0.78rem;
+  }
+
+  .zc-hero__placeholder--main {
+    aspect-ratio: 4 / 5;
+    min-height: 320px;
+  }
+
+  .zc-hero__placeholder--thumb {
+    aspect-ratio: 1 / 1;
+    font-size: 0.75rem;
+  }
+
+  /* —— Product card —— */
   .zc-hero__card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 1.75rem 1.5rem;
-    box-shadow: 0 8px 30px rgba(40, 30, 20, 0.06);
+    background: #ffffff;
+    border-radius: 20px;
+    padding: clamp(1.35rem, 2.5vw, 1.85rem);
+    box-shadow:
+      0 1px 2px rgba(28, 25, 23, 0.04),
+      0 12px 40px rgba(28, 25, 23, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
+
+  @media screen and (min-width: 990px) {
+    .zc-hero__card {
+      position: sticky;
+      top: 1.25rem;
+    }
+  }
+
   .zc-hero__eyebrow {
-    margin: 0 0 0.75rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
+    margin: 0 0 0.85rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: #8b6b4a;
+    font-weight: 600;
+    line-height: 1.4;
   }
+
   .zc-hero__heading {
     margin: 0 0 1rem;
-    font-size: clamp(1.6rem, 2.4vw, 2.15rem);
-    line-height: 1.15;
+    font-size: clamp(1.55rem, 2.2vw, 2.05rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
     color: #1c1917;
+    font-weight: 500;
   }
+
   .zc-hero__body {
-    color: #44403c;
-    font-size: 0.98rem;
+    color: #57534e;
+    font-size: 0.95rem;
     line-height: 1.55;
   }
-  .zc-hero__body p { margin: 0 0 0.75rem; }
+
+  .zc-hero__body p {
+    margin: 0 0 0.65rem;
+  }
+
+  .zc-hero__body p:last-child {
+    margin-bottom: 0;
+  }
+
   .zc-hero__bullets {
-    margin: 1rem 0;
+    margin: 1rem 0 0;
     padding: 0;
     list-style: none;
   }
+
   .zc-hero__bullets li {
     position: relative;
-    padding-left: 1.25rem;
-    margin: 0.35rem 0;
+    padding: 0.28rem 0 0.28rem 1.35rem;
     color: #44403c;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
   }
+
   .zc-hero__bullets li::before {
     content: "✓";
     position: absolute;
     left: 0;
+    top: 0.28rem;
     color: #8b6b4a;
-    font-weight: 600;
+    font-weight: 700;
   }
+
   .zc-hero__price {
-    margin: 1.25rem 0;
+    margin-top: 1.15rem;
     padding-top: 1rem;
     border-top: 1px solid #ece7df;
   }
+
   .zc-hero__price-name {
-    display: block;
+    margin: 0 0 0.2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1c1917;
+  }
+
+  .zc-hero__price-value {
+    margin: 0;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #1c1917;
-    margin-bottom: 0.25rem;
   }
-  .zc-hero__price-value {
-    font-size: 1.15rem;
+
+  .zc-hero__hints {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  .zc-hero__hint {
+    border: 1px solid #e7e0d6;
+    border-radius: 10px;
+    padding: 0.55rem 0.65rem;
+    background: #faf7f2;
+  }
+
+  .zc-hero__hint-label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #8b6b4a;
+    margin-bottom: 0.15rem;
+  }
+
+  .zc-hero__hint-value {
+    display: block;
+    font-size: 0.82rem;
     color: #1c1917;
+    font-weight: 500;
   }
-  .zc-btn {
-    display: inline-flex;
+
+  .zc-hero__btn {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 48px;
-    padding: 0.85rem 1.25rem;
+    min-height: 52px;
+    margin-top: 1.15rem;
+    padding: 0.9rem 1.25rem;
     border-radius: 999px;
     background: #1c1917;
     color: #fff !important;
     text-decoration: none !important;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: opacity 0.15s ease;
+    letter-spacing: 0.01em;
+    transition: opacity 0.15s ease, transform 0.15s ease;
   }
-  .zc-btn:hover { opacity: 0.88; }
+
+  .zc-hero__btn:hover {
+    opacity: 0.9;
+  }
+
   .zc-hero__micro {
     margin: 0.85rem 0 0;
     text-align: center;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: #78716c;
+    line-height: 1.4;
+  }
+
+  @media screen and (max-width: 989px) {
+    .zc-hero__card {
+      order: -1;
+    }
   }
 {% endstylesheet %}
 
@@ -198,23 +400,129 @@
   "tag": "section",
   "class": "zc-section",
   "settings": [
-    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F5F0E8" },
-    { "type": "image_picker", "id": "image_main", "label": "Main lifestyle image" },
-    { "type": "image_picker", "id": "image_thumb_1", "label": "Thumbnail 1" },
-    { "type": "image_picker", "id": "image_thumb_2", "label": "Thumbnail 2" },
-    { "type": "image_picker", "id": "image_thumb_3", "label": "Thumbnail 3" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "PERSONALIZED PET TEE · PET-HAIR-RESISTANT FABRIC" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Finally, a Custom Pet Tee Made for Life With Your Pet." },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p>" },
-    { "type": "textarea", "id": "bullets", "label": "Bullets (one per line)", "default": "Helps loose fur brush off more easily\nMade personal with your own pet photo\nEveryday style in black or white" },
-    { "type": "text", "id": "price_label", "label": "Product name", "default": "Zena Comme Personalized Pet Portrait Tee" },
-    { "type": "text", "id": "price", "label": "From price", "default": "$49.00" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "Create My Custom Tee" },
-    { "type": "url", "id": "button_link", "label": "Button link" },
-    { "type": "text", "id": "microcopy", "label": "Microcopy", "default": "Made to order · Free shipping · Secure checkout" },
-    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 40 },
-    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 40 }
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#F5F0E8"
+    },
+    {
+      "type": "header",
+      "content": "Left collage"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_main",
+      "label": "Main lifestyle image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_thumb_1",
+      "label": "Thumbnail 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_thumb_2",
+      "label": "Thumbnail 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_thumb_3",
+      "label": "Thumbnail 3"
+    },
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "PERSONALIZED PET TEE · PET-HAIR-RESISTANT FABRIC"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Finally, a Custom Pet Tee Made for Life With Your Pet."
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><p>Turn your favorite pet photo into a tee you'll actually want to wear—made with smoother, pet-hair-resistant fabric designed to help reduce fur cling.</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "bullets",
+      "label": "Bullets (one per line)",
+      "default": "Helps loose fur brush off more easily\nMade personal with your own pet photo\nEveryday style in black or white"
+    },
+    {
+      "type": "text",
+      "id": "price_label",
+      "label": "Product name",
+      "default": "Zena Comme Personalized Pet Portrait Tee"
+    },
+    {
+      "type": "text",
+      "id": "price",
+      "label": "From price",
+      "default": "$49.00"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_option_hints",
+      "label": "Show option hints (color / size / placement)",
+      "default": true,
+      "info": "Visual only — real options live on the product page"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Create My Custom Tee"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "microcopy",
+      "label": "Microcopy",
+      "default": "Made to order · Free shipping · Secure checkout"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 48
+    }
   ],
-  "presets": [{ "name": "ZC Hero" }]
+  "presets": [
+    {
+      "name": "ZC Hero"
+    }
+  ]
 }
 {% endschema %}

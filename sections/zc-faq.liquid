@@ -1,0 +1,71 @@
+{% comment %} ZC FAQ {% endcomment %}
+<section class="zc-faq" id="zc-faq-{{ section.id }}" style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="zc-faq__inner">
+    <div class="zc-faq__header">
+      {% if section.settings.eyebrow != blank %}<p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>{% endif %}
+      {% if section.settings.heading != blank %}<h2 class="zc-faq__heading">{{ section.settings.heading | escape }}</h2>{% endif %}
+    </div>
+    <div class="zc-faq__list">
+      {% for block in section.blocks %}
+        <details class="zc-faq__item" {{ block.shopify_attributes }}{% if forloop.first and section.settings.open_first %} open{% endif %}>
+          <summary class="zc-faq__q">{{ block.settings.question | escape }}</summary>
+          <div class="zc-faq__a">{{ block.settings.answer }}</div>
+        </details>
+      {% endfor %}
+    </div>
+    {% if section.settings.button_label != blank %}
+      <div class="zc-faq__cta">
+        <a class="zc-btn zc-btn--inline" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% stylesheet %}
+  .zc-faq { background: var(--zc-bg, #f5f0e8); padding: var(--zc-pad-top, 64px) 1.25rem var(--zc-pad-bottom, 64px); }
+  .zc-faq__inner { max-width: 720px; margin: 0 auto; }
+  .zc-faq__header { text-align: center; margin-bottom: 1.75rem; }
+  .zc-kicker { margin: 0 0 0.6rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8b6b4a; }
+  .zc-faq__heading { margin: 0; font-size: clamp(1.4rem, 2vw, 1.85rem); color: #1c1917; }
+  .zc-faq__item { border-bottom: 1px solid #e7e0d6; }
+  .zc-faq__q {
+    list-style: none; cursor: pointer; padding: 1.1rem 1.75rem 1.1rem 0;
+    font-weight: 600; color: #1c1917; position: relative; font-size: 0.98rem;
+  }
+  .zc-faq__q::-webkit-details-marker { display: none; }
+  .zc-faq__q::after {
+    content: "+"; position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+    font-size: 1.25rem; color: #8b6b4a; font-weight: 400;
+  }
+  .zc-faq__item[open] .zc-faq__q::after { content: "–"; }
+  .zc-faq__a { padding: 0 0 1.15rem; color: #57534e; line-height: 1.55; font-size: 0.95rem; }
+  .zc-faq__a p { margin: 0 0 0.6rem; }
+  .zc-faq__cta { text-align: center; margin-top: 2rem; }
+  .zc-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.5rem; border-radius: 999px; background: #1c1917; color: #fff !important; text-decoration: none !important; font-weight: 600; }
+  .zc-btn--inline { width: auto; }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "ZC FAQ",
+  "tag": "section",
+  "class": "zc-section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F5F0E8" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "QUESTIONS ANSWERED" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "A Few Things You Might Be Wondering" },
+    { "type": "checkbox", "id": "open_first", "label": "Open first question", "default": false },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Create My Custom Tee" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
+  ],
+  "blocks": [{
+    "type": "item",
+    "name": "Question",
+    "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "Does the shirt completely repel pet hair?" },
+      { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>No. The fabric is pet-hair resistant, not pet-hair proof. Results vary.</p>" }
+    ]
+  }],
+  "presets": [{ "name": "ZC FAQ", "blocks": [{ "type": "item" }] }]
+}
+{% endschema %}
