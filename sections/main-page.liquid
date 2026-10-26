@@ -1,104 +1,106 @@
-
-
 {% liquid
-  if section.settings.background_color != blank
-    render 'contrast-override', background_color: section.settings.background_color, section_id: section.id
+  assign landing_product = section.settings.product
+  assign cta_url = section.settings.cta_link
+  if cta_url == blank and landing_product != blank
+    assign cta_url = landing_product.url
   endif
 %}
 
-<div
-  class="section-background{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}"
-></div>
-<div class="section page-width-content{% if section.settings.background_color != blank %} color-custom-{{ section.id }}{% endif %}">
-  <div
-    class="
-      spacing-style
-      layout-panel-flex
-      layout-panel-flex--column
-      section-content-wrapper
-      mobile-column
-    "
-    style="
-      {% render 'layout-panel-style', settings: section.settings %}
-      {% render 'spacing-style', settings: section.settings %}
-    "
-  >
-    {% content_for 'blocks' %}
+<section id="personalize" class="zc-horizon-hero" data-section-id="{{ section.id }}">
+  <div class="zc-horizon-hero__gallery">
+    {% if landing_product != blank and landing_product.media.size > 0 %}
+      <div class="zc-horizon-hero__media-grid">
+        {% for media in landing_product.media limit: 7 %}
+          {% if media.preview_image != blank %}
+            {% liquid
+              assign image_loading = 'lazy'
+              assign image_priority = 'auto'
+              if forloop.first
+                assign image_loading = 'eager'
+                assign image_priority = 'high'
+              endif
+            %}
+            <figure class="zc-horizon-hero__media{% if forloop.first %} zc-horizon-hero__media--primary{% endif %}">
+              {{ media.preview_image | image_url: width: 1600 | image_tag: loading: image_loading, fetchpriority: image_priority, widths: '360, 540, 720, 960, 1200, 1600', sizes: '(min-width: 990px) 50vw, 100vw', alt: media.alt | default: landing_product.title }}
+            </figure>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'zc-horizon-hero__placeholder' }}
+    {% endif %}
   </div>
-</div>
+
+  <div class="zc-horizon-hero__content">
+    {% if section.settings.eyebrow != blank %}<p class="zc-horizon-hero__eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+    <h1>{{ section.settings.heading }}</h1>
+    {% if section.settings.supporting_heading != blank %}<p class="zc-horizon-hero__supporting">{{ section.settings.supporting_heading }}</p>{% endif %}
+    <div class="zc-horizon-hero__copy rte">{{ section.settings.body }}</div>
+
+    {% if section.blocks.size > 0 %}
+      <ul class="zc-horizon-hero__benefits" role="list">
+        {% for block in section.blocks %}
+          <li {{ block.shopify_attributes }}><span aria-hidden="true">✓</span>{{ block.settings.text }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if landing_product != blank %}
+      <p class="zc-horizon-hero__price">
+        {% if landing_product.price_varies %}{{ section.settings.from_label }} {% endif %}{{ landing_product.price | money }}
+      </p>
+    {% endif %}
+
+    {% if cta_url != blank %}
+      <a class="zc-horizon-button" href="{{ cta_url }}">{{ section.settings.cta_label }}</a>
+    {% endif %}
+    {% if section.settings.microcopy != blank %}<p class="zc-horizon-hero__microcopy">{{ section.settings.microcopy }}</p>{% endif %}
+  </div>
+  {% if cta_url != blank %}
+    <div class="zc-horizon-hero__sticky">
+      <div>
+        <strong>{{ section.settings.sticky_label }}</strong>
+        {% if landing_product != blank %}<span>{{ landing_product.price | money }}</span>{% endif %}
+      </div>
+      <a href="{{ cta_url }}">{{ section.settings.sticky_cta_label }}</a>
+    </div>
+  {% endif %}
+</section>
+
+{% stylesheet %}
+  body:has(.zc-horizon-hero) #header-group .section-background,
+  body:has(.zc-horizon-hero) #header-group .header__underlay{background:#F7F3EC!important}
+  .zc-horizon-hero{--zc-ink:#382B25;--zc-sage:#C87546;--zc-cream:#F7F3EC;--zc-sand:#E5D9CF;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);background:#fff;color:var(--zc-ink)}
+  .zc-horizon-hero *{box-sizing:border-box}.zc-horizon-hero__gallery{background:var(--zc-cream);min-width:0}.zc-horizon-hero__media-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}.zc-horizon-hero__media{aspect-ratio:1;margin:0;overflow:hidden}.zc-horizon-hero__media--primary{aspect-ratio:1/1;grid-column:1/-1}.zc-horizon-hero__media img{display:block;height:100%;object-fit:cover;width:100%}.zc-horizon-hero__content{align-self:center;padding:clamp(4rem,7vw,9rem)}.zc-horizon-hero__eyebrow{color:var(--zc-sage);font-size:1.1rem;font-weight:700;letter-spacing:.16em;margin:0 0 1.5rem;text-transform:uppercase}.zc-horizon-hero h1{font-family:var(--font-heading--family);font-size:clamp(2.8rem,3.3vw,4.2rem);font-weight:var(--font-heading--weight);letter-spacing:-.035em;line-height:1.08;margin:0}.zc-horizon-hero__supporting{font-family:var(--font-heading--family);font-size:clamp(1.7rem,1.7vw,2.2rem);line-height:1.25;margin:1.5rem 0 0}.zc-horizon-hero__copy{color:#68615D;font-size:1.6rem;line-height:1.65;margin-top:1.8rem}.zc-horizon-hero__benefits{display:grid;gap:.9rem;list-style:none;margin:2rem 0;padding:0}.zc-horizon-hero__benefits li{align-items:flex-start;display:flex;font-size:1.4rem;gap:.9rem;line-height:1.5}.zc-horizon-hero__benefits span{color:var(--zc-sage);font-weight:800}.zc-horizon-hero__price{font-family:var(--font-heading--family);font-size:2.4rem;margin:2rem 0 1.4rem}.zc-horizon-button{align-items:center;background:var(--zc-ink);border:1px solid var(--zc-ink);border-radius:10px;color:#fff;display:inline-flex;font-size:1.5rem;font-weight:700;justify-content:center;min-height:5.4rem;padding:1.4rem 2.6rem;text-decoration:none;transition:transform .2s ease,background .2s ease,color .2s ease;width:100%}.zc-horizon-button:hover{background:#fff;color:var(--zc-ink);transform:translateY(-1px)}.zc-horizon-button:focus-visible{outline:3px solid var(--zc-sage);outline-offset:3px}.zc-horizon-hero__microcopy{color:#68615D;font-size:1.2rem;line-height:1.5;margin:1rem 0 0;text-align:center}.zc-horizon-hero__placeholder{height:100%;min-height:60rem;width:100%}.zc-horizon-hero__sticky{display:none}
+  @media(max-width:989px){.zc-horizon-hero{grid-template-columns:1fr;padding-bottom:7.4rem}.zc-horizon-hero__content{padding:4.5rem 2rem 5.5rem}.zc-horizon-hero__media-grid{grid-template-columns:repeat(3,1fr)}.zc-horizon-hero__media--primary{grid-column:1/-1}.zc-horizon-hero h1{font-size:clamp(2.6rem,7.2vw,3.4rem)}.zc-horizon-hero__sticky{align-items:center;background:#fff;border-top:1px solid var(--zc-sand);bottom:0;box-shadow:0 -8px 24px rgba(56,43,37,.12);display:flex;gap:1rem;justify-content:space-between;left:0;padding:1rem 1.6rem;position:fixed;right:0;z-index:30}.zc-horizon-hero__sticky div{display:flex;flex-direction:column}.zc-horizon-hero__sticky strong{font-size:1.2rem}.zc-horizon-hero__sticky span{color:var(--zc-sage);font-size:1.3rem;font-weight:700}.zc-horizon-hero__sticky a{align-items:center;background:var(--zc-ink);border-radius:8px;color:#fff;display:inline-flex;font-size:1.3rem;font-weight:700;justify-content:center;min-height:4.6rem;padding:1rem 1.6rem;text-decoration:none}.zc-horizon-hero__sticky a:focus-visible{outline:3px solid var(--zc-sage);outline-offset:2px}}
+  @media(prefers-reduced-motion:reduce){.zc-horizon-button{transition:none}}
+{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:names.page",
+  "name": "ZC Horizon hero",
+  "tag": "section",
   "class": "section-wrapper",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "CUSTOM PET PORTRAIT · MADE FOR PET PARENTS" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Finally, a Custom Pet Tee Made for Life With Your Pet." },
+    { "type": "text", "id": "supporting_heading", "label": "Supporting heading", "default": "Wear Your Pet. Not Their Fur." },
+    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Turn your favorite pet photo into a polished portrait tee, made with smoother anti-static fabric designed for reduced cling and easier brushing.</p>" },
+    { "type": "text", "id": "from_label", "label": "Variable price prefix", "default": "From" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Personalize your tee" },
+    { "type": "text", "id": "microcopy", "label": "CTA supporting text", "default": "Customize securely on the product page · Free standard U.S. shipping" },
+    { "type": "text", "id": "sticky_label", "label": "Mobile sticky label", "default": "Custom pet portrait tee" },
+    { "type": "text", "id": "sticky_cta_label", "label": "Mobile sticky CTA", "default": "Create My Tee" }
+  ],
   "blocks": [
     {
-      "type": "@theme"
-    },
-    {
-      "type": "@app"
-    },
-    {
-      "type": "_divider"
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [{ "type": "text", "id": "text", "label": "Text", "default": "Smoother anti-static fabric designed to reduce cling" }]
     }
   ],
-  "disabled_on": {
-    "groups": ["header"]
-  },
-  "settings": [
-    {
-      "type": "select",
-      "id": "content_direction",
-      "label": "t:settings.direction",
-      "options": [
-        {
-          "value": "column",
-          "label": "t:options.vertical"
-        }
-      ],
-      "default": "column",
-      "visible_if": "{{ section.settings.gap < 0 }}"
-    },
-    {
-      "type": "range",
-      "id": "gap",
-      "label": "t:settings.gap",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "t:settings.background_color",
-      "placeholder": "t:settings.default"
-    },
-    {
-      "type": "header",
-      "content": "t:content.padding"
-    },
-    {
-      "type": "range",
-      "id": "padding-block-start",
-      "label": "t:settings.top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding-block-end",
-      "label": "t:settings.bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    }
-  ]
+  "presets": [{ "name": "ZC Horizon hero", "blocks": [{ "type": "benefit" }, { "type": "benefit" }, { "type": "benefit" }] }]
 }
 {% endschema %}
