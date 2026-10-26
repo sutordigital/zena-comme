@@ -1,39 +1,158 @@
 {% comment %} ZC Split — text + image (portrait / lifestyle) {% endcomment %}
-<section class="zc-split{% if section.settings.media_position == 'left' %} zc-split--media-left{% endif %}" id="zc-split-{{ section.id }}" style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
+<section
+  class="zc-split{% if section.settings.media_position == 'left' %} zc-split--media-left{% endif %}"
+  id="zc-split-{{ section.id }}"
+  style="
+    --zc-bg: {{ section.settings.bg_color }};
+    --zc-pad-top: {{ section.settings.padding_top }}px;
+    --zc-pad-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
   <div class="zc-split__inner">
     <div class="zc-split__copy">
-      {% if section.settings.eyebrow != blank %}<p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>{% endif %}
-      {% if section.settings.heading != blank %}<h2 class="zc-split__heading">{{ section.settings.heading | escape }}</h2>{% endif %}
-      {% if section.settings.body != blank %}<div class="zc-split__body">{{ section.settings.body }}</div>{% endif %}
+      {% if section.settings.eyebrow != blank %}
+        <p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="zc-split__heading">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+      {% if section.settings.body != blank %}
+        <div class="zc-split__body">{{ section.settings.body }}</div>
+      {% endif %}
       {% if section.settings.button_label != blank %}
-        <a class="zc-btn zc-btn--inline" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a>
+        <a class="zc-btn zc-btn--inline" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label | escape }}
+        </a>
       {% endif %}
     </div>
     <div class="zc-split__media">
       {% if section.settings.image != blank %}
-        {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', class: 'zc-split__img', alt: section.settings.image.alt | default: section.settings.heading }}
+        {{
+          section.settings.image
+          | image_url: width: 1600
+          | image_tag:
+            loading: 'lazy',
+            class: 'zc-split__img',
+            widths: '600,900,1200,1600',
+            sizes: '(min-width: 900px) 50vw, 100vw',
+            alt: section.settings.image.alt | default: section.settings.heading
+        }}
       {% else %}
         <div class="zc-split__ph">Add image</div>
       {% endif %}
     </div>
   </div>
 </section>
+
 {% stylesheet %}
-  .zc-split { background: var(--zc-bg, #f5f0e8); padding: var(--zc-pad-top, 64px) 1.25rem var(--zc-pad-bottom, 64px); }
-  .zc-split__inner { max-width: 1200px; margin: 0 auto; display: grid; gap: 2rem; align-items: center; }
-  @media (min-width: 900px) {
-    .zc-split__inner { grid-template-columns: 1fr 1.1fr; gap: 3rem; }
-    .zc-split--media-left .zc-split__media { order: -1; }
+  .zc-split {
+    background: var(--zc-bg, #f5f0e8);
+    width: 100%;
+    padding: var(--zc-pad-top, 64px) clamp(1rem, 4vw, 3rem) var(--zc-pad-bottom, 64px);
+    width: 100%;
   }
-  .zc-kicker { margin: 0 0 0.6rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: #8b6b4a; }
-  .zc-split__heading { margin: 0 0 1rem; font-size: clamp(1.45rem, 2.2vw, 2rem); line-height: 1.2; color: #1c1917; }
-  .zc-split__body { color: #44403c; line-height: 1.6; margin-bottom: 1.25rem; }
-  .zc-split__body p { margin: 0 0 0.85rem; }
-  .zc-split__img { width: 100%; height: auto; border-radius: 14px; display: block; object-fit: cover; aspect-ratio: 5 / 4; }
-  .zc-split__ph { aspect-ratio: 5 / 4; border-radius: 14px; background: #e8e0d4; display: grid; place-items: center; color: #7a6f63; }
-  .zc-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.5rem; border-radius: 999px; background: #1c1917; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 0.95rem; }
-  .zc-btn--inline { width: auto; }
+
+  .zc-split__inner {
+    width: 100%;
+    max-width: 1120px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 900px) {
+    .zc-split__inner {
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 3.5rem);
+    }
+    .zc-split--media-left .zc-split__media {
+      order: -1;
+    }
+  }
+
+  .zc-split__copy {
+    min-width: 0;
+  }
+
+  .zc-kicker {
+    margin: 0 0 0.65rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #8b6b4a;
+    font-weight: 600;
+  }
+
+  .zc-split__heading {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: #1c1917;
+    font-weight: 500;
+  }
+
+  .zc-split__body {
+    color: #44403c;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 1.35rem;
+  }
+
+  .zc-split__body p {
+    margin: 0 0 0.85rem;
+  }
+
+  .zc-split__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .zc-split__media {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .zc-split__img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 5 / 4;
+  }
+
+  .zc-split__ph {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    border-radius: 16px;
+    background: #e8e0d4;
+    display: grid;
+    place-items: center;
+    color: #8a8076;
+    font-size: 0.9rem;
+  }
+
+  .zc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    background: #1c1917;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .zc-btn--inline {
+    width: auto;
+  }
 {% endstylesheet %}
+
 {% schema %}
 {
   "name": "ZC Split",
@@ -41,14 +160,25 @@
   "class": "zc-section",
   "settings": [
     { "type": "color", "id": "bg_color", "label": "Background", "default": "#F5F0E8" },
-    { "type": "select", "id": "media_position", "label": "Image position", "options": [
-      { "value": "right", "label": "Right" },
-      { "value": "left", "label": "Left" }
-    ], "default": "right" },
+    {
+      "type": "select",
+      "id": "media_position",
+      "label": "Image position",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ],
+      "default": "right"
+    },
     { "type": "image_picker", "id": "image", "label": "Image" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "PORTRAIT CONFIDENCE" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "Not Just Any Dog. Not Just Any Cat. Yours." },
-    { "type": "richtext", "id": "body", "label": "Body", "default": "<p>It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p>" },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body",
+      "default": "<p>It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p>"
+    },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Turn My Pet Into a Tee" },
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
