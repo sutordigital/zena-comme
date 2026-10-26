@@ -11,47 +11,18 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "blocks": {
-        "heading": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "page-content": {
-          "type": "page-content",
-          "settings": {},
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "heading",
-        "page-content"
-      ],
       "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 40,
-        "padding-block-end": 80
+        "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
+        "eyebrow": "CUSTOM PET PORTRAIT · MADE FOR PET PARENTS",
+        "heading": "Finally, a Custom Pet Tee Made for Life With Your Pet.",
+        "supporting_heading": "Wear Your Pet. Not Their Fur.",
+        "body": "<p>Turn your favorite pet photo into a polished portrait tee, made with smoother anti-static fabric designed for reduced cling and easier brushing.</p>",
+        "from_label": "From",
+        "cta_link": "",
+        "cta_label": "Personalize your tee",
+        "microcopy": "Customize securely on the product page · Free standard U.S. shipping",
+        "sticky_label": "Custom pet portrait tee",
+        "sticky_cta_label": "Create My Tee"
       }
     }
   },
