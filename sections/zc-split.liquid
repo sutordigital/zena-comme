@@ -56,24 +56,16 @@
     max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 2rem;
     align-items: center;
   }
 
   @media screen and (min-width: 900px) {
     .zc-split__inner {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(2rem, 4vw, 3.5rem);
-  }
-
-    .zc-split__copy,
-    .zc-split__media {
-      flex: 1 1 50%;
-      width: 50%;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(2rem, 4vw, 3.5rem);
     }
-
     .zc-split--media-left .zc-split__media {
       order: -1;
     }
@@ -118,6 +110,7 @@
 
   .zc-split__media {
     min-width: 0;
+    width: 100%;
   }
 
   .zc-split__img {
