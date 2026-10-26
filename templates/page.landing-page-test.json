@@ -1,373 +1,211 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "blocks": {
-        "heading": {
-          "type": "text",
-          "name": "t:names.title",
-          "settings": {
-            "text": "<h1>{{ closest.page.title }}</h1>",
-            "width": "100%",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "page-content": {
-          "type": "page-content",
-          "settings": {
-            "text_color": ""
-          },
-          "blocks": {}
-        }
+    "hero_main": {
+      "type": "hero",
+      "settings": {
+        "heading": "Finally, a Custom Pet Tee Made for Life With Your Pet.",
+        "text": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><p>Turn your favorite photo into a tee you'll actually want to wear. Designed with premium pet-parent fabric, printed in full detail, and made to help reduce fur cling.</p><ul><li>✓ Helps keep fur off most everyday surfaces</li><li>✓ Made with premium soft cotton blend</li><li>✓ Made with your own pet photo</li><li>✓ Soft, smooth & breathable fabric</li></ul><p><strong>Zena Comme Personalized Pet Portrait Tee</strong><br>From $49.00 USD</p>",
+        "button_label": "Create Your Custom Tee",
+        "button_link": "shopify://products/your-product-handle",
+        "image": "shopify://shop_images/zena-hero-main.jpg",
+        "image_position": "right",
+        "layout": "split"
+      }
+    },
+    "collage_problem": {
+      "type": "media-with-content",
+      "settings": {
+        "media_position": "left",
+        "media_width": "50%"
       },
-      "block_order": [
-        "heading",
-        "page-content"
-      ],
-      "settings": {
-        "content_direction": "column",
-        "gap": 32,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 40,
-        "padding-block-end": 80
-      }
-    },
-    "1792474198c7a7eb46": {
-      "type": "_blocks",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "featured_product_information_6WFV66": {
-      "type": "featured-product-information",
       "blocks": {
-        "media-gallery": {
-          "type": "_featured-product-information-carousel",
-          "static": true,
-          "settings": {
-            "aspect_ratio": "adapt",
-            "constrain_to_viewport": true,
-            "media_fit": "contain",
-            "media_radius": 0,
-            "extend_media": false,
-            "zoom": true,
-            "video_loop": false,
-            "hide_variants": true,
-            "icons_style": "arrow",
-            "slideshow_controls_style": "counter",
-            "slideshow_mobile_controls_style": "dots",
-            "thumbnail_position": "bottom",
-            "thumbnail_width": 44,
-            "thumbnail_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "product-details": {
-          "type": "_product-details",
-          "static": true,
-          "settings": {
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "details_position": "flex-start",
-            "gap": 28,
-            "sticky_details_desktop": true,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 24,
-            "padding-block-end": 24,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
+        "group_media": {
+          "type": "group",
+          "settings": {},
           "blocks": {
-            "group_neARGT": {
-              "type": "group",
-              "name": "t:names.header",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_color": "",
-                "border_radius": 0,
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "zepto_product_personalizer_product_personalizer_page_qpxPiD": {
-                  "type": "shopify://apps/zepto-product-personalizer/blocks/product_personalizer_page/7411210d-7b32-4c09-9455-e129e3be4729",
-                  "settings": {
-                    "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant"
-                  }
-                },
-                "product_title_kMAQjP": {
-                  "type": "product-title",
-                  "name": "t:names.title",
-                  "settings": {
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "price_9JtfyD": {
-                  "type": "price",
-                  "name": "t:names.product_price",
-                  "settings": {
-                    "show_sale_price_first": true,
-                    "show_installments": true,
-                    "show_tax_info": true,
-                    "type_preset": "",
-                    "width": "100%",
-                    "alignment": "left",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "text_color": "",
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "zepto_product_personalizer_product_personalizer_page_qpxPiD",
-                "product_title_kMAQjP",
-                "price_9JtfyD"
-              ]
-            },
-            "review_4EnXWe": {
-              "type": "review",
-              "name": "t:names.product_review_stars",
-              "settings": {
-                "stars_style": "shaded",
-                "show_number": true,
-                "text_color": "",
-                "type_preset": "paragraph",
-                "width": "100%",
-                "alignment": "left"
-              },
-              "blocks": {}
-            },
-            "variant_picker_FNNNRx": {
-              "type": "variant-picker",
-              "name": "t:names.product_variant_picker",
-              "settings": {
-                "variant_style": "buttons",
-                "show_swatches": true,
-                "option_label_text_color": "",
-                "variant_style_class": "default",
-                "custom_variant_background": "{{ settings.color_palette.background }}",
-                "custom_variant_text": "{{ settings.color_palette.foreground }}",
-                "custom_variant_border": "{{ settings.color_palette.foreground }}",
-                "selected_variant_style_class": "default",
-                "custom_selected_variant_background": "{{ settings.color_palette.foreground }}",
-                "custom_selected_variant_text": "{{ settings.color_palette.background }}",
-                "custom_selected_variant_border": "{{ settings.color_palette.foreground }}",
-                "alignment": "left",
-                "padding-block-start": 0,
-                "padding-block-end": 8,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "buy_buttons_G8XAxc": {
-              "type": "buy-buttons",
-              "name": "t:names.product_buy_buttons",
-              "settings": {
-                "stacking": false,
-                "text_color": "",
-                "show_pickup_availability": true,
-                "gift_card_form": true,
-                "recipient_button_style": "default",
-                "recipient_button_background": "{{ settings.color_palette.background }}",
-                "recipient_button_text": "{{ settings.color_palette.foreground }}",
-                "recipient_button_border": "{{ settings.color_palette.foreground }}",
-                "selected_recipient_button_style": "default",
-                "selected_recipient_button_background": "{{ settings.color_palette.foreground }}",
-                "selected_recipient_button_text": "{{ settings.color_palette.background }}",
-                "selected_recipient_button_border": "{{ settings.color_palette.foreground }}",
-                "input_style": "default",
-                "input_background_color": "{{ settings.color_palette.background }}",
-                "input_text_color": "{{ settings.color_palette.foreground }}",
-                "input_border_color": "{{ settings.color_palette.foreground }}",
-                "border_width": 1,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "quantity": {
-                  "type": "quantity",
-                  "static": true,
-                  "settings": {
-                    "input_style": "default",
-                    "input_background_color": "{{ settings.color_palette.background }}",
-                    "input_text_color": "{{ settings.color_palette.foreground }}",
-                    "input_border_color": "{{ settings.color_palette.foreground }}",
-                    "border_width": 1,
-                    "border_radius": 0
-                  },
-                  "blocks": {}
-                },
-                "add-to-cart": {
-                  "type": "add-to-cart",
-                  "static": true,
-                  "settings": {
-                    "style_class": "button-secondary",
-                    "custom_button_background": "{{ settings.color_palette.foreground }}",
-                    "custom_button_text": "{{ settings.color_palette.background }}",
-                    "custom_button_border": "{{ settings.color_palette.background }}"
-                  },
-                  "blocks": {}
-                },
-                "accelerated-checkout": {
-                  "type": "accelerated-checkout",
-                  "static": true,
-                  "settings": {},
-                  "blocks": {}
-                }
-              },
-              "block_order": []
-            }
+            "collage_img_1": { "type": "image", "settings": { "image": "shopify://shop_images/collage-1.jpg" } },
+            "collage_img_2": { "type": "image", "settings": { "image": "shopify://shop_images/collage-2.jpg" } },
+            "collage_img_3": { "type": "image", "settings": { "image": "shopify://shop_images/collage-3.jpg" } }
           },
-          "block_order": [
-            "group_neARGT",
-            "review_4EnXWe",
-            "variant_picker_FNNNRx",
-            "buy_buttons_G8XAxc"
-          ]
+          "block_order": ["collage_img_1", "collage_img_2", "collage_img_3"]
+        },
+        "group_text": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "subheading": { "type": "text", "settings": { "text": "<p style='color:#8b6b4a; letter-spacing:2px;'>THE PET PARENT PROBLEM</p>" } },
+            "heading": { "type": "heading", "settings": { "text": "You Love Your Pet. The Fur on Your Clothes? Not So Much.", "heading_size": "h2" } },
+            "text": { "type": "text", "settings": { "text": "<p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p><p>What if your favorite pet tee was made with those moments in mind?</p>" } }
+          },
+          "block_order": ["subheading", "heading", "text"]
         }
       },
-      "name": "t:names.featured_product_information",
+      "block_order": ["group_media", "group_text"]
+    },
+    "benefits_three_columns": {
+      "type": "multicolumn",
       "settings": {
-        "product": "zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
-        "content_width": "content-center-aligned",
-        "desktop_media_position": "left",
-        "equal_columns": true,
-        "limit_details_width": false,
-        "gap": 48,
-        "background_color": "",
-        "padding-block-start": 40,
-        "padding-block-end": 40
+        "title": "More Cuddles. Less Fur Drama.",
+        "columns_desktop": 3
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-1.jpg" } },
+            "txt": { "type": "text", "settings": { "text": "<h3>Cuddle Friendly</h3><p>Made for room for the moments that matter.</p>" } }
+          },
+          "block_order": ["img", "txt"]
+        },
+        "benefit_2": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-2.jpg" } },
+            "txt": { "type": "text", "settings": { "text": "<h3>Brush Off Easier</h3><p>A smoother surface designed to make fur less clingy.</p>" } }
+          },
+          "block_order": ["img", "txt"]
+        },
+        "benefit_3": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-3.jpg" } },
+            "txt": { "type": "text", "settings": { "text": "<h3>Wear It Everywhere</h3><p>From couch cuddles to coffee runs.</p>" } }
+          },
+          "block_order": ["img", "txt"]
+        }
+      },
+      "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+    },
+    "comparison_images": {
+      "type": "multicolumn",
+      "settings": {
+        "title": "Same Pet Hair. Different Fabric. See for Yourself.",
+        "columns_desktop": 2
+      },
+      "blocks": {
+        "comp_1": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "img": { "type": "image", "settings": { "image": "shopify://shop_images/comparison-a.jpg" } },
+            "txt": { "type": "text", "settings": { "text": "<p style='text-align:center;'><strong>REGULAR TEE</strong></p>" } }
+          },
+          "block_order": ["img", "txt"]
+        },
+        "comp_2": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "img": { "type": "image", "settings": { "image": "shopify://shop_images/comparison-b.jpg" } },
+            "txt": { "type": "text", "settings": { "text": "<p style='text-align:center;'><strong>ZENA COMME TEE</strong></p>" } }
+          },
+          "block_order": ["img", "txt"]
+        }
+      },
+      "block_order": ["comp_1", "comp_2"]
+    },
+    "comparison_table_text": {
+      "type": "rich-text",
+      "settings": {
+        "text": "<h2>The Smooth-Fabric Difference.</h2><p>Ordinary cotton tees weren't necessarily designed with shedding pets in mind. Ours start with a different priority—everyday wearability in a pet-parent home.</p><table style='width:100%; border-collapse: collapse;'><tr style='border-bottom: 1px solid #ddd;'><th style='padding: 10px; text-align:left;'>Feature</th><th style='padding: 10px; text-align:left;'>Zena Comme</th><th style='padding: 10px; text-align:left;'>Ordinary Cotton Tees</th></tr><tr style='border-bottom: 1px solid #ddd;'><td style='padding: 10px;'>Personalized pet image</td><td style='padding: 10px;'>Yes</td><td style='padding: 10px;'>Common</td></tr><tr style='border-bottom: 1px solid #ddd;'><td style='padding: 10px;'>Smooth pet-hair resistant fabric</td><td style='padding: 10px;'>Designed for this</td><td style='padding: 10px;'>Depends on garment</td></tr><tr style='border-bottom: 1px solid #ddd;'><td style='padding: 10px;'>Anti-static fabric design</td><td style='padding: 10px;'>Specialized feature</td><td style='padding: 10px;'>Varies</td></tr></table>"
+      }
+    },
+    "how_it_works": {
+      "type": "media-with-content",
+      "settings": {
+        "media_position": "right"
+      },
+      "blocks": {
+        "group_media": { "type": "image", "settings": { "image": "shopify://shop_images/how-it-works-graphic.jpg" } },
+        "group_text": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "subheading": { "type": "text", "settings": { "text": "<p style='color:#8b6b4a; letter-spacing:2px;'>HOW IT WORKS</p>" } },
+            "heading": { "type": "heading", "settings": { "text": "Your Pet. Your Tee. Three Simple Steps.", "heading_size": "h2" } },
+            "text": { "type": "text", "settings": { "text": "<p>1. <strong>Make It Yours:</strong> Choose your own style, size, and placement.<br>2. <strong>Upload Your Favorite Photo:</strong> Choose from our available preview tools.<br>3. <strong>We'll Make Your Tee:</strong> Your pet's portrait is printed and pressed to order.</p>" } },
+            "btn": { "type": "button", "settings": { "label": "Start Creating My Tee", "link": "shopify://products/your-product-handle" } }
+          },
+          "block_order": ["subheading", "heading", "text", "btn"]
+        }
+      },
+      "block_order": ["group_media", "group_text"]
+    },
+    "pricing_bundles": {
+      "type": "multicolumn",
+      "settings": {
+        "title": "One for You. One for Someone Who Loves Them Just as Much.",
+        "columns_desktop": 3
+      },
+      "blocks": {
+        "bundle_1": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "txt": { "type": "text", "settings": { "text": "<h3>THE PERSONALIZED TEE</h3><p><strong>$49</strong></p><ul><li>One pet portrait tee</li><li>Choose black or white</li><li>Front or back print</li></ul>" } },
+            "btn": { "type": "button", "settings": { "label": "Create My Tee", "style": "secondary" } }
+          },
+          "block_order": ["txt", "btn"]
+        },
+        "bundle_2": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "txt": { "type": "text", "settings": { "text": "<h3>THE PERSONALIZED SET</h3><p><strong>$89</strong></p><ul><li>One tee + one hoodie</li><li>Choose the size and color of each</li><li>Same pet, same fur-free fabric</li></ul>" } },
+            "btn": { "type": "button", "settings": { "label": "Create My Set", "style": "primary" } }
+          },
+          "block_order": ["txt", "btn"]
+        },
+        "bundle_3": {
+          "type": "group",
+          "settings": {},
+          "blocks": {
+            "txt": { "type": "text", "settings": { "text": "<h3>GIFT-READY UPGRADE</h3><p><strong>+$5</strong></p><ul><li>A nice box with card for birthdays and special moments.</li></ul>" } },
+            "btn": { "type": "button", "settings": { "label": "Add to Order", "style": "secondary" } }
+          },
+          "block_order": ["txt", "btn"]
+        }
+      },
+      "block_order": ["bundle_1", "bundle_2", "bundle_3"]
+    },
+    "faq_section": {
+      "type": "collapsible-content",
+      "settings": {
+        "title": "A Few Things You Might Be Wondering"
+      },
+      "blocks": {
+        "faq_1": { "type": "collapsible-row", "settings": { "heading": "Does the shirt completely repel pet hair?", "content": "<p>No. The fabric is smoother and more hair-resistant by construction, and smooth surfaces tend to release hair more easily. Results vary.</p>" } },
+        "faq_2": { "type": "collapsible-row", "settings": { "heading": "How is it different from an ordinary custom tee?", "content": "<p>Most custom tees focus on the print. Ours starts with the fabric and fit, then adds the print.</p>" } },
+        "faq_3": { "type": "collapsible-row", "settings": { "heading": "What kind of photo should I upload?", "content": "<p>A clear, well-lit photo with your pet's face and eyes visible works best.</p>" } },
+        "faq_4": { "type": "collapsible-row", "settings": { "heading": "Can I preview my design before ordering?", "content": "<p>Yes, you'll see a preview of your personalized tee before checkout.</p>" } }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
+    },
+    "footer_cta": {
+      "type": "hero",
+      "settings": {
+        "heading": "They're More Than a Pet. They're Part of Your Everyday.",
+        "text": "<p>There's no them for busy schedules, early walks, long days, and the moments that make up a life. And because they're always part of your everyday, we'd like to make the clothes you wear feel more like a part of them, too.</p>",
+        "button_label": "Create My Custom Tee",
+        "button_link": "shopify://products/your-product-handle",
+        "image": "shopify://shop_images/bottom-cta-bg.jpg",
+        "overlay_opacity": 40,
+        "text_alignment": "center"
       }
     }
   },
   "order": [
-    "main",
-    "1792474198c7a7eb46",
-    "featured_product_information_6WFV66"
+    "hero_main",
+    "collage_problem",
+    "benefits_three_columns",
+    "comparison_images",
+    "comparison_table_text",
+    "how_it_works",
+    "pricing_bundles",
+    "faq_section",
+    "footer_cta"
   ]
 }
