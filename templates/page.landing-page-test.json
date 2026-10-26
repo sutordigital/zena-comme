@@ -12,14 +12,20 @@
     "zc_hero": {
       "type": "zc-hero",
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
+        "image_main": "shopify://shop_images/zena-comme-personalized-pet-tshirts-black-white-hero.jpg",
+        "image_thumb_1": "shopify://shop_images/zena-comme-pet-hair-resistant-tee-fur-comparison.jpg",
+        "image_thumb_2": "shopify://shop_images/zena-comme-pet-portrait-tshirt-front-back-print-options.jpg",
+        "image_thumb_3": "shopify://shop_images/zena-comme-anti-static-pet-hair-resistant-fabric-features.jpg",
         "eyebrow": "PERSONALIZED PET TEE · PET-HAIR-RESISTANT FABRIC",
         "heading": "Finally, a Custom Pet Tee Made for Life With Your Pet.",
         "body": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><p>Turn your favorite pet photo into a tee you'll actually want to wear—made with smoother, pet-hair-resistant fabric designed to help reduce fur cling.</p>",
         "bullets": "Helps loose fur brush off more easily\nMade personal with your own pet photo\nEveryday style in black or white",
         "price_label": "Zena Comme Personalized Pet Portrait Tee",
         "price": "$49.00",
+        "show_option_hints": true,
         "button_label": "Create My Custom Tee",
+        "button_link": "",
         "microcopy": "Made to order · Free shipping · Secure checkout",
         "padding_top": 40,
         "padding_bottom": 40
@@ -28,7 +34,9 @@
     "zc_problem": {
       "type": "zc-problem",
       "settings": {
-        "bg_color": "#FAF7F2",
+        "bg_color": "#faf7f2",
+        "image_1": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps.jpg",
+        "image_2": "shopify://shop_images/zena-comme-custom-pet-shirts-pet-parent-lifestyle.jpg",
         "eyebrow": "THE PET PARENT PROBLEM",
         "heading": "You Love Your Pet. The Fur on Your Clothes? Not So Much.",
         "body": "<p>You put on a clean black tee. Your dog gives you that look. You lean in for one little nuzzle. And suddenly you're reaching for the lint roller. Again.</p><p>The familiar routine: brush off the fur, change your shirt, or accept you're bringing half your pet's coat with you.</p><p><em>What if your favorite pet tee was made with those moments in mind?</em></p>",
@@ -67,19 +75,20 @@
         "c3"
       ],
       "settings": {
-        "bg_color": "#F5F0E8",
-        "eyebrow": "THE TRANSFORMED EVERYDAY",
+        "bg_color": "#f5f0e8",
+        "eyebrow": "",
         "heading": "More Cuddles. Less Fur Drama.",
         "subheading": "You're going to cuddle them anyway. You deserve a tee that gets it.",
         "button_label": "Create Your Everyday Pet Tee",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "button_link": "",
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_compare": {
       "type": "zc-compare",
       "settings": {
-        "bg_color": "#FAF7F2",
+        "bg_color": "#faf7f2",
         "eyebrow": "SEE THE DIFFERENCE",
         "heading": "Same Pet Hair. Different Fabric. See for Yourself.",
         "body": "<p>Pet hair clings to clothing because of texture, friction, and static. Our smoother, anti-static fabric is designed to help loose fur brush away more easily.</p>",
@@ -126,7 +135,7 @@
         "f3"
       ],
       "settings": {
-        "bg_color": "#FAF7F2",
+        "bg_color": "#faf7f2",
         "eyebrow": "WHY THE FABRIC MATTERS",
         "heading": "The Smooth-Fabric Difference.",
         "body": "<p>Ordinary custom tees weren't necessarily designed with shedding pets in mind. Ours starts with a different priority: everyday wearability in a real pet home.</p>",
@@ -138,12 +147,13 @@
     "zc_portrait": {
       "type": "zc-split",
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "media_position": "right",
         "eyebrow": "PORTRAIT CONFIDENCE",
         "heading": "Not Just Any Dog. Not Just Any Cat. Yours.",
         "body": "<p>It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p><p>A great custom tee isn't just about putting a pet on fabric. It's about celebrating your pet.</p>",
         "button_label": "Turn My Pet Into a Tee",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -182,11 +192,12 @@
         "s3"
       ],
       "settings": {
-        "bg_color": "#FAF7F2",
+        "bg_color": "#faf7f2",
         "eyebrow": "HOW IT WORKS",
         "heading": "Your Pet. Your Tee. Three Simple Steps.",
         "subheading": "You don't need to be a designer. Just bring the pet photo you love.",
         "button_label": "Start Creating My Tee",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -194,12 +205,13 @@
     "zc_lifestyle": {
       "type": "zc-split",
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "media_position": "left",
         "eyebrow": "LIFESTYLE & FIT",
         "heading": "Cute Enough to Show Off. Practical Enough to Live In.",
         "body": "<p>Some custom tees are made for the unboxing photo. This one is designed for everything that happens afterward.</p><p>Morning dog walks. Weekend coffee runs. Movie nights on the couch. The ordinary, lovely moments you spend with your pet.</p>",
         "button_label": "Make It Personal",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -256,12 +268,16 @@
         "r5"
       ],
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "eyebrow": "AN EDITORIAL COMPARISON",
         "heading": "Not All Custom Pet Tees Are Made for Pet Parents.",
         "body": "<p>Most personalized tees start with “What should we print on it?” We asked one more question: What happens when you wear it around your pet?</p>",
+        "col_feature": "Features",
+        "col_us": "Zena Comme",
+        "col_them": "Other Custom Tees",
         "footer": "A personalized tee that considers the pet hair, too.",
         "button_label": "Choose My Tee",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -272,10 +288,12 @@
         "p1": {
           "type": "plan",
           "settings": {
+            "badge": "",
             "title": "The Personalized Tee",
             "price": "$49",
             "features": "One pet portrait tee\nChoose black or white\nFront or back print",
             "button_label": "Create My Tee",
+            "button_link": "",
             "featured": false
           }
         },
@@ -287,6 +305,7 @@
             "price": "$89",
             "features": "Two personalized tees\nChoose the color and size of each\nSave $9 vs. two singles",
             "button_label": "Create Our Set",
+            "button_link": "",
             "featured": true
           }
         },
@@ -298,6 +317,7 @@
             "price": "+$5",
             "features": "A little extra care for birthdays and special moments.",
             "button_label": "Add to Order",
+            "button_link": "",
             "featured": false
           }
         }
@@ -308,7 +328,7 @@
         "p3"
       ],
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "eyebrow": "PRICING & BUNDLES",
         "heading": "One for You. One for Someone Who Loves Them Just as Much.",
         "subheading": "One very spoilt pet. Two very proud pet parents.",
@@ -359,7 +379,7 @@
         "i4"
       ],
       "settings": {
-        "bg_color": "#FAF7F2",
+        "bg_color": "#faf7f2",
         "eyebrow": "SHIPPING, FIT & POLICY",
         "heading": "Made for Your Pet. Ordered With Confidence.",
         "note": "Personalized preparation usually takes 6–10 days; shipping typically takes 7–15 days after dispatch. Estimates may vary.",
@@ -454,11 +474,12 @@
         "q10"
       ],
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "eyebrow": "QUESTIONS ANSWERED",
         "heading": "A Few Things You Might Be Wondering",
         "open_first": false,
         "button_label": "Create My Custom Tee",
+        "button_link": "",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -471,6 +492,7 @@
         "heading": "They're More Than a Pet. They're Part of Your Everyday.",
         "body": "<p>They're there for lazy Sundays, early walks, long days, and the moments that make life better. You already carry them in your heart. Now you can wear them, too.</p><p>A personalized tee designed to celebrate the face you love—with less fur-cling fuss.</p>",
         "button_label": "Create My Custom Tee",
+        "button_link": "",
         "microcopy": "Your pet. Your portrait. Your new everyday favorite.",
         "padding_top": 100,
         "padding_bottom": 100
