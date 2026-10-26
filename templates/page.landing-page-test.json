@@ -1,1191 +1,268 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "main": {
-      "type": "section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
-    "hero_E8mUdX": {
+    "hero_main": {
       "type": "hero",
       "blocks": {
-        "text_gkfD8R": {
+        "hero_text_1": {
           "type": "text",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
-            "width": "fit-content",
-            "max_width": "narrow",
+            "text": "<p style='color: #8b6b4a; font-weight: bold; letter-spacing: 2px; font-size: 12px;'>PERSONALIZED PET TEE · PET HAIR RESISTANT FABRIC</p>",
             "alignment": "left",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "type_preset": "rte"
+          }
         },
-        "text_H39kHU": {
+        "hero_text_2": {
           "type": "text",
           "settings": {
-            "text": "<p>Made with care and unconditionally loved by our customers.</p>",
-            "width": "fit-content",
-            "max_width": "narrow",
+            "text": "<h1>Finally, a Custom Pet Tee Made for Life With Your Pet.</h1>",
             "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 32,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "type_preset": "h1"
+          }
         },
-        "button_MgbM3H": {
+        "hero_text_3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><ul style='list-style-type: none; padding-left: 0;'><li>✓ Helps keep fur off most everyday surfaces</li><li>✓ Made with premium soft cotton blend</li><li>✓ Every tee is unique, created just for you</li></ul>",
+            "alignment": "left",
+            "type_preset": "rte"
+          }
+        },
+        "hero_button": {
           "type": "button",
-          "name": "t:names.button",
           "settings": {
-            "label": "Shop now",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
+            "label": "Create Your Custom Tee",
+            "link": "shopify://products/your-product-handle",
             "style_class": "button",
-            "custom_button_background": "{{ settings.color_palette.foreground }}",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "link_text_color": "",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "width": "fit-content"
+          }
         }
       },
-      "block_order": [
-        "text_gkfD8R",
-        "text_H39kHU",
-        "button_MgbM3H"
-      ],
-      "name": "t:names.hero",
-      "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
-        "section_width": "page-width",
-        "section_height": "large",
-        "section_height_custom": 50,
-        "background_color": "",
-        "toggle_overlay": true,
-        "overlay_color": "#00000026",
-        "overlay_style": "gradient",
-        "gradient_direction": "to top",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 40,
-        "padding-block-end": 40
-      }
-    },
-    "section_HXgXcD": {
-      "type": "section",
-      "blocks": {
-        "image_3yLLwe": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "image_ratio": "square",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "group_3Gpnbt": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_tbPgQd": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h2>Our signature product</h2>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_wRycxM": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Made with care and unconditionally loved by our customers, this signature bestseller exceeds all expectations.</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_a7Pdqe": {
-              "type": "button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "custom_button_background": "{{ settings.color_palette.foreground }}",
-                "custom_button_text": "{{ settings.color_palette.background }}",
-                "custom_button_border": "{{ settings.color_palette.background }}",
-                "link_text_color": "",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_tbPgQd",
-            "text_wRycxM",
-            "button_a7Pdqe"
-          ]
-        }
-      },
-      "block_order": [
-        "image_3yLLwe",
-        "group_3Gpnbt"
-      ],
-      "name": "t:names.image_with_text",
+      "block_order": ["hero_text_1", "hero_text_2", "hero_text_3", "hero_button"],
       "settings": {
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "space-between",
         "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
+        "section_height": "adapt",
         "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
         "padding-block-start": 40,
         "padding-block-end": 40
       }
     },
-    "carousel_p4jFAp": {
-      "type": "carousel",
-      "blocks": {
-        "static-header": {
-          "type": "group",
-          "name": "t:names.header",
-          "static": true,
-          "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "background_color": "",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 16,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_yqQWq6": {
-              "type": "text",
-              "name": "t:names.header",
-              "settings": {
-                "text": "<p>Discover elevated design </p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_yqQWq6"
-          ]
-        },
-        "static-carousel-content": {
-          "type": "_carousel-content",
-          "name": "t:names.carousel_content",
-          "static": true,
-          "settings": {
-            "background_color": "",
-            "height": "fit",
-            "position": "top",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "card_fz9ge7": {
-              "type": "_card",
-              "name": "t:names.card",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "aspect_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "image_MMEdVi": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_color": "",
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_6UrM3x": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p>Artistry in action </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h5",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_8XPjWB": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Bold style that's recognizable anywhere</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_MMEdVi",
-                "text_6UrM3x",
-                "text_8XPjWB"
-              ]
-            },
-            "card_t6jRpj": {
-              "type": "_card",
-              "name": "t:names.card",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "aspect_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "image_FKWLW9": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_color": "",
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_4tJ8XB": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p>Uncompromising standards </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h5",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_6UeHPd": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Expert construction and an impeccable finish</p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_FKWLW9",
-                "text_4tJ8XB",
-                "text_6UeHPd"
-              ]
-            },
-            "card_dpnLCx": {
-              "type": "_card",
-              "name": "t:names.card",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "aspect_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "image_frpQkQ": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_color": "",
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_VdebcW": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<p>Made to last </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h5",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_UicekD": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Pieces that only get better with time and wear </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_frpQkQ",
-                "text_VdebcW",
-                "text_UicekD"
-              ]
-            },
-            "card_QKf6iE": {
-              "type": "_card",
-              "name": "t:names.card",
-              "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "background_media": "none",
-                "background_color": "",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "aspect_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "image_YjPhm3": {
-                  "type": "image",
-                  "name": "t:names.image",
-                  "settings": {
-                    "link": "",
-                    "image_ratio": "adapt",
-                    "width": "fill",
-                    "custom_width": 100,
-                    "width_mobile": "fill",
-                    "custom_width_mobile": 100,
-                    "height": "fit",
-                    "border": "none",
-                    "border_width": 1,
-                    "border_opacity": 100,
-                    "border_color": "",
-                    "border_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_mzzeAV": {
-                  "type": "text",
-                  "name": "t:names.heading",
-                  "settings": {
-                    "text": "<h2>Quality you can feel</h2>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h5",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_Gp6Xpa": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Authentic materials, no compromises </p>",
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "image_YjPhm3",
-                "text_mzzeAV",
-                "text_Gp6Xpa"
-              ]
-            }
-          },
-          "block_order": [
-            "card_fz9ge7",
-            "card_t6jRpj",
-            "card_dpnLCx",
-            "card_QKf6iE"
-          ]
-        }
-      },
-      "name": "t:names.carousel",
-      "settings": {
-        "columns": 3,
-        "mobile_columns": "1",
-        "section_width": "page-width",
-        "columns_gap": 12,
-        "background_color": "",
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
-    },
-    "section_CPKcx6": {
+    "problem_section": {
       "type": "section",
       "blocks": {
-        "text_zfFdt9": {
-          "type": "text",
-          "name": "t:names.heading",
+        "problem_image": {
+          "type": "image",
           "settings": {
-            "text": "<h2>Frequently asked questions</h2>",
-            "width": "fit-content",
-            "max_width": "narrow",
-            "alignment": "left",
-            "type_preset": "h3",
-            "font": "var(--font-body--family)",
-            "font_size": "",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "text_color": "",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "width": "fill",
+            "image_ratio": "adapt",
+            "border_radius": 8
+          }
         },
-        "accordion_6bt3na": {
+        "problem_group": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "gap": 16,
+            "width": "custom",
+            "custom_width": 50
+          },
+          "blocks": {
+            "problem_text": {
+              "type": "text",
+              "settings": {
+                "text": "<p style='color: #8b6b4a; letter-spacing: 2px; font-size: 12px;'>THE PET PARENT PROBLEM</p><h2>You Love Your Pet. The Fur on Your Clothes? Not So Much.</h2><p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p><p>What if your favorite pet tee was made with those moments in mind?</p>",
+                "alignment": "left",
+                "type_preset": "rte"
+              }
+            }
+          },
+          "block_order": ["problem_text"]
+        }
+      },
+      "block_order": ["problem_image", "problem_group"],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "benefits_section": {
+      "type": "section",
+      "blocks": {
+        "benefits_header": {
+          "type": "text",
+          "settings": {
+            "text": "<h2 style='text-align: center;'>More Cuddles. Less Fur Drama.</h2><p style='text-align: center;'>You're going to cuddle them anyway, no matter how much fur they bring.</p>",
+            "alignment": "center",
+            "type_preset": "rte",
+            "padding-block-end": 32
+          }
+        },
+        "card_group_1": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "width": "custom",
+            "custom_width": 33,
+            "gap": 12,
+            "padding-inline-end": 12
+          },
+          "blocks": {
+            "card_img_1": { "type": "image", "settings": { "width": "fill", "image_ratio": "landscape" } },
+            "card_text_1": { "type": "text", "settings": { "text": "<h3>Cuddle Friendly</h3><p>Made for room for the moments that matter.</p>", "type_preset": "rte" } }
+          },
+          "block_order": ["card_img_1", "card_text_1"]
+        },
+        "card_group_2": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "width": "custom",
+            "custom_width": 33,
+            "gap": 12,
+            "padding-inline-start": 12,
+            "padding-inline-end": 12
+          },
+          "blocks": {
+            "card_img_2": { "type": "image", "settings": { "width": "fill", "image_ratio": "landscape" } },
+            "card_text_2": { "type": "text", "settings": { "text": "<h3>Brush Off Easier</h3><p>A smoother surface designed to make fur less clingy.</p>", "type_preset": "rte" } }
+          },
+          "block_order": ["card_img_2", "card_text_2"]
+        },
+        "card_group_3": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "width": "custom",
+            "custom_width": 33,
+            "gap": 12,
+            "padding-inline-start": 12
+          },
+          "blocks": {
+            "card_img_3": { "type": "image", "settings": { "width": "fill", "image_ratio": "landscape" } },
+            "card_text_3": { "type": "text", "settings": { "text": "<h3>Wear It Everywhere</h3><p>From couch cuddles to coffee runs.</p>", "type_preset": "rte" } }
+          },
+          "block_order": ["card_img_3", "card_text_3"]
+        }
+      },
+      "block_order": ["benefits_header", "card_group_1", "card_group_2", "card_group_3"],
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "space-between",
+        "vertical_alignment": "flex-start",
+        "gap": 12,
+        "section_width": "page-width",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "faq_section": {
+      "type": "section",
+      "blocks": {
+        "faq_heading": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>A Few Things You Might Be Wondering</h2>",
+            "alignment": "center",
+            "type_preset": "h2",
+            "padding-block-end": 24
+          }
+        },
+        "faq_accordion": {
           "type": "accordion",
-          "name": "t:names.accordion",
           "settings": {
             "icon": "caret",
             "dividers": true,
-            "divider_color": "",
-            "type_preset": "h5",
-            "background_color": "",
-            "text_color": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_color": "",
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "type_preset": "h5"
           },
           "blocks": {
-            "accordion_row_6P97x8": {
+            "row_1": {
               "type": "_accordion-row",
-              "settings": {
-                "heading": "What is the return policy?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
+              "settings": { "heading": "Does the shirt completely repel pet hair?", "open_by_default": false },
               "blocks": {
-                "text_wBjtTB": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
+                "text_1": { "type": "text", "settings": { "text": "<p>No. The fabric is smoother and more hair-resistant by construction, and smooth surfaces tend to release hair more easily. Results vary.</p>", "type_preset": "rte" } }
               },
-              "block_order": [
-                "text_wBjtTB"
-              ]
+              "block_order": ["text_1"]
             },
-            "accordion_row_9Xapzg": {
+            "row_2": {
               "type": "_accordion-row",
-              "settings": {
-                "heading": "Are any purchases final sale?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
+              "settings": { "heading": "How is it different from an ordinary custom tee?", "open_by_default": false },
               "blocks": {
-                "text_VXpKfz": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>We are unable to accept returns on certain items. These will be carefully marked before purchase.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
+                "text_2": { "type": "text", "settings": { "text": "<p>Most custom tees focus on the print. Ours starts with the fabric and fit, then adds the print.</p>", "type_preset": "rte" } }
               },
-              "block_order": [
-                "text_VXpKfz"
-              ]
-            },
-            "accordion_row_gVVN76": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "When will I get my order?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_eg4igB": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>We will work quickly to ship your order as soon as possible. Once your order has shipped, you will receive an email with further information. Delivery times vary depending on your location.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_eg4igB"
-              ]
-            },
-            "accordion_row_AJqjb4": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "Where are your products manufactured?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_7aFAxn": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Our products are manufactured both locally and globally. We carefully select our manufacturing partners to ensure our products are high quality and a fair value.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_7aFAxn"
-              ]
-            },
-            "accordion_row_idPL4C": {
-              "type": "_accordion-row",
-              "name": "t:names.accordion_row",
-              "settings": {
-                "heading": "How much does shipping cost?",
-                "open_by_default": false,
-                "icon": "none",
-                "width": 20
-              },
-              "blocks": {
-                "text_KmdBgz": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Shipping is calculated based on your location and the items in your order. You will always know the shipping price before you purchase.</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "text_color": "",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_KmdBgz"
-              ]
+              "block_order": ["text_2"]
             }
           },
-          "block_order": [
-            "accordion_row_6P97x8",
-            "accordion_row_9Xapzg",
-            "accordion_row_gVVN76",
-            "accordion_row_AJqjb4",
-            "accordion_row_idPL4C"
-          ]
+          "block_order": ["row_1", "row_2"]
         }
       },
-      "block_order": [
-        "text_zfFdt9",
-        "accordion_6bt3na"
-      ],
-      "name": "t:names.faq_section",
+      "block_order": ["faq_heading", "faq_accordion"],
       "settings": {
         "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 32,
-        "section_width": "page-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "background_media": "none",
-        "background_color": "",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_color": "",
-        "border_radius": 0,
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "section_width": "narrow",
+        "padding-block-start": 60,
+        "padding-block-end": 60
+      }
+    },
+    "bottom_cta": {
+      "type": "section",
+      "blocks": {
+        "cta_group": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "horizontal_alignment": "center",
+            "vertical_alignment": "center",
+            "gap": 24,
+            "background_media": "image",
+            "toggle_overlay": true,
+            "overlay_color": "#00000080",
+            "padding-block-start": 100,
+            "padding-block-end": 100
+          },
+          "blocks": {
+            "cta_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2 style='color: white; text-align: center;'>They're More Than a Pet. They're Part of Your Everyday.</h2><p style='color: white; text-align: center;'>Because they're always part of your everyday, we'd like to make the clothes you wear feel more like a part of them, too.</p>",
+                "alignment": "center",
+                "type_preset": "rte"
+              }
+            },
+            "cta_btn": {
+              "type": "button",
+              "settings": {
+                "label": "Create My Custom Tee",
+                "link": "shopify://products/your-product-handle",
+                "style_class": "button"
+              }
+            }
+          },
+          "block_order": ["cta_text", "cta_btn"]
+        }
+      },
+      "block_order": ["cta_group"],
+      "settings": {
+        "content_direction": "column",
+        "section_width": "full-width"
       }
     }
   },
   "order": [
-    "main",
-    "hero_E8mUdX",
-    "section_HXgXcD",
-    "carousel_p4jFAp",
-    "section_CPKcx6"
+    "hero_main",
+    "problem_section",
+    "benefits_section",
+    "faq_section",
+    "bottom_cta"
   ]
 }
