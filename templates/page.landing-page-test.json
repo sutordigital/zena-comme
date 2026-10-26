@@ -30,7 +30,7 @@
         "hero_price": {
           "type": "text",
           "settings": {
-            "text": "<p><strong>Zena Comme Personalized Pet Portrait Tee</strong><br>From <strong>$49.00</strong></p>",
+            "text": "<p><strong>Zena Comme Personalized Pet Portrait Tee</strong></p><p>From <strong>$49.00</strong></p>",
             "alignment": "left",
             "type_preset": "rte"
           }
@@ -707,7 +707,7 @@
         "table_body": {
           "type": "text",
           "settings": {
-            "text": "<table><thead><tr><th>Features</th><th>Zena Comme</th><th>Other Custom Tees</th></tr></thead><tbody><tr><td>Personalized pet image</td><td>Yes</td><td>Common</td></tr><tr><td>Smooth pet-hair resistant fabric</td><td>Designed for this</td><td>Depends on garment</td></tr><tr><td>Anti-static fabric design</td><td>Specified feature</td><td>Varies</td></tr><tr><td>Front or back placement</td><td>Yes</td><td>Varies</td></tr><tr><td>Everyday pet-home focus</td><td>Core priority</td><td>Varies</td></tr></tbody></table><p><em>A personalized tee that considers the pet hair, too.</em></p>",
+            "text": "<h3>Features comparison</h3><p><strong>Personalized pet image</strong> — Zena Comme: Yes · Other custom tees: Common</p><p><strong>Smooth pet-hair resistant fabric</strong> — Zena Comme: Designed for this · Other custom tees: Depends on garment</p><p><strong>Anti-static fabric design</strong> — Zena Comme: Specified feature · Other custom tees: Varies</p><p><strong>Front or back placement</strong> — Zena Comme: Yes · Other custom tees: Varies</p><p><strong>Everyday pet-home focus</strong> — Zena Comme: Core priority · Other custom tees: Varies</p><p><em>A personalized tee that considers the pet hair, too.</em></p>",
             "alignment": "center",
             "type_preset": "rte"
           }
