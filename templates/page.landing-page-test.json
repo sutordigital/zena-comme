@@ -10,25 +10,21 @@
       }
     },
     "pet_parent_problem": {
-      "type": "media-with-content",
-      "settings": {
-        "media_position": "left"
-      },
+      "type": "section",
+      "settings": {},
       "blocks": {
         "problem_group": {
           "type": "group",
           "settings": {},
           "blocks": {
-            "problem_heading": {
-              "type": "heading",
-              "settings": { "text": "You Love Your Pet. The Fur on Your Clothes? Not So Much." }
-            },
             "problem_text": {
               "type": "text",
-              "settings": { "text": "<p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p>" }
+              "settings": {
+                "text": "<h2>You Love Your Pet. The Fur on Your Clothes? Not So Much.</h2><p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p><p>What if your favorite pet tee was made with those moments in mind?</p>"
+              }
             }
           },
-          "block_order": ["problem_heading", "problem_text"]
+          "block_order": ["problem_text"]
         }
       },
       "block_order": ["problem_group"]
@@ -41,71 +37,90 @@
           "type": "group",
           "settings": {},
           "blocks": {
-            "benefit_1": {
-              "type": "group",
-              "settings": {},
-              "blocks": {
-                "b1_img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-1.jpg" } },
-                "b1_text": { "type": "text", "settings": { "text": "<h3>Cuddle Friendly</h3><p>Made for room for the moments that matter.</p>" } }
-              },
-              "block_order": ["b1_img", "b1_text"]
+            "b1_img": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/benefit-1.jpg"
+              }
             },
-            "benefit_2": {
-              "type": "group",
-              "settings": {},
-              "blocks": {
-                "b2_img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-2.jpg" } },
-                "b2_text": { "type": "text", "settings": { "text": "<h3>Brush Off Easier</h3><p>A smoother surface designed to make fur less clingy.</p>" } }
-              },
-              "block_order": ["b2_img", "b2_text"]
+            "b1_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Cuddle Friendly</h3><p>Made for room for the moments that matter.</p>"
+              }
             },
-            "benefit_3": {
-              "type": "group",
-              "settings": {},
-              "blocks": {
-                "b3_img": { "type": "image", "settings": { "image": "shopify://shop_images/benefit-3.jpg" } },
-                "b3_text": { "type": "text", "settings": { "text": "<h3>Wear It Everywhere</h3><p>From couch cuddles to coffee runs.</p>" } }
-              },
-              "block_order": ["b3_img", "b3_text"]
+            "b2_img": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/benefit-2.jpg"
+              }
+            },
+            "b2_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Brush Off Easier</h3><p>A smoother surface designed to make fur less clingy.</p>"
+              }
+            },
+            "b3_img": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/benefit-3.jpg"
+              }
+            },
+            "b3_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>Wear It Everywhere</h3><p>From couch cuddles to coffee runs.</p>"
+              }
             }
           },
-          "block_order": ["benefit_1", "benefit_2", "benefit_3"]
+          "block_order": ["b1_img", "b1_text", "b2_img", "b2_text", "b3_img", "b3_text"]
         }
       },
       "block_order": ["benefits_group"]
     },
     "comparison_section": {
-      "type": "media-with-content",
-      "settings": {
-        "media_position": "right"
-      },
+      "type": "section",
+      "settings": {},
       "blocks": {
         "comparison_group": {
           "type": "group",
           "settings": {},
           "blocks": {
-            "comp_heading": { "type": "heading", "settings": { "text": "Same Pet Hair. Different Fabric. See for Yourself." } },
-            "comp_text": { "type": "text", "settings": { "text": "<p>Pet hair can cling to clothing because of texture, friction, and static. Our smoother, anti-static fabric is designed to help brush off more easily.</p>" } }
+            "comp_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2>Same Pet Hair. Different Fabric. See for Yourself.</h2><p>Pet hair can cling to clothing because of texture, friction, and static. Our smoother, anti-static fabric is designed to help brush off more easily.</p>"
+              }
+            },
+            "comp_img": {
+              "type": "image",
+              "settings": {
+                "image": "shopify://shop_images/comparison.jpg"
+              }
+            }
           },
-          "block_order": ["comp_heading", "comp_text"]
+          "block_order": ["comp_text", "comp_img"]
         }
       },
       "block_order": ["comparison_group"]
     },
     "how_it_works_section": {
-      "type": "media-with-content",
-      "settings": {
-        "media_position": "right"
-      },
+      "type": "section",
+      "settings": {},
       "blocks": {
         "how_group": {
           "type": "group",
           "settings": {},
           "blocks": {
-            "how_heading": { "type": "heading", "settings": { "text": "Your Pet. Your Tee. Three Simple Steps." } },
-            "how_text": { "type": "text", "settings": { "text": "<p>1. <strong>Make It Yours:</strong> Choose your own style, size, and placement.<br>2. <strong>Upload Your Favorite Photo:</strong> Choose from our available preview tools.<br>3. <strong>We'll Make Your Tee:</strong> Your pet's portrait is printed and pressed to order.</p>" } }
+            "how_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2>Your Pet. Your Tee. Three Simple Steps.</h2><p>1. <strong>Make It Yours:</strong> Choose your own style, size, and placement.<br>2. <strong>Upload Your Favorite Photo:</strong> Choose from our available preview tools.<br>3. <strong>We'll Make Your Tee:</strong> Your pet's portrait is printed and pressed to order.</p>"
+              }
+            }
           },
-          "block_order": ["how_heading", "how_text"]
+          "block_order": ["how_text"]
         }
       },
       "block_order": ["how_group"]
@@ -118,11 +133,14 @@
           "type": "group",
           "settings": {},
           "blocks": {
-            "faq_heading": { "type": "heading", "settings": { "text": "A Few Things You Might Be Wondering" } },
-            "faq_1": { "type": "text", "settings": { "text": "<p><strong>Does the shirt completely repel pet hair?</strong><br>No. The fabric is smoother and more hair-resistant by construction, and smooth surfaces tend to release hair more easily. Results vary.</p>" } },
-            "faq_2": { "type": "text", "settings": { "text": "<p><strong>What kind of photo should I upload?</strong><br>A clear, well-lit photo with your pet's face and eyes visible works best.</p>" } }
+            "faq_text": {
+              "type": "text",
+              "settings": {
+                "text": "<h2>A Few Things You Might Be Wondering</h2><p><strong>Does the shirt completely repel pet hair?</strong><br>No. The fabric is smoother and more hair-resistant by construction, and smooth surfaces tend to release hair more easily. Results vary.</p><p><strong>What kind of photo should I upload?</strong><br>A clear, well-lit photo with your pet's face and eyes visible works best.</p>"
+              }
+            }
           },
-          "block_order": ["faq_heading", "faq_1", "faq_2"]
+          "block_order": ["faq_text"]
         }
       },
       "block_order": ["faq_group"]
