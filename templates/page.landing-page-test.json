@@ -6,7 +6,7 @@
         "hero_text_1": {
           "type": "text",
           "settings": {
-            "text": "<p style='color: #8b6b4a; font-weight: bold; letter-spacing: 2px; font-size: 12px;'>PERSONALIZED PET TEE · PET HAIR RESISTANT FABRIC</p>",
+            "text": "<p>PERSONALIZED PET TEE · PET HAIR RESISTANT FABRIC</p>",
             "alignment": "left",
             "type_preset": "rte"
           }
@@ -22,7 +22,7 @@
         "hero_text_3": {
           "type": "text",
           "settings": {
-            "text": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><ul style='list-style-type: none; padding-left: 0;'><li>✓ Helps keep fur off most everyday surfaces</li><li>✓ Made with premium soft cotton blend</li><li>✓ Every tee is unique, created just for you</li></ul>",
+            "text": "<p>Because loving your pet shouldn't mean wearing their fur everywhere.</p><ul><li>✓ Helps keep fur off most everyday surfaces</li><li>✓ Made with premium soft cotton blend</li><li>✓ Every tee is unique, created just for you</li></ul>",
             "alignment": "left",
             "type_preset": "rte"
           }
@@ -74,7 +74,7 @@
             "problem_text": {
               "type": "text",
               "settings": {
-                "text": "<p style='color: #8b6b4a; letter-spacing: 2px; font-size: 12px;'>THE PET PARENT PROBLEM</p><h2>You Love Your Pet. The Fur on Your Clothes? Not So Much.</h2><p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p><p>What if your favorite pet tee was made with those moments in mind?</p>",
+                "text": "<p>THE PET PARENT PROBLEM</p><h2>You Love Your Pet. The Fur on Your Clothes? Not So Much.</h2><p>You put on a clean black tee. Your dog gives you that look. You know the fur is already on it. It happens every day—but with Zena Comme, the fit and the feeling help bring that pet parent hair problem down.</p><p>What if your favorite pet tee was made with those moments in mind?</p>",
                 "alignment": "left",
                 "type_preset": "rte"
               }
@@ -101,7 +101,7 @@
         "benefits_header": {
           "type": "text",
           "settings": {
-            "text": "<h2 style='text-align: center;'>More Cuddles. Less Fur Drama.</h2><p style='text-align: center;'>You're going to cuddle them anyway, no matter how much fur they bring.</p>",
+            "text": "<h2>More Cuddles. Less Fur Drama.</h2><p>You're going to cuddle them anyway, no matter how much fur they bring.</p>",
             "alignment": "center",
             "type_preset": "rte",
             "padding-block-end": 32
@@ -234,7 +234,7 @@
             "cta_text": {
               "type": "text",
               "settings": {
-                "text": "<h2 style='color: white; text-align: center;'>They're More Than a Pet. They're Part of Your Everyday.</h2><p style='color: white; text-align: center;'>Because they're always part of your everyday, we'd like to make the clothes you wear feel more like a part of them, too.</p>",
+                "text": "<h2>They're More Than a Pet. They're Part of Your Everyday.</h2><p>Because they're always part of your everyday, we'd like to make the clothes you wear feel more like a part of them, too.</p>",
                 "alignment": "center",
                 "type_preset": "rte"
               }
