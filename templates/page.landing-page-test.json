@@ -13,23 +13,11 @@
       "type": "media-with-content",
       "settings": {
         "media_position": "left"
-      },
-      "blocks": {
-        "heading_block": {
-          "type": "heading",
-          "settings": {
-            "text": "THE PET PARENT PROBLEM"
-          }
-        },
-        "text_block": {
-          "type": "text",
-          "settings": {
-            "text": "<p>You Love Your Pet. The Fur on Your Clothes? Not So Much.</p>"
-          }
-        }
-      },
-      "block_order": ["heading_block", "text_block"]
+      }
     }
   },
-  "order": ["main_hero", "main_media"]
+  "order": [
+    "main_hero",
+    "main_media"
+  ]
 }
