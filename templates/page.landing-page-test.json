@@ -84,11 +84,11 @@
         "subheading": "You're going to cuddle them anyway. You deserve a tee that gets it.",
         "button_label": "Create Your Everyday Pet Tee",
         "button_link": "",
+        "heading_size": 33,
+        "card_title_size": 20,
+        "card_text_size": 12,
         "padding_top": 80,
-        "padding_bottom": 80,
-        "heading_size": 32,
-        "card_title_size": 18,
-        "card_text_size": 15
+        "padding_bottom": 80
       }
     },
     "zc_compare": {
