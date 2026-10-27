@@ -52,7 +52,7 @@
         "c1": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps.jpg",
+            "image": "shopify://shop_images/zena-s03-card-01-cuddle-freely-4x3.webp",
             "title": "Cuddle Freely",
             "text": "Make room for the moments that matter."
           }
@@ -60,7 +60,7 @@
         "c2": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/zena-comme-custom-pet-shirts-pet-parent-lifestyle_4e646329-a58b-463e-8ee7-0a79fddd8b56.jpg",
+            "image": "shopify://shop_images/zena-s03-card-02-brush-off-easier-4x3.webp",
             "title": "Brush Off Easier",
             "text": "A smoother surface designed to make loose fur easier to remove."
           }
@@ -68,7 +68,7 @@
         "c3": {
           "type": "card",
           "settings": {
-            "image": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps_90259128-1aca-4a42-8e40-03c44d944120.jpg",
+            "image": "shopify://shop_images/zena-s03-card-03-wear-it-everywhere-4x3.webp",
             "title": "Wear It Everywhere",
             "text": "From couch cuddles to coffee runs."
           }
@@ -88,10 +88,10 @@
         "button_link": "",
         "heading_size": 32,
         "card_title_size": 20,
-        "card_text_size": 12,
+        "card_text_size": 16,
+        "outro_size": 18,
         "padding_top": 80,
-        "padding_bottom": 80,
-        "outro_size": 16
+        "padding_bottom": 80
       }
     },
     "zc_compare": {
