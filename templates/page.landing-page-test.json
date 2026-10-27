@@ -60,7 +60,7 @@
           "settings": {
             "image": "shopify://shop_images/zena-comme-custom-pet-shirts-pet-parent-lifestyle_4e646329-a58b-463e-8ee7-0a79fddd8b56.jpg",
             "title": "Brush Off Easier",
-            "text": "A smoother surface designed to make loose fur less clingy."
+            "text": "A smoother surface designed to make loose fur easier to remove."
           }
         },
         "c3": {
@@ -78,7 +78,7 @@
         "c3"
       ],
       "settings": {
-        "bg_color": "#f5f0e8",
+        "bg_color": "#f7f3ec",
         "eyebrow": "",
         "heading": "More Cuddles. Less Fur Drama.",
         "subheading": "You're going to cuddle them anyway. You deserve a tee that gets it.",
