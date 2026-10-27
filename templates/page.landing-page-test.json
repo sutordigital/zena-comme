@@ -29,8 +29,8 @@
         "button_label": "Create My Custom Tee",
         "button_link": "",
         "microcopy": "Made to order · Free shipping · Secure checkout",
-        "padding_top": 40,
-        "padding_bottom": 40
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_problem": {
@@ -42,8 +42,8 @@
         "eyebrow": "THE PET PARENT PROBLEM",
         "heading": "You Love Your Pet. The Fur on Your Clothes? Not So Much.",
         "body": "<p>You put on a clean black tee. Your dog gives you that look. You lean in for one little nuzzle. And suddenly you're reaching for the lint roller. Again.</p><p>The familiar routine: brush off the fur, change your shirt, or accept you're bringing half your pet's coat with you.</p><p><em>What if your favorite pet tee was made with those moments in mind?</em></p>",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_benefits": {
@@ -106,8 +106,8 @@
         "label_right": "Zena Comme",
         "caption_right": "Same Cuddles. Less Fur Cling.",
         "note": "Pet-hair resistant, not pet-hair proof. Results vary by pet type, contact, and care.",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_features": {
@@ -149,8 +149,8 @@
         "heading": "The Smooth-Fabric Difference.",
         "body": "<p>Ordinary custom tees weren't necessarily designed with shedding pets in mind. Ours starts with a different priority: everyday wearability in a real pet home.</p>",
         "footer": "Finally, a custom tee that thinks about the pet hair, too.",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_portrait": {
@@ -163,8 +163,8 @@
         "body": "<p>It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p><p>A great custom tee isn't just about putting a pet on fabric. It's about celebrating your pet.</p>",
         "button_label": "Turn My Pet Into a Tee",
         "button_link": "",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_steps": {
@@ -207,8 +207,8 @@
         "subheading": "You don't need to be a designer. Just bring the pet photo you love.",
         "button_label": "Start Creating My Tee",
         "button_link": "",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_lifestyle": {
@@ -221,8 +221,8 @@
         "body": "<p>Some custom tees are made for the unboxing photo. This one is designed for everything that happens afterward.</p><p>Morning dog walks. Weekend coffee runs. Movie nights on the couch. The ordinary, lovely moments you spend with your pet.</p>",
         "button_label": "Make It Personal",
         "button_link": "",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_ctable": {
@@ -287,8 +287,8 @@
         "footer": "A personalized tee that considers the pet hair, too.",
         "button_label": "Choose My Tee",
         "button_link": "",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_pricing": {
@@ -341,8 +341,8 @@
         "eyebrow": "PRICING & BUNDLES",
         "heading": "One for You. One for Someone Who Loves Them Just as Much.",
         "subheading": "One very spoilt pet. Two very proud pet parents.",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_policy": {
@@ -392,8 +392,8 @@
         "eyebrow": "SHIPPING, FIT & POLICY",
         "heading": "Made for Your Pet. Ordered With Confidence.",
         "note": "Personalized preparation usually takes 6–10 days; shipping typically takes 7–15 days after dispatch. Estimates may vary.",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_faq": {
@@ -489,8 +489,8 @@
         "open_first": false,
         "button_label": "Create My Custom Tee",
         "button_link": "",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     },
     "zc_cta": {
@@ -504,8 +504,8 @@
         "button_label": "Create My Custom Tee",
         "button_link": "",
         "microcopy": "Your pet. Your portrait. Your new everyday favorite.",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 80,
+        "padding_bottom": 80
       }
     }
   },
