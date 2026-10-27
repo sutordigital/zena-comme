@@ -85,7 +85,10 @@
         "button_label": "Create Your Everyday Pet Tee",
         "button_link": "",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "heading_size": 32,
+        "card_title_size": 18,
+        "card_text_size": 15
       }
     },
     "zc_compare": {
