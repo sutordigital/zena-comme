@@ -1,7 +1,7 @@
 <section
   class="zc-benefits"
   id="zc-benefits-{{ section.id }}"
-  style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;"
+  style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px; --zc-heading-size: {{ section.settings.heading_size }}px; --zc-card-title-size: {{ section.settings.card_title_size }}px; --zc-card-text-size: {{ section.settings.card_text_size }}px;"
 >
   <div class="zc-benefits__inner">
     <div class="zc-benefits__header">
@@ -95,7 +95,7 @@
   .zc-benefits__heading {
     margin: 0;
     color: #1c1917;
-    font-size: clamp(1.55rem, 2.2vw, 2rem);
+    font-size: var(--zc-heading-size, 32px);
     font-weight: 500;
     letter-spacing: -0.02em;
     line-height: 1.18;
@@ -162,7 +162,7 @@
   .zc-benefits__title {
     margin: 0 0 0.4rem !important;
     color: #382b25;
-    font-size: 1.15rem;
+    font-size: var(--zc-card-title-size, 18px);
     font-weight: 600;
     line-height: 1.3;
   }
@@ -170,7 +170,7 @@
   .zc-benefits__text {
     margin: 0 !important;
     color: #68615d;
-    font-size: 0.95rem;
+    font-size: var(--zc-card-text-size, 15px);
     line-height: 1.55;
   }
 
@@ -252,6 +252,11 @@
     { "type": "text", "id": "subheading", "label": "Outro", "default": "You're going to cuddle them anyway. You deserve a tee that gets it." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Create Your Everyday Pet Tee" },
     { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "header", "content": "Typography" },
+    { "type": "range", "id": "heading_size", "min": 24, "max": 48, "step": 1, "unit": "px", "label": "Section heading size", "default": 32 },
+    { "type": "range", "id": "card_title_size", "min": 14, "max": 28, "step": 1, "unit": "px", "label": "Card title size", "default": 18 },
+    { "type": "range", "id": "card_text_size", "min": 12, "max": 22, "step": 1, "unit": "px", "label": "Card text size", "default": 15 },
+    { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
   ],
