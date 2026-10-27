@@ -56,7 +56,15 @@
           {% assign key = 'image_thumb_' | append: i %}
           {% assign img = section.settings[key] %}
           {% if img != blank %}
-            <button class="zc-hero__thumb" type="button" data-zc-gallery-thumb aria-label="View image {{ i | plus: 1 }}">
+            <button
+              class="zc-hero__thumb"
+              type="button"
+              data-zc-gallery-thumb
+              data-gallery-src="{{ img | image_url: width: 1800 }}"
+              data-gallery-srcset="{{ img | image_url: width: 600 }} 600w, {{ img | image_url: width: 900 }} 900w, {{ img | image_url: width: 1200 }} 1200w, {{ img | image_url: width: 1600 }} 1600w"
+              data-gallery-alt="{{ img.alt | default: section.settings.heading | escape }}"
+              aria-label="View image {{ i | plus: 1 }}"
+            >
               {{
                 img
                 | image_url: width: 500
@@ -537,15 +545,12 @@
         sizes: mainImage.sizes,
         alt: mainImage.alt
       },
-      ...thumbnailButtons.map((button) => {
-        const image = button.querySelector('img');
-        return {
-          src: image.currentSrc || image.src,
-          srcset: image.srcset,
-          sizes: image.sizes,
-          alt: image.alt
-        };
-      })
+      ...thumbnailButtons.map((button) => ({
+        src: button.dataset.gallerySrc,
+        srcset: button.dataset.gallerySrcset,
+        sizes: '(min-width: 990px) 55vw, 100vw',
+        alt: button.dataset.galleryAlt
+      }))
     ];
 
     let activeIndex = 0;
