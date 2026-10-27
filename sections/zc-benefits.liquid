@@ -13,7 +13,9 @@
           {% if block.settings.image != blank %}
             {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'zc-benefits__img', alt: block.settings.image.alt | default: block.settings.title }}
           {% else %}
-            <div class="zc-benefits__ph"></div>
+            <div class="zc-benefits__ph" aria-hidden="true">
+              <span>Add card image</span>
+            </div>
           {% endif %}
           {% if block.settings.title != blank %}<h3 class="zc-benefits__title">{{ block.settings.title | escape }}</h3>{% endif %}
           {% if block.settings.text != blank %}<p class="zc-benefits__text">{{ block.settings.text | escape }}</p>{% endif %}
@@ -60,14 +62,24 @@
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 4px 18px rgba(40, 30, 20, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   .zc-benefits__img, .zc-benefits__ph {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
     display: block;
+    flex: 0 0 auto;
   }
-  .zc-benefits__ph { background: #e8e0d4; }
+  .zc-benefits__ph {
+    background: #e8e0d4;
+    display: grid;
+    place-items: center;
+    color: #8a8076;
+    font-size: 0.85rem;
+  }
   .zc-benefits__title {
     margin: 1rem 1.1rem 0.35rem;
     font-size: 1.1rem;
@@ -78,8 +90,22 @@
     color: #57534e;
     font-size: 0.95rem;
     line-height: 1.5;
+    flex: 1;
   }
   .zc-benefits__cta { text-align: center; margin-top: 2rem; }
+  .zc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.85rem 1.5rem;
+    border-radius: 999px;
+    background: #1c1917;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
   .zc-btn--inline { width: auto; min-width: 220px; padding-inline: 1.75rem; }
 {% endstylesheet %}
 

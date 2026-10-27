@@ -10,9 +10,9 @@
     <div class="zc-pricing__grid">
       {% for block in section.blocks %}
         <article class="zc-pricing__card{% if block.settings.featured %} zc-pricing__card--featured{% endif %}" {{ block.shopify_attributes }}>
-          {% if block.settings.badge != blank %}
-            <p class="zc-pricing__badge">{{ block.settings.badge | escape }}</p>
-          {% endif %}
+          <p class="zc-pricing__badge{% if block.settings.badge == blank %} zc-pricing__badge--empty{% endif %}">
+            {% if block.settings.badge != blank %}{{ block.settings.badge | escape }}{% else %}&nbsp;{% endif %}
+          </p>
           <h3 class="zc-pricing__title">{{ block.settings.title | escape }}</h3>
           <p class="zc-pricing__price">{{ block.settings.price | escape }}</p>
           {% if block.settings.features != blank %}
@@ -23,9 +23,11 @@
                 {% if t != blank %}<li>{{ t | escape }}</li>{% endif %}
               {% endfor %}
             </ul>
+          {% else %}
+            <ul class="zc-pricing__list" aria-hidden="true"></ul>
           {% endif %}
           {% if block.settings.button_label != blank %}
-            <a class="zc-btn{% unless block.settings.featured %} zc-btn--outline{% endunless %}" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label | escape }}</a>
+            <a class="zc-btn zc-pricing__btn{% unless block.settings.featured %} zc-btn--outline{% endunless %}" href="{{ block.settings.button_link | default: '#' }}">{{ block.settings.button_label | escape }}</a>
           {% endif %}
         </article>
       {% endfor %}
@@ -60,19 +62,24 @@
     padding: 1.5rem 1.25rem 1.35rem;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
   }
   .zc-pricing__card--featured {
     border-color: #1c1917;
+    border-width: 2px;
     box-shadow: 0 10px 28px rgba(28, 25, 23, 0.08);
   }
   .zc-pricing__badge {
     margin: 0 0 0.5rem;
+    min-height: 1.1rem;
     font-size: 0.7rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #8b6b4a;
     font-weight: 600;
   }
+  .zc-pricing__badge--empty { visibility: hidden; }
   .zc-pricing__title {
     margin: 0 0 0.35rem;
     font-size: 0.95rem;
@@ -90,7 +97,7 @@
     margin: 0 0 1.25rem;
     padding: 0;
     list-style: none;
-    flex: 1;
+    flex: 1 1 auto;
   }
   .zc-pricing__list li {
     position: relative;
@@ -105,6 +112,23 @@
     left: 0;
     color: #8b6b4a;
   }
+  .zc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    margin-top: auto;
+    padding: 0.85rem 1.25rem;
+    border-radius: 999px;
+    background: #1c1917;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+  .zc-pricing__btn { margin-top: auto; }
   .zc-btn--outline {
     background: transparent;
     color: #1c1917 !important;
