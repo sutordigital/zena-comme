@@ -13,8 +13,15 @@
   "
 >
   <div class="zc-hero__inner">
-    {%- comment -%} LEFT: lifestyle collage {%- endcomment -%}
-    <div class="zc-hero__media">
+    {%- assign has_thumbs = false -%}
+    {%- for i in (1..6) -%}
+      {%- assign key = 'image_thumb_' | append: i -%}
+      {%- if section.settings[key] != blank -%}
+        {%- assign has_thumbs = true -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    <div class="zc-hero__media" data-zc-gallery>
       <div class="zc-hero__main-wrap">
         {% if section.settings.image_main != blank %}
           {{
@@ -22,44 +29,50 @@
             | image_url: width: 1800
             | image_tag:
               loading: 'eager',
+              fetchpriority: 'high',
               class: 'zc-hero__img zc-hero__img--main',
               widths: '600,900,1200,1600',
-              sizes: '(min-width: 900px) 55vw, 100vw',
+              sizes: '(min-width: 990px) 55vw, 100vw',
               alt: section.settings.image_main.alt | default: section.settings.heading
           }}
         {% else %}
           <div class="zc-hero__placeholder zc-hero__placeholder--main">
-            <span>Upload main lifestyle photo<br><small>(man + dog / couple with pets)</small></span>
+            <span>Upload main product image</span>
           </div>
+        {% endif %}
+
+        {% if section.settings.image_main != blank and has_thumbs %}
+          <button class="zc-hero__arrow zc-hero__arrow--prev" type="button" data-zc-gallery-prev aria-label="Previous image">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button class="zc-hero__arrow zc-hero__arrow--next" type="button" data-zc-gallery-next aria-label="Next image">
+            <span aria-hidden="true">›</span>
+          </button>
         {% endif %}
       </div>
 
-      {%- assign has_thumbs = false -%}
-      {%- for i in (1..6) -%}
-        {%- assign key = 'image_thumb_' | append: i -%}
-        {%- if section.settings[key] != blank -%}
-          {%- assign has_thumbs = true -%}
-        {%- endif -%}
-      {%- endfor -%}
-
-      <div class="zc-hero__thumbs{% unless has_thumbs %} zc-hero__thumbs--empty{% endunless %}">
+      <div class="zc-hero__thumbs{% unless has_thumbs %} zc-hero__thumbs--empty{% endunless %}" aria-label="Product gallery thumbnails">
         {% for i in (1..6) %}
           {% assign key = 'image_thumb_' | append: i %}
           {% assign img = section.settings[key] %}
-          <div class="zc-hero__thumb">
-            {% if img != blank %}
+          {% if img != blank %}
+            <button class="zc-hero__thumb" type="button" data-zc-gallery-thumb aria-label="View image {{ i | plus: 1 }}">
               {{
                 img
-                | image_url: width: 700
+                | image_url: width: 500
                 | image_tag:
                   loading: 'lazy',
                   class: 'zc-hero__img zc-hero__img--thumb',
-                  alt: img.alt
+                  widths: '160,240,360,500',
+                  sizes: '(min-width: 750px) 9vw, 80px',
+                  alt: img.alt | default: section.settings.heading
               }}
-            {% else %}
-              <div class="zc-hero__placeholder zc-hero__placeholder--thumb">Product {{ i }}</div>
-            {% endif %}
-          </div>
+            </button>
+          {% else %}
+            <div class="zc-hero__thumb zc-hero__thumb--placeholder">
+              <div class="zc-hero__placeholder zc-hero__placeholder--thumb">Image {{ i | plus: 1 }}</div>
+            </div>
+          {% endif %}
         {% endfor %}
       </div>
     </div>
@@ -189,8 +202,11 @@
   }
 
   .zc-hero__main-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     border-radius: 16px;
-    overflow: visible;
+    overflow: hidden;
     background: #e8e0d4;
   }
 
@@ -200,34 +216,118 @@
     display: block;
   }
 
-  /* P0: do not crop poster art / baked-in headline text */
   .zc-hero__img--main {
-    aspect-ratio: auto;
-    max-height: none;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center top;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
     background: #e8e0d4;
   }
 
+  .zc-hero__arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    border: 1px solid rgba(56, 43, 37, 0.14);
+    border-radius: 50%;
+    color: #382b25;
+    background: rgba(247, 243, 236, 0.94);
+    box-shadow: 0 4px 16px rgba(28, 25, 23, 0.12);
+    cursor: pointer;
+  }
+
+  .zc-hero__arrow span {
+    display: block;
+    font-size: 2rem;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+
+  .zc-hero__arrow--prev {
+    left: 1rem;
+  }
+
+  .zc-hero__arrow--next {
+    right: 1rem;
+  }
+
+  .zc-hero__arrow:hover {
+    background: #ffffff;
+  }
+
+  .zc-hero__arrow:focus-visible,
+  .zc-hero__thumb:focus-visible {
+    outline: 3px solid #c87546;
+    outline-offset: 3px;
+  }
 
   .zc-hero__thumbs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 0.6rem;
   }
 
   .zc-hero__thumb {
-    border-radius: 12px;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
     overflow: hidden;
     background: #e8e0d4;
+    cursor: pointer;
+  }
+
+  .zc-hero__thumb.is-active {
+    border-color: #382b25;
+  }
+
+  .zc-hero__thumb--placeholder {
+    cursor: default;
   }
 
   .zc-hero__img--thumb {
+    width: 100% !important;
+    height: 100% !important;
     aspect-ratio: 1 / 1;
-    height: 100%;
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 749px) {
+    .zc-hero__thumbs {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 80px;
+      gap: 0.55rem;
+      overflow-x: auto;
+      padding: 0.2rem 0.2rem 0.65rem;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+    }
+
+    .zc-hero__thumb {
+      scroll-snap-align: start;
+    }
+
+    .zc-hero__arrow {
+      width: 42px;
+      height: 42px;
+    }
+
+    .zc-hero__arrow--prev {
+      left: 0.75rem;
+    }
+
+    .zc-hero__arrow--next {
+      right: 0.75rem;
+    }
   }
 
   .zc-hero__placeholder {
@@ -246,7 +346,8 @@
   }
 
   .zc-hero__placeholder--main {
-    aspect-ratio: 4 / 5;
+    width: 100%;
+    height: 100%;
     min-height: 320px;
   }
 
@@ -417,6 +518,74 @@
 
   
 {% endstylesheet %}
+
+{% javascript %}
+  const initializeZcGallery = (gallery) => {
+    if (!gallery || gallery.dataset.zcGalleryReady === 'true') return;
+
+    const mainImage = gallery.querySelector('.zc-hero__img--main');
+    const thumbnailButtons = Array.from(gallery.querySelectorAll('[data-zc-gallery-thumb]'));
+    const previousButton = gallery.querySelector('[data-zc-gallery-prev]');
+    const nextButton = gallery.querySelector('[data-zc-gallery-next]');
+
+    if (!mainImage || thumbnailButtons.length === 0) return;
+
+    const slides = [
+      {
+        src: mainImage.currentSrc || mainImage.src,
+        srcset: mainImage.srcset,
+        sizes: mainImage.sizes,
+        alt: mainImage.alt
+      },
+      ...thumbnailButtons.map((button) => {
+        const image = button.querySelector('img');
+        return {
+          src: image.currentSrc || image.src,
+          srcset: image.srcset,
+          sizes: image.sizes,
+          alt: image.alt
+        };
+      })
+    ];
+
+    let activeIndex = 0;
+
+    const showSlide = (requestedIndex) => {
+      activeIndex = (requestedIndex + slides.length) % slides.length;
+      const slide = slides[activeIndex];
+
+      mainImage.src = slide.src;
+      mainImage.srcset = slide.srcset || '';
+      mainImage.sizes = slide.sizes || '';
+      mainImage.alt = slide.alt || '';
+
+      thumbnailButtons.forEach((button, index) => {
+        const isActive = index + 1 === activeIndex;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-current', isActive ? 'true' : 'false');
+      });
+    };
+
+    thumbnailButtons.forEach((button, index) => {
+      button.addEventListener('click', () => showSlide(index + 1));
+    });
+
+    previousButton?.addEventListener('click', () => showSlide(activeIndex - 1));
+    nextButton?.addEventListener('click', () => showSlide(activeIndex + 1));
+
+    gallery.dataset.zcGalleryReady = 'true';
+  };
+
+  const initializeAllZcGalleries = (scope = document) => {
+    scope.querySelectorAll('[data-zc-gallery]').forEach(initializeZcGallery);
+  };
+
+  initializeAllZcGalleries();
+
+  document.addEventListener('shopify:section:load', (event) => {
+    initializeAllZcGalleries(event.target);
+  });
+{% endjavascript %}
 
 {% schema %}
 {
