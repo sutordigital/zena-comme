@@ -8,15 +8,15 @@
     </div>
     <div class="zc-ctable__wrap" role="table" aria-label="Feature comparison">
       <div class="zc-ctable__row zc-ctable__row--head" role="row">
-        <div role="columnheader">{{ section.settings.col_feature | default: 'Features' | escape }}</div>
-        <div role="columnheader">{{ section.settings.col_us | default: 'Zena Comme' | escape }}</div>
-        <div role="columnheader">{{ section.settings.col_them | default: 'Other Custom Tees' | escape }}</div>
+        <div class="zc-ctable__cell zc-ctable__cell--feature" role="columnheader">{{ section.settings.col_feature | default: 'Features' | escape }}</div>
+        <div class="zc-ctable__cell zc-ctable__cell--us" role="columnheader">{{ section.settings.col_us | default: 'Zena Comme' | escape }}</div>
+        <div class="zc-ctable__cell zc-ctable__cell--them" role="columnheader">{{ section.settings.col_them | default: 'Other Custom Tees' | escape }}</div>
       </div>
       {% for block in section.blocks %}
         <div class="zc-ctable__row" role="row" {{ block.shopify_attributes }}>
-          <div role="cell"><strong>{{ block.settings.feature | escape }}</strong></div>
-          <div role="cell">{{ block.settings.us | escape }}</div>
-          <div role="cell">{{ block.settings.them | escape }}</div>
+          <div class="zc-ctable__cell zc-ctable__cell--feature" role="cell"><strong>{{ block.settings.feature | escape }}</strong></div>
+          <div class="zc-ctable__cell zc-ctable__cell--us" role="cell">{{ block.settings.us | escape }}</div>
+          <div class="zc-ctable__cell zc-ctable__cell--them" role="cell">{{ block.settings.them | escape }}</div>
         </div>
       {% endfor %}
     </div>
@@ -38,16 +38,28 @@
   .zc-ctable__intro p { margin: 0; }
   .zc-ctable__wrap { border-radius: 12px; overflow: hidden; border: 1px solid #e7e0d6; background: #fff; }
   .zc-ctable__row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 0; }
-  .zc-ctable__row > div { padding: 0.9rem 1rem; border-top: 1px solid #ece7df; font-size: 0.92rem; color: #44403c; }
-  .zc-ctable__row--head > div { background: #1c1917; color: #fff; border-top: 0; font-weight: 600; font-size: 0.85rem; }
+  .zc-ctable__cell { padding: 0.9rem 1rem; border-top: 1px solid #ece7df; font-size: 0.92rem; color: #44403c; }
+  .zc-ctable__row--head .zc-ctable__cell { background: #1c1917; color: #fff; border-top: 0; font-weight: 600; font-size: 0.85rem; }
+  /* Positive "us" column — sage/brand, never red */
+  .zc-ctable__row:not(.zc-ctable__row--head) .zc-ctable__cell--us {
+    color: #3f6b4a;
+    font-weight: 600;
+    background: #f4f7f2;
+  }
+  .zc-ctable__row:not(.zc-ctable__row--head) .zc-ctable__cell--them {
+    color: #78716c;
+  }
   .zc-ctable__footer { margin: 1rem 0 0; text-align: center; font-style: italic; color: #57534e; }
   .zc-ctable__cta { text-align: center; margin-top: 1.5rem; }
   .zc-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.5rem; border-radius: 999px; background: #1c1917; color: #fff !important; text-decoration: none !important; font-weight: 600; }
   .zc-btn--inline { width: auto; }
   @media (max-width: 600px) {
     .zc-ctable__row { grid-template-columns: 1fr; }
-    .zc-ctable__row > div:nth-child(1) { background: #faf7f2; font-weight: 600; }
+    .zc-ctable__cell--feature { background: #faf7f2; font-weight: 600; }
     .zc-ctable__row--head { display: none; }
+    .zc-ctable__row:not(.zc-ctable__row--head) .zc-ctable__cell--us::before {
+      content: attr(data-label);
+    }
   }
 {% endstylesheet %}
 {% schema %}

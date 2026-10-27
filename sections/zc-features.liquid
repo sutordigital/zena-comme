@@ -9,7 +9,13 @@
     <div class="zc-features__grid">
       {% for block in section.blocks %}
         <article class="zc-features__card" {{ block.shopify_attributes }}>
-          {% if block.settings.number != blank %}<p class="zc-features__num">{{ block.settings.number | escape }}</p>{% endif %}
+          {% if block.settings.image != blank %}
+            <div class="zc-features__icon">
+              {{ block.settings.image | image_url: width: 160 | image_tag: loading: 'lazy', class: 'zc-features__icon-img', alt: block.settings.title }}
+            </div>
+          {% elsif block.settings.number != blank %}
+            <p class="zc-features__num">{{ block.settings.number | escape }}</p>
+          {% endif %}
           {% if block.settings.title != blank %}<h3 class="zc-features__title">{{ block.settings.title | escape }}</h3>{% endif %}
           {% if block.settings.text != blank %}<p class="zc-features__text">{{ block.settings.text | escape }}</p>{% endif %}
         </article>
@@ -26,12 +32,32 @@
   .zc-features__heading { margin: 0 0 0.75rem; font-size: clamp(1.45rem, 2.1vw, 1.9rem); color: #1c1917; }
   .zc-features__intro { color: #57534e; line-height: 1.55; }
   .zc-features__intro p { margin: 0; }
-  .zc-features__grid { display: grid; gap: 1rem; }
+  .zc-features__grid { display: grid; gap: 1rem; align-items: stretch; }
   @media (min-width: 750px) { .zc-features__grid { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
-  .zc-features__card { background: #fff; border: 1px solid #e7e0d6; border-radius: 14px; padding: 1.35rem 1.2rem; }
+  .zc-features__card {
+    background: #fff;
+    border: 1px solid #e7e0d6;
+    border-radius: 14px;
+    padding: 1.35rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .zc-features__icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 0 0.75rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #f5f0e8;
+    display: grid;
+    place-items: center;
+  }
+  .zc-features__icon-img { width: 2.25rem; height: 2.25rem; object-fit: contain; display: block; }
   .zc-features__num { margin: 0 0 0.5rem; font-size: 0.8rem; letter-spacing: 0.08em; color: #8b6b4a; font-weight: 600; }
   .zc-features__title { margin: 0 0 0.4rem; font-size: 1.05rem; color: #1c1917; }
-  .zc-features__text { margin: 0; color: #57534e; font-size: 0.95rem; line-height: 1.5; }
+  .zc-features__text { margin: 0; color: #57534e; font-size: 0.95rem; line-height: 1.5; flex: 1; }
   .zc-features__footer { margin: 1.5rem 0 0; text-align: center; color: #57534e; font-style: italic; }
 {% endstylesheet %}
 {% schema %}
@@ -52,7 +78,8 @@
     "type": "feature",
     "name": "Feature",
     "settings": [
-      { "type": "text", "id": "number", "label": "Number", "default": "01" },
+      { "type": "image_picker", "id": "image", "label": "Icon / image (optional)", "info": "Tip: use assets zc-icon-less-fur / anti-static / comfort / your-design" },
+      { "type": "text", "id": "number", "label": "Number (used if no image)", "default": "01" },
       { "type": "text", "id": "title", "label": "Title", "default": "A Smoother Surface" },
       { "type": "textarea", "id": "text", "label": "Text", "default": "Designed to give loose pet hair fewer places to catch." }
     ]

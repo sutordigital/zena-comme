@@ -1,10 +1,10 @@
 {% comment %} ZC CTA — bottom full-bleed {% endcomment %}
 <section class="zc-cta" id="zc-cta-{{ section.id }}" style="--zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
-  <div class="zc-cta__bg">
+  <div class="zc-cta__bg{% if section.settings.image == blank %} zc-cta__bg--solid{% endif %}">
     {% if section.settings.image != blank %}
       {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'zc-cta__img', alt: section.settings.heading }}
+      <div class="zc-cta__overlay" style="--zc-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
     {% endif %}
-    <div class="zc-cta__overlay" style="--zc-overlay: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
   </div>
   <div class="zc-cta__content">
     {% if section.settings.eyebrow != blank %}<p class="zc-cta__eyebrow">{{ section.settings.eyebrow | escape }}</p>{% endif %}
@@ -19,6 +19,7 @@
 {% stylesheet %}
   .zc-cta { position: relative; padding: var(--zc-pad-top, 100px) 1.25rem var(--zc-pad-bottom, 100px); color: #fff; overflow: hidden; background: #1c1917; }
   .zc-cta__bg { position: absolute; inset: 0; }
+  .zc-cta__bg--solid { background: #1c1917; }
   .zc-cta__img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .zc-cta__overlay { position: absolute; inset: 0; background: rgba(0,0,0, var(--zc-overlay, 0.55)); }
   .zc-cta__content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; text-align: center; }
@@ -26,7 +27,21 @@
   .zc-cta__heading { margin: 0 0 1rem; font-size: clamp(1.6rem, 2.5vw, 2.2rem); line-height: 1.2; }
   .zc-cta__body { margin: 0 0 1.5rem; line-height: 1.55; opacity: 0.92; }
   .zc-cta__body p { margin: 0 0 0.75rem; }
-  .zc-btn--light { background: #fff; color: #1c1917 !important; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.85rem 1.75rem; border-radius: 999px; text-decoration: none !important; font-weight: 600; }
+  /* P0: beat other sections' .zc-btn { background:#1c1917 } (black-on-black) */
+  .zc-cta a.zc-btn.zc-btn--light {
+    background: #fff !important;
+    color: #1c1917 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    text-decoration: none !important;
+    font-weight: 600;
+    border: none;
+  }
+  .zc-cta a.zc-btn.zc-btn--light:hover { opacity: 0.92; }
   .zc-cta__micro { margin: 1rem 0 0; font-size: 0.85rem; opacity: 0.85; }
 {% endstylesheet %}
 {% schema %}
