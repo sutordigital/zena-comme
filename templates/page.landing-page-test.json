@@ -209,7 +209,7 @@
         "heading": "Your Pet. Your Tee. Three Simple Steps.",
         "subheading": "You don't need to be a designer. Just bring the pet photo you love.",
         "button_label": "Start Creating My Tee",
-        "button_link": "",
+        "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -219,11 +219,12 @@
       "settings": {
         "bg_color": "#f5f0e8",
         "media_position": "left",
+        "image": "shopify://shop_images/zena-s03-card-03-wear-it-everywhere-4x3.webp",
         "eyebrow": "LIFESTYLE & FIT",
         "heading": "Cute Enough to Show Off. Practical Enough to Live In.",
         "body": "<p>Some custom tees are made for the unboxing photo. This one is designed for everything that happens afterward.</p><p>Morning dog walks. Weekend coffee runs. Movie nights on the couch. The ordinary, lovely moments you spend with your pet.</p>",
         "button_label": "Make It Personal",
-        "button_link": "",
+        "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
         "padding_top": 80,
         "padding_bottom": 80
       }
