@@ -1,3 +1,17 @@
+{% style %}
+  #zc-benefits-{{ section.id }} .zc-benefits__heading {
+    font-size: {{ section.settings.heading_size }}px !important;
+  }
+
+  #zc-benefits-{{ section.id }} .zc-benefits__title {
+    font-size: {{ section.settings.card_title_size }}px !important;
+  }
+
+  #zc-benefits-{{ section.id }} .zc-benefits__text {
+    font-size: {{ section.settings.card_text_size }}px !important;
+  }
+{% endstyle %}
+
 <section
   class="zc-benefits"
   id="zc-benefits-{{ section.id }}"
