@@ -490,6 +490,7 @@
     "zc_cta": {
       "type": "zc-cta",
       "settings": {
+        "image": "shopify://shop_images/zena-comme-final-cta-pet-owner-warm-home-21x9.webp",
         "overlay_opacity": 55,
         "eyebrow": "YOUR PET. YOUR PORTRAIT.",
         "heading": "They're More Than a Pet. They're Part of Your Everyday.",
