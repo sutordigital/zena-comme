@@ -10,6 +10,10 @@
   #zc-benefits-{{ section.id }} .zc-benefits__text {
     font-size: {{ section.settings.card_text_size }}px !important;
   }
+
+  #zc-benefits-{{ section.id }} .zc-benefits__outro {
+    font-size: {{ section.settings.outro_size }}px !important;
+  }
 {% endstyle %}
 
 <section
@@ -189,12 +193,13 @@
   }
 
   .zc-benefits__outro {
-    max-width: 680px;
+    max-width: 900px;
     margin: 2rem auto 0;
     color: #57534e;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.55;
     text-align: center;
+    text-wrap: balance;
   }
 
   .zc-benefits__cta {
@@ -270,6 +275,7 @@
     { "type": "range", "id": "heading_size", "min": 24, "max": 48, "step": 1, "unit": "px", "label": "Section heading size", "default": 32 },
     { "type": "range", "id": "card_title_size", "min": 14, "max": 28, "step": 1, "unit": "px", "label": "Card title size", "default": 18 },
     { "type": "range", "id": "card_text_size", "min": 12, "max": 22, "step": 1, "unit": "px", "label": "Card text size", "default": 15 },
+    { "type": "range", "id": "outro_size", "min": 14, "max": 24, "step": 1, "unit": "px", "label": "Outro text size", "default": 16 },
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
     { "type": "range", "id": "padding_bottom", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding bottom", "default": 64 }
