@@ -50,6 +50,7 @@
         "c1": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps.jpg",
             "title": "Cuddle Freely",
             "text": "Make room for the moments that matter."
           }
@@ -57,6 +58,7 @@
         "c2": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/zena-comme-custom-pet-shirts-pet-parent-lifestyle_4e646329-a58b-463e-8ee7-0a79fddd8b56.jpg",
             "title": "Brush Off Easier",
             "text": "A smoother surface designed to make loose fur less clingy."
           }
@@ -64,6 +66,7 @@
         "c3": {
           "type": "card",
           "settings": {
+            "image": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps_90259128-1aca-4a42-8e40-03c44d944120.jpg",
             "title": "Wear It Everywhere",
             "text": "From couch cuddles to coffee runs."
           }
