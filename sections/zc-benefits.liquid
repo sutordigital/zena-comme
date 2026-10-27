@@ -1,30 +1,62 @@
-{% comment %} Zena Comme — 3 benefit cards {% endcomment %}
-
-<section class="zc-benefits" id="zc-benefits-{{ section.id }}" style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
+<section
+  class="zc-benefits"
+  id="zc-benefits-{{ section.id }}"
+  style="--zc-bg: {{ section.settings.bg_color }}; --zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;"
+>
   <div class="zc-benefits__inner">
     <div class="zc-benefits__header">
-      {% if section.settings.eyebrow != blank %}<p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>{% endif %}
-      {% if section.settings.heading != blank %}<h2 class="zc-benefits__heading">{{ section.settings.heading | escape }}</h2>{% endif %}
-      {% if section.settings.subheading != blank %}<p class="zc-benefits__sub">{{ section.settings.subheading | escape }}</p>{% endif %}
+      {% if section.settings.eyebrow != blank %}
+        <p class="zc-kicker">{{ section.settings.eyebrow | escape }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2 class="zc-benefits__heading">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
     </div>
+
     <div class="zc-benefits__grid">
       {% for block in section.blocks %}
+        {%- assign block_settings = block.settings -%}
         <article class="zc-benefits__card" {{ block.shopify_attributes }}>
-          {% if block.settings.image != blank %}
-            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', class: 'zc-benefits__img', alt: block.settings.image.alt | default: block.settings.title }}
-          {% else %}
-            <div class="zc-benefits__ph" aria-hidden="true">
-              <span>Add card image</span>
-            </div>
-          {% endif %}
-          {% if block.settings.title != blank %}<h3 class="zc-benefits__title">{{ block.settings.title | escape }}</h3>{% endif %}
-          {% if block.settings.text != blank %}<p class="zc-benefits__text">{{ block.settings.text | escape }}</p>{% endif %}
+          <div class="zc-benefits__media">
+            {% if block_settings.image != blank %}
+              {{
+                block_settings.image
+                | image_url: width: 1000
+                | image_tag:
+                  loading: 'lazy',
+                  class: 'zc-benefits__img',
+                  widths: '360, 540, 720, 1000',
+                  sizes: '(min-width: 750px) 33vw, 100vw',
+                  alt: block_settings.image.alt | default: block_settings.title
+              }}
+            {% else %}
+              <div class="zc-benefits__ph" aria-hidden="true">
+                <span>Add card image</span>
+              </div>
+            {% endif %}
+          </div>
+
+          <div class="zc-benefits__content">
+            {% if block_settings.title != blank %}
+              <h3 class="zc-benefits__title">{{ block_settings.title | escape }}</h3>
+            {% endif %}
+            {% if block_settings.text != blank %}
+              <p class="zc-benefits__text">{{ block_settings.text | escape }}</p>
+            {% endif %}
+          </div>
         </article>
       {% endfor %}
     </div>
+
+    {% if section.settings.subheading != blank %}
+      <p class="zc-benefits__outro">{{ section.settings.subheading | escape }}</p>
+    {% endif %}
+
     {% if section.settings.button_label != blank %}
       <div class="zc-benefits__cta">
-        <a class="zc-btn zc-btn--inline" href="{{ section.settings.button_link | default: '#' }}">{{ section.settings.button_label | escape }}</a>
+        <a class="zc-btn zc-btn--inline" href="{{ section.settings.button_link | default: '#' }}">
+          {{ section.settings.button_label | escape }}
+        </a>
       </div>
     {% endif %}
   </div>
@@ -32,81 +64,179 @@
 
 {% stylesheet %}
   .zc-benefits {
-    background: var(--zc-bg, #f5f0e8);
-    padding: var(--zc-pad-top, 80px) 1.25rem var(--zc-pad-bottom, 80px);
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--zc-bg, #f7f3ec);
+    padding: var(--zc-pad-top, 80px) clamp(1.25rem, 4vw, 3rem) var(--zc-pad-bottom, 80px);
   }
-  .zc-benefits__inner { max-width: 1100px; margin: 0 auto; }
-  .zc-benefits__header { text-align: center; margin-bottom: 2rem; }
+
+  .zc-benefits__inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .zc-benefits__header {
+    max-width: 760px;
+    margin: 0 auto 2rem;
+    text-align: center;
+  }
+
   .zc-kicker {
     margin: 0 0 0.6rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
     color: #8b6b4a;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
   }
+
   .zc-benefits__heading {
-    margin: 0 0 0.5rem;
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    margin: 0;
     color: #1c1917;
+    font-size: clamp(1.55rem, 2.2vw, 2rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.18;
   }
-  .zc-benefits__sub { margin: 0; color: #57534e; }
+
   .zc-benefits__grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  @media (min-width: 750px) {
-    .zc-benefits__grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  }
+
   .zc-benefits__card {
-    background: #fff;
-    border-radius: 14px;
+    min-width: 0;
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgba(40, 30, 20, 0.05);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    background: #ffffff;
+    border: 1px solid rgba(56, 43, 37, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(40, 30, 20, 0.06);
   }
-  .zc-benefits__img, .zc-benefits__ph {
+
+  .zc-benefits__media {
+    position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
+    overflow: hidden;
     flex: 0 0 auto;
-  }
-  .zc-benefits__ph {
     background: #e8e0d4;
-    display: grid;
+  }
+
+  .zc-benefits .zc-benefits__img,
+  .zc-benefits .zc-benefits__ph {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+  }
+
+  .zc-benefits .zc-benefits__img {
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .zc-benefits__ph {
     place-items: center;
     color: #8a8076;
+    background: #e8e0d4;
     font-size: 0.85rem;
+    text-align: center;
   }
-  .zc-benefits__title {
-    margin: 1rem 1.1rem 0.35rem;
-    font-size: 1.1rem;
-    color: #1c1917;
-  }
-  .zc-benefits__text {
-    margin: 0 1.1rem 1.25rem;
-    color: #57534e;
-    font-size: 0.95rem;
-    line-height: 1.5;
+
+  .zc-benefits__content {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    padding: 1.15rem 1.2rem 1.3rem;
   }
-  .zc-benefits__cta { text-align: center; margin-top: 2rem; }
+
+  .zc-benefits__title {
+    margin: 0 0 0.4rem !important;
+    color: #382b25;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .zc-benefits__text {
+    margin: 0 !important;
+    color: #68615d;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .zc-benefits__outro {
+    max-width: 680px;
+    margin: 2rem auto 0;
+    color: #57534e;
+    font-size: 1rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .zc-benefits__cta {
+    margin-top: 1.25rem;
+    text-align: center;
+  }
+
   .zc-btn {
+    min-height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 48px;
     padding: 0.85rem 1.5rem;
-    border-radius: 999px;
-    background: #1c1917;
-    color: #fff !important;
-    text-decoration: none !important;
-    font-weight: 600;
+    color: #ffffff !important;
+    background: #382b25;
+    border-radius: 8px;
     font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none !important;
   }
-  .zc-btn--inline { width: auto; min-width: 220px; padding-inline: 1.75rem; }
+
+  .zc-btn--inline {
+    width: auto;
+    min-width: 220px;
+    padding-inline: 1.75rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .zc-benefits__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .zc-benefits {
+      padding-inline: 1.25rem;
+    }
+
+    .zc-benefits__header {
+      margin-bottom: 1.5rem;
+    }
+
+    .zc-benefits__content {
+      padding: 1rem 1rem 1.15rem;
+    }
+
+    .zc-benefits__outro {
+      margin-top: 1.5rem;
+    }
+
+    .zc-btn--inline {
+      width: 100%;
+      min-width: 0;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -114,11 +244,12 @@
   "name": "ZC Benefits",
   "tag": "section",
   "class": "zc-section",
+  "max_blocks": 3,
   "settings": [
-    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F5F0E8" },
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F7F3EC" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "THE TRANSFORMED EVERYDAY" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "More Cuddles. Less Fur Drama." },
-    { "type": "text", "id": "subheading", "label": "Subheading", "default": "You're going to cuddle them anyway. You deserve a tee that gets it." },
+    { "type": "text", "id": "subheading", "label": "Outro", "default": "You're going to cuddle them anyway. You deserve a tee that gets it." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "Create Your Everyday Pet Tee" },
     { "type": "url", "id": "button_link", "label": "Button link" },
     { "type": "range", "id": "padding_top", "min": 0, "max": 120, "step": 4, "unit": "px", "label": "Padding top", "default": 64 },
@@ -139,7 +270,7 @@
     "name": "ZC Benefits",
     "blocks": [
       { "type": "card", "settings": { "title": "Cuddle Freely", "text": "Make room for the moments that matter." } },
-      { "type": "card", "settings": { "title": "Brush Off Easier", "text": "A smoother surface designed to make loose fur less clingy." } },
+      { "type": "card", "settings": { "title": "Brush Off Easier", "text": "A smoother surface designed to make loose fur easier to remove." } },
       { "type": "card", "settings": { "title": "Wear It Everywhere", "text": "From couch cuddles to coffee runs." } }
     ]
   }]
