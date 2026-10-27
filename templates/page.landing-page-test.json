@@ -290,7 +290,7 @@
         "col_them": "Other Custom Tees",
         "footer": "A personalized tee that considers the pet hair, too.",
         "button_label": "Choose My Tee",
-        "button_link": "",
+        "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -306,7 +306,7 @@
             "price": "$49",
             "features": "One pet portrait tee\nChoose black or white\nFront or back print",
             "button_label": "Create My Tee",
-            "button_link": "",
+            "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
             "featured": false
           }
         },
@@ -318,7 +318,7 @@
             "price": "$89",
             "features": "Two personalized tees\nChoose the color and size of each\nSave $9 vs. two singles",
             "button_label": "Create Our Set",
-            "button_link": "",
+            "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
             "featured": true
           }
         },
@@ -330,7 +330,7 @@
             "price": "+$5",
             "features": "A little extra care for birthdays and special moments.",
             "button_label": "Add to Order",
-            "button_link": "",
+            "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
             "featured": false
           }
         }
@@ -492,7 +492,7 @@
         "heading": "A Few Things You Might Be Wondering",
         "open_first": false,
         "button_label": "Create My Custom Tee",
-        "button_link": "",
+        "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -501,12 +501,12 @@
       "type": "zc-cta",
       "settings": {
         "image": "shopify://shop_images/zena-comme-final-cta-pet-owner-warm-home-21x9.webp",
-        "overlay_opacity": 55,
+        "overlay_opacity": 40,
         "eyebrow": "YOUR PET. YOUR PORTRAIT.",
         "heading": "They're More Than a Pet. They're Part of Your Everyday.",
         "body": "<p>They're there for lazy Sundays, early walks, long days, and the moments that make life better. You already carry them in your heart. Now you can wear them, too.</p><p>A personalized tee designed to celebrate the face you love—with less fur-cling fuss.</p>",
         "button_label": "Create My Custom Tee",
-        "button_link": "",
+        "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
         "microcopy": "Your pet. Your portrait. Your new everyday favorite.",
         "padding_top": 80,
         "padding_bottom": 80
