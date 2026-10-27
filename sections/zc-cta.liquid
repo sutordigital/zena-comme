@@ -8,9 +8,15 @@
     color: #ffffff !important;
   }
 
+  #zc-cta-{{ section.id }} .zc-cta__content {
+    width: 100% !important;
+    max-width: 760px !important;
+  }
+
   #zc-cta-{{ section.id }} .zc-cta__body,
   #zc-cta-{{ section.id }} .zc-cta__body p {
     font-size: 16px !important;
+    text-wrap: pretty;
   }
 {% endstyle %}
 <section class="zc-cta" id="zc-cta-{{ section.id }}" style="--zc-pad-top: {{ section.settings.padding_top }}px; --zc-pad-bottom: {{ section.settings.padding_bottom }}px;">
