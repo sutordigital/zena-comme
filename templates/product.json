@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -276,31 +267,6 @@
               },
               "block_order": []
             },
-            "zena_guarantee": {
-              "type": "text",
-              "settings": {
-                "text": "<h3>30-Day Money-Back Guarantee</h3><p><strong>Eligible non-personalized items only.</strong> Personalized and made-to-order items, including this personalized tee, are excluded from change-of-mind returns.</p><p>For eligible standard items, contact us within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. Customers pay return shipping for change-of-mind returns.</p><p>Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending your item back. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View full return policy</a></p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": true,
-                "background_color": "#f5f4ef",
-                "corner_radius": 12,
-                "padding-block-start": 20,
-                "padding-block-end": 20,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
-              },
-              "blocks": {}
-            },
             "zena_information": {
               "type": "accordion",
               "settings": {
@@ -510,7 +476,7 @@
                     "content": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Personalized and made-to-order items are excluded from change-of-mind returns. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View our return policy</a> or <a href=\"/pages/contact\">contact us about your order</a>.</p>",
+                        "text": "<p><strong>For this personalized tee</strong></p><p>Personalized and made-to-order items are excluded from change-of-mind returns. Your rights for damaged, defective or incorrect items remain protected.</p><p><strong>30-day money-back guarantee: eligible non-personalized items only</strong></p><p>For eligible standard items, contact us within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. Customers pay return shipping for change-of-mind returns.</p><p>Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending your item back.</p><p><a href=\"/pages/refund-policy\">View full return policy</a></p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -842,7 +808,6 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "zena_guarantee",
             "zena_information",
             "zena_reassurance"
           ]
