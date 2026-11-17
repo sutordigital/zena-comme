@@ -1,0 +1,27 @@
+<div class="zena-size-chart" {{ block.shopify_attributes }}>
+  {{ block.settings.content }}
+</div>
+
+{% stylesheet %}
+  .zena-size-chart { width: 100%; min-width: 0; line-height: 1.6; }
+  .zena-size-chart__scroll { width: 100%; max-width: 100%; overflow-x: auto; margin-block: 16px; }
+  .zena-size-chart__scroll:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  .zena-size-chart table { width: 100%; min-width: 540px; border-collapse: collapse; font-size: 0.875rem; }
+  .zena-size-chart caption { text-align: left; font-weight: 600; margin-bottom: 12px; }
+  .zena-size-chart th, .zena-size-chart td { padding: 10px 12px; text-align: center; border: 1px solid #d8dbd2; }
+  .zena-size-chart thead { background: #eef0e8; color: #242820; }
+  .zena-size-chart tbody th { font-weight: 600; }
+  .zena-size-chart img { display: block; width: 100%; max-width: 100%; height: auto; margin-top: 20px; }
+  .zena-size-chart p { margin-block: 12px; }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:names.custom_liquid",
+  "tag": null,
+  "settings": [
+    { "type": "liquid", "id": "content", "label": "t:settings.custom_liquid" }
+  ],
+  "presets": [{ "name": "t:names.custom_liquid" }]
+}
+{% endschema %}
