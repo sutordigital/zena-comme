@@ -310,18 +310,6 @@
             "featured": false
           }
         },
-        "p2": {
-          "type": "plan",
-          "settings": {
-            "badge": "Preferential offer",
-            "title": "Pet Parent Set",
-            "price": "$89",
-            "features": "Two personalized tees\nChoose the color and size of each\nSave $9 vs. two singles",
-            "button_label": "Create Our Set",
-            "button_link": "shopify://products/zena-comme-personalized-pet-portrait-t-shirt-pet-hair-resistant",
-            "featured": true
-          }
-        },
         "p3": {
           "type": "plan",
           "settings": {
@@ -337,14 +325,13 @@
       },
       "block_order": [
         "p1",
-        "p2",
         "p3"
       ],
       "settings": {
         "bg_color": "#f5f0e8",
-        "eyebrow": "PRICING & BUNDLES",
-        "heading": "One for You. One for Someone Who Loves Them Just as Much.",
-        "subheading": "One very spoilt pet. Two very proud pet parents.",
+        "eyebrow": "PERSONALIZE YOUR TEE",
+        "heading": "A Tee Made Personal.",
+        "subheading": "Choose your tee and make it your own.",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -445,13 +432,6 @@
             "answer": "<p>The smoother, anti-static construction is built into the fabric. Follow care instructions for best long-term results.</p>"
           }
         },
-        "q7": {
-          "type": "item",
-          "settings": {
-            "question": "Can I buy matching shirts?",
-            "answer": "<p>Yes. The Pet Parent Set lets you create two personalized tees—great for couples or family members who share the same pet.</p>"
-          }
-        },
         "q8": {
           "type": "item",
           "settings": {
@@ -481,7 +461,6 @@
         "q4",
         "q5",
         "q6",
-        "q7",
         "q8",
         "q9",
         "q10"
