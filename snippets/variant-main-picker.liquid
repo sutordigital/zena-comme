@@ -66,6 +66,12 @@
             endif
           endif
 
+          assign zena_color_swatches = false
+          if product_resource.id == 15422982881646 and product_option.name == 'Color'
+            assign zena_color_swatches = true
+            assign variant_style = 'swatch'
+          endif
+
           if variant_style == 'buttons' and settings.variant_button_width == 'equal-width-buttons'
             assign fieldset_id = section.id | append: '-' | append: product_resource.id | append: '-' | append: product_option.name | handleize
             assign option_id_attribute = 'data-option-id="' | append: fieldset_id | append: '"'
@@ -143,11 +149,16 @@
                     endif
                   %}
 
+                  {% if zena_color_swatches %}
+                    <span class="zena-color-swatch" style="--zena-color: {{ product_option_value.name | downcase | escape }}"></span>
+                    <span class="visually-hidden">{{ product_option_value.name | escape }}</span>
+                  {% else %}
                   {% render 'swatch',
                     swatch: product_option_value.swatch,
                     variant_image: featured_media,
                     mode: 'unscaled'
                   %}
+                  {% endif %}
                 {% else %}
                   {% if product_option_value.available == true %}
                     <span

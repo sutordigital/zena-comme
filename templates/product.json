@@ -165,10 +165,19 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "zena_review_badge": {
+                  "type": "custom-liquid",
+                  "name": "Product rating",
+                  "settings": {
+                    "custom_liquid": "{% if product.id == 15422982881646 %}\n<div class=\"jdgm-widget jdgm-preview-badge\" data-id=\"{{ product.id }}\" data-auto-install=\"false\">{{ product.metafields.judgeme.badge }}</div>\n<style>\n#shopify-section-{{ section.id }} product-price[data-product-id=\"15422982881646\"] [ref=\"priceContainer\"]{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px}\n#shopify-section-{{ section.id }} product-price[data-product-id=\"15422982881646\"] .price{font-size:clamp(30px,4vw,38px);font-weight:700;line-height:1.15;color:#a63730}\n#shopify-section-{{ section.id }} product-price[data-product-id=\"15422982881646\"] .compare-at-price{font-size:18px;font-weight:400;opacity:.65}\n#shopify-section-{{ section.id }} variant-picker[data-product-id=\"15422982881646\"] .variant-option--buttons:not(.variant-option--swatches) .variant-option__button-label{border-radius:999px;min-width:54px;min-height:48px}\n#shopify-section-{{ section.id }} variant-picker[data-product-id=\"15422982881646\"] .variant-option--buttons{gap:10px}\n#shopify-section-{{ section.id }} variant-picker[data-product-id=\"15422982881646\"] .variant-option--swatches .variant-option__button-label{border-radius:50%;width:48px;height:48px}\n#shopify-section-{{ section.id }} variant-picker[data-product-id=\"15422982881646\"] .zena-color-swatch{display:block;width:36px;height:36px;border:1px solid #ccc;border-radius:50%;background:var(--zena-color)}\n#shopify-section-{{ section.id }} .jdgm-preview-badge{font-size:14px}\n</style>\n{% endif %}"
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_xrnftG",
+                "zena_review_badge",
                 "price_tVjtKg"
               ]
             },
@@ -189,7 +198,7 @@
               "type": "variant-picker",
               "settings": {
                 "variant_style": "buttons",
-                "show_swatches": false,
+                "show_swatches": true,
                 "option_label_text_color": "",
                 "variant_style_class": "default",
                 "custom_variant_background": "{{ settings.color_palette.background }}",
@@ -243,7 +252,7 @@
                     "input_text_color": "{{ settings.color_palette.foreground }}",
                     "input_border_color": "{{ settings.color_palette.foreground }}",
                     "border_width": 1,
-                    "border_radius": 0
+                    "border_radius": 28
                   },
                   "blocks": {}
                 },
@@ -338,7 +347,7 @@
                     "content": {
                       "type": "zena-size-chart",
                       "settings": {
-                        "content": "<p>Compare these garment measurements with a T-shirt you already like wearing. All measurements are in inches.</p><div class=\"zena-size-chart__scroll\" role=\"region\" aria-label=\"T-shirt size chart, scroll horizontally on small screens\" tabindex=\"0\"><table><caption>T-shirt size chart · inches</caption><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Chest (full circumference)</th><th scope=\"col\">Shoulder</th><th scope=\"col\">Sleeve length</th><th scope=\"col\">Front length (HPS)</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>40</td><td>17</td><td>8.5</td><td>26</td><td>40</td></tr><tr><th scope=\"row\">M</th><td>42</td><td>17.5</td><td>8.75</td><td>27</td><td>42</td></tr><tr><th scope=\"row\">L</th><td>44</td><td>17.75</td><td>9</td><td>28</td><td>44</td></tr><tr><th scope=\"row\">XL</th><td>46</td><td>18.3</td><td>9.3</td><td>29</td><td>46</td></tr><tr><th scope=\"row\">2XL</th><td>49</td><td>19</td><td>9.6</td><td>31</td><td>49</td></tr></tbody></table></div><p>HPS means high point shoulder. On smaller screens, swipe the table to see every measurement.</p><a href=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open the T-shirt measuring guide at full size\"><img src=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757&amp;width=1200\" width=\"1568\" height=\"1003\" loading=\"lazy\" alt=\"T-shirt measuring guide: lay the garment flat without stretching. Double the flat chest width for full circumference. Measure front length from the high point shoulder beside the neckline to the hem, and sleeve length from shoulder seam to sleeve hem.\"></a><p><a href=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757\" target=\"_blank\" rel=\"noopener\">View measuring guide full size</a></p><p>Need help choosing your size? <a href=\"/pages/contact\">Contact us before ordering</a>.</p>"
+                        "content": "<p>Compare these garment measurements with a T-shirt you already like wearing. All measurements are in inches.</p><div class=\"zena-size-chart__scroll\" role=\"region\" aria-label=\"T-shirt size chart, scroll horizontally on small screens\" tabindex=\"0\"><table><caption>T-shirt size chart \u00b7 inches</caption><thead><tr><th scope=\"col\">Size</th><th scope=\"col\">Chest (full circumference)</th><th scope=\"col\">Shoulder</th><th scope=\"col\">Sleeve length</th><th scope=\"col\">Front length (HPS)</th><th scope=\"col\">Waist</th></tr></thead><tbody><tr><th scope=\"row\">S</th><td>40</td><td>17</td><td>8.5</td><td>26</td><td>40</td></tr><tr><th scope=\"row\">M</th><td>42</td><td>17.5</td><td>8.75</td><td>27</td><td>42</td></tr><tr><th scope=\"row\">L</th><td>44</td><td>17.75</td><td>9</td><td>28</td><td>44</td></tr><tr><th scope=\"row\">XL</th><td>46</td><td>18.3</td><td>9.3</td><td>29</td><td>46</td></tr><tr><th scope=\"row\">2XL</th><td>49</td><td>19</td><td>9.6</td><td>31</td><td>49</td></tr></tbody></table></div><p>HPS means high point shoulder. On smaller screens, swipe the table to see every measurement.</p><a href=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757\" target=\"_blank\" rel=\"noopener\" aria-label=\"Open the T-shirt measuring guide at full size\"><img src=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757&amp;width=1200\" width=\"1568\" height=\"1003\" loading=\"lazy\" alt=\"T-shirt measuring guide: lay the garment flat without stretching. Double the flat chest width for full circumference. Measure front length from the high point shoulder beside the neckline to the hem, and sleeve length from shoulder seam to sleeve hem.\"></a><p><a href=\"https://cdn.shopify.com/s/files/1/1028/4335/1406/files/zena-comme-how-to-measure.png?v=1794907757\" target=\"_blank\" rel=\"noopener\">View measuring guide full size</a></p><p>Need help choosing your size? <a href=\"/pages/contact\">Contact us before ordering</a>.</p>"
                       },
                       "blocks": {}
                     }
