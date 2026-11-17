@@ -439,11 +439,51 @@
                   "block_order": [
                     "content"
                   ]
+                },
+                "care": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Fabric & Care",
+                    "open_by_default": false,
+                    "icon": "washing",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "content": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p><strong>Material:</strong> 100% polyester.</p><p><strong>General care guidance:</strong> Follow the instructions on your garment\u2019s care label. As a precaution, turn the T-shirt inside out before washing, use a mild detergent, and avoid ironing directly over the artwork.</p><p><small>This is provisional, general guidance rather than a verified garment-specific wash specification. The care label takes priority.</small></p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "content"
+                  ]
                 }
               },
               "block_order": [
                 "description",
                 "fit",
+                "care",
                 "shipping",
                 "returns"
               ]
