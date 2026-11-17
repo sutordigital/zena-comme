@@ -476,7 +476,7 @@
                 "returns": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Returns & Order Help",
+                    "heading": "Returns: Standard vs Personalized",
                     "open_by_default": false,
                     "icon": "chat_bubble",
                     "width": 20
@@ -485,7 +485,7 @@
                     "content": {
                       "type": "text",
                       "settings": {
-                        "text": "<p><strong>For this personalized tee</strong></p><p>Personalized and made-to-order items are excluded from change-of-mind returns. Your rights for damaged, defective or incorrect items remain protected.</p><p><strong>30-day money-back guarantee: eligible non-personalized items only</strong></p><p>For eligible standard items, contact us within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. Customers pay return shipping for change-of-mind returns.</p><p>Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending your item back.</p><p><a href=\"/pages/refund-policy\">View full return policy</a></p>",
+                        "text": "<p><strong>Non-personalized items: 30-day refund policy.</strong> Request a return within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. You pay return shipping for change-of-mind returns. Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending anything back.</p><p><strong>Personalized or made-to-order items are non-refundable for change of mind</strong> and are not eligible for change-of-mind returns or exchanges. This does not affect your rights if an item is damaged, defective or incorrect, or any non-excludable statutory rights.</p><p>For damaged, defective or incorrect items, email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> within 30 days of delivery with your order number, a description and clear photos. For verified issues, you may choose a refund or replacement, subject to replacement availability. We cover reasonable return shipping when a return is requested. Claims required by applicable law are considered even outside this period.</p><p>Approved refunds are initiated to your original payment method within five business days after an eligible return is received and approved, or a qualifying claim is approved without a return. Your payment provider may take additional time.</p><p><a href=\"/pages/refund-policy\">Read the full refund and return policy</a>.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -810,6 +810,31 @@
                 "delivery",
                 "support"
               ]
+            },
+            "zena_return_summary": {
+              "type": "text",
+              "settings": {
+                "text": "<p><strong>Non-personalized:</strong> 30-day returns for eligible unused items.<br><strong>Personalized:</strong> no change-of-mind refunds. Damaged, defective or incorrect items remain covered. <a href=\"/pages/refund-policy\">Full policy</a>.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "0.875rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
@@ -817,6 +842,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "zena_return_summary",
             "zena_information",
             "zena_reassurance"
           ]
@@ -1188,8 +1214,8 @@
           "type": "item",
           "settings": {
             "number": "04",
-            "title": "Clear Custom-Order Policies",
-            "text": "Personalized items are made for you. Review our returns and replacement policy before ordering."
+            "title": "Standard vs Personalized Returns",
+            "text": "Non-personalized: request eligible unused-item returns within 30 days of delivery. Personalized: no change-of-mind refunds. Damaged, defective or incorrect items remain covered."
           }
         }
       },
@@ -1203,7 +1229,7 @@
         "bg_color": "#faf7f2",
         "eyebrow": "SHIPPING, FIT & POLICY",
         "heading": "Made for Your Pet. Ordered With Confidence.",
-        "note": "Review the shipping and return policies linked in the product information above before ordering.",
+        "note": "30-day returns apply only to eligible non-personalized items. Personalized items are not refundable for change of mind. See Returns: Standard vs Personalized above for conditions and issue resolution.",
         "padding_top": 48,
         "padding_bottom": 48
       }
@@ -1236,7 +1262,7 @@
           "type": "item",
           "settings": {
             "question": "How should I care for my tee?",
-            "answer": "<p>Hand wash separately. Do not bleach. Dry in shade and do not tumble dry. Use a low iron and do not dry clean. Check the Fabric &amp; Care section above for details.</p>"
+            "answer": "<p>Hand wash separately. Do not bleach. Dry in shade and do not tumble dry. Use a low iron and do not dry clean. Follow the care label attached to your tee.</p>"
           }
         },
         "q8": {
@@ -1245,6 +1271,27 @@
             "question": "How long does delivery take?",
             "answer": "<p>Standard shipping to the United States is free. Personalized items require preparation before dispatch. <a href=\"/pages/shipping-policy\">Read our shipping policy</a> for delivery details.</p>"
           }
+        },
+        "q_return_standard": {
+          "type": "item",
+          "settings": {
+            "question": "Can I get a refund for a non-personalized item?",
+            "answer": "<p><strong>Non-personalized items: 30-day refund policy.</strong> Request a return within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. You pay return shipping for change-of-mind returns. Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending anything back.</p><p><a href=\"/pages/refund-policy\">Read the full refund and return policy</a>.</p>"
+          }
+        },
+        "q_return_custom": {
+          "type": "item",
+          "settings": {
+            "question": "Can I get a refund for a personalized item?",
+            "answer": "<p><strong>Personalized or made-to-order items are non-refundable for change of mind</strong> and are not eligible for change-of-mind returns or exchanges. This does not affect your rights if an item is damaged, defective or incorrect, or any non-excludable statutory rights.</p><p><a href=\"/pages/refund-policy\">Read the full refund and return policy</a>.</p>"
+          }
+        },
+        "q_return_issue": {
+          "type": "item",
+          "settings": {
+            "question": "What if my item is damaged, defective or incorrect?",
+            "answer": "<p>For damaged, defective or incorrect items, email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> within 30 days of delivery with your order number, a description and clear photos. For verified issues, you may choose a refund or replacement, subject to replacement availability. We cover reasonable return shipping when a return is requested. Claims required by applicable law are considered even outside this period.</p><p><a href=\"/pages/refund-policy\">Read the full refund and return policy</a>.</p>"
+          }
         }
       },
       "block_order": [
@@ -1252,7 +1299,10 @@
         "q3",
         "q5",
         "q6",
-        "q8"
+        "q8",
+        "q_return_standard",
+        "q_return_custom",
+        "q_return_issue"
       ],
       "settings": {
         "bg_color": "#f5f0e8",
@@ -1275,7 +1325,7 @@
         "body": "<p>They're there for lazy Sundays, early walks, long days, and the moments that make life better. You already carry them in your heart. Now you can wear them, too.</p><p>A personalized tee designed to celebrate the face you love—with less fur-cling fuss.</p>",
         "button_label": "Back to Tee Options",
         "button_link": "#MainContent",
-        "microcopy": "Your pet. Your portrait. Your new everyday favorite.",
+        "microcopy": "Personalized items: no change-of-mind refunds. Eligible non-personalized items: 30-day returns. Damaged, defective or incorrect items remain covered.",
         "padding_top": 48,
         "padding_bottom": 48
       }
