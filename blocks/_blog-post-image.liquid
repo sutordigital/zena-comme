@@ -60,6 +60,12 @@
     height: calc(var(--blog-post-card-img-height) * var(--blog-post-card-scale));
   }
 
+  .blog-post-card__image--auto {
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+
   .blog-post-card__image--small {
     --blog-post-card-img-height: 280px;
   }
@@ -84,6 +90,10 @@
       "id": "height",
       "label": "t:settings.height",
       "options": [
+        {
+          "value": "auto",
+          "label": "t:options.auto"
+        },
         {
           "value": "small",
           "label": "t:options.small"

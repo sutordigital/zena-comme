@@ -81,7 +81,7 @@
               "type": "_blog-post-image",
               "static": true,
               "settings": {
-                "height": "large",
+                "height": "auto",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
