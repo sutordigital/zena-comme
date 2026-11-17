@@ -34,6 +34,12 @@
       assign add_to_cart_text = 'products.product.unavailable' | t
     endif
   endif
+  assign zena_needs_color = false
+  if product.id == 15422982881646 and product.selected_variant == blank
+    assign zena_needs_color = true
+    assign can_add_to_cart = false
+    assign add_to_cart_text = 'Choose a color'
+  endif
 %}
 
 <span
@@ -65,7 +71,7 @@
           type="hidden"
           name="id"
           ref="variantId"
-          value="{{ product.selected_or_first_available_variant.id }}"
+          value="{% unless zena_needs_color %}{{ product.selected_or_first_available_variant.id }}{% endunless %}"
         >
         {%- if block_settings.gift_card_form and product.gift_card? -%}
           {%- render 'gift-card-recipient-form', product: product, form: form, section: section, block: block -%}

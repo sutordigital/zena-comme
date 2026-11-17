@@ -40,9 +40,7 @@ export default class VariantPicker extends Component {
       this.#radios.push(radios);
 
       const initialCheckedIndex = radios.findIndex((radio) => radio.dataset.currentChecked === 'true');
-      if (initialCheckedIndex !== -1) {
-        this.#checkedIndices.push([initialCheckedIndex]);
-      }
+      this.#checkedIndices.push(initialCheckedIndex === -1 ? [] : [initialCheckedIndex]);
     });
 
     this.addEventListener('change', this.variantChanged.bind(this));
@@ -67,6 +65,10 @@ export default class VariantPicker extends Component {
     if (!selectedOption) return;
 
     this.updateSelectedOption(event.target);
+
+    // This product requires an explicit color. Size can change locally while the
+    // choice is incomplete; do not let Shopify resolve a partial choice to Black.
+    if (this.requiresColorSelection) return;
 
     const isOnProductPage =
       this.dataset.templateProductMatch === 'true' &&
@@ -382,6 +384,15 @@ export default class VariantPicker extends Component {
           const variantData = JSON.parse(textContent);
 
           if (variantData && typeof variantData === 'object') {
+            // A size chosen before color has not been fetched yet. Use the resolved
+            // combination, not the clicked radio's previously rendered variant ID.
+            if (this.dataset.productId === '15422982881646' &&
+                this.dataset.templateProductMatch === 'true' &&
+                !this.closest('quick-add-dialog') && variantData.id) {
+              const url = new URL(window.location.href);
+              url.searchParams.set('variant', variantData.id);
+              history.replaceState({}, '', url.toString());
+            }
             const productViewAttr = variantPickerJsonScript
               ?.closest('[view-event-payload]')
               ?.getAttribute('view-event-payload')
@@ -519,6 +530,11 @@ export default class VariantPicker extends Component {
    * Gets the selected option.
    * @returns {HTMLInputElement | HTMLOptionElement | undefined} The selected option.
    */
+  get requiresColorSelection() {
+    return this.dataset.productId === '15422982881646' &&
+      !this.querySelector('input[data-option-name="Color"]:checked');
+  }
+
   get selectedOption() {
     const selectedOption = this.querySelector('select option[selected], fieldset input:checked');
 

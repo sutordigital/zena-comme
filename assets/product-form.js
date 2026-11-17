@@ -324,6 +324,15 @@ class ProductFormComponent extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
+    if (this.dataset.productId === '15422982881646') {
+      const picker = this.#getVariantPicker();
+      if (!picker || picker.requiresColorSelection) {
+        this.refs.liveRegion.textContent = 'Please choose a color before adding to cart.';
+        picker?.querySelector('input[data-option-name="Color"]')?.focus();
+        return;
+      }
+    }
+
     if (this.#variantChangeInProgress) {
       this.#addToCartQueue.push(this.#createQueuedAddToCartItem());
       this.refs.addToCartButtonContainer?.animateAddToCart?.();

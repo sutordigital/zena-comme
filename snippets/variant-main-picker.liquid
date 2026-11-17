@@ -21,6 +21,10 @@
   if block_settings.variant_style == 'buttons' and block_settings.selected_variant_style_class == 'custom'
     assign has_custom_variant_buttons = true
   endif
+  assign zena_needs_color = false
+  if product_resource.id == 15422982881646 and product_resource.selected_variant == blank
+    assign zena_needs_color = true
+  endif
   assign fieldset_index = 0
 %}
 
@@ -102,7 +106,7 @@
             <legend>
               {{ product_option.name | escape -}}
               {%- if variant_style == 'swatch' -%}
-                <span class="variant-option__swatch-value">{{ product_option.selected_value }}</span>
+                <span class="variant-option__swatch-value">{% if zena_color_swatches and zena_needs_color %}Choose a color{% else %}{{ product_option.selected_value }}{% endif %}</span>
               {%- endif %}
             </legend>
             {%- for product_option_value in product_option.values -%}
@@ -131,7 +135,9 @@
                   {% if product_option_value.variant.id %}
                     data-variant-id="{{ product_option_value.variant.id }}"
                   {% endif %}
-                  {% if product_option_value.selected %}
+                  {% if zena_color_swatches and zena_needs_color %}
+                    data-current-checked="false"
+                  {% elsif product_option_value.selected %}
                     data-current-checked="true"
                     checked
                   {% else %}

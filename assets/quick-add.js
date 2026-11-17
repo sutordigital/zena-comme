@@ -118,6 +118,12 @@ export class QuickAddComponent extends Component {
 
     const currentUrl = this.productPageUrl;
 
+    // Keep this product's required color choice in the full product form.
+    if (this.dataset.productId === '15422982881646') {
+      if (currentUrl) window.location.href = currentUrl.split('?')[0];
+      return;
+    }
+
     if (this.dataset.usesSellingPlans === 'true') {
       if (currentUrl) window.location.href = currentUrl;
       return;

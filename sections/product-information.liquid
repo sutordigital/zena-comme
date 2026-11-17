@@ -32,6 +32,10 @@
 
   {% liquid
     assign current_variant = product.selected_or_first_available_variant
+    assign zena_needs_color = false
+    if product.id == 15422982881646 and product.selected_variant == blank
+      assign zena_needs_color = true
+    endif
     # Get the initial quantity based on quantity rules
     assign initial_quantity = current_variant.quantity_rule.min | default: 1
   %}
@@ -109,7 +113,7 @@
             {% if current_variant != blank %}
               {% assign variant_title = current_variant.title | escape %}
             {% endif %}
-            {{ variant_title }}
+            {% if zena_needs_color %}Choose a color{% else %}{{ variant_title }}{% endif %}
           {% endunless %}
         </div>
       </div>
@@ -126,9 +130,9 @@
         class="sticky-add-to-cart__button add-to-cart-button button"
         ref="addToCartButton"
         on:click="/handleAddToCartClick"
-        {% unless current_variant.available %}
+        {% if zena_needs_color or current_variant.available == false %}
           disabled
-        {% endunless %}
+        {% endif %}
       >
         <span
           class="add-to-cart-text"
@@ -140,7 +144,9 @@
           {% endif %}
           <span class="add-to-cart-text__content">
             <span>
-              {%- if current_variant.available -%}
+              {%- if zena_needs_color -%}
+                Choose a color
+              {%- elsif current_variant.available -%}
                 {{- 'products.product.add_to_cart' | t -}}
               {%- elsif current_variant == blank -%}
                 {{- 'products.product.unavailable' | t -}}
