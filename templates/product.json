@@ -276,12 +276,49 @@
               },
               "block_order": []
             },
+            "zena_guarantee": {
+              "type": "text",
+              "settings": {
+                "text": "<h3>30-Day Money-Back Guarantee</h3><p><strong>Eligible non-personalized items only.</strong> Personalized and made-to-order items, including this personalized tee, are excluded from change-of-mind returns.</p><p>For eligible standard items, contact us within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. Customers pay return shipping for change-of-mind returns.</p><p>Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending your item back. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View full return policy</a></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": true,
+                "background_color": "#f5f4ef",
+                "corner_radius": 12,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
+                "padding-inline-start": 20,
+                "padding-inline-end": 20
+              },
+              "blocks": {}
+            },
             "zena_information": {
               "type": "accordion",
               "settings": {
                 "icon": "caret",
                 "dividers": true,
-                "type_preset": "h6"
+                "divider_color": "",
+                "type_preset": "h6",
+                "background_color": "",
+                "text_color": "",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_color": "",
+                "border_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {
                 "description": {
@@ -344,58 +381,19 @@
                     "content"
                   ]
                 },
-                "shipping": {
+                "features": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "US Shipping",
+                    "heading": "Fabric Features",
                     "open_by_default": false,
-                    "icon": "truck",
+                    "icon": "none",
                     "width": 20
                   },
                   "blocks": {
                     "content": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>Free standard shipping to the United States. Personalized products require preparation before dispatch.</p><p><a href=\"/pages/shipping-policy\">View our shipping policy</a> for delivery details.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "text_color": "",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "content"
-                  ]
-                },
-                "returns": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Returns & Order Help",
-                    "open_by_default": false,
-                    "icon": "chat_bubble",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "content": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Personalized and made-to-order items are excluded from change-of-mind returns. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View our return policy</a> or <a href=\"/pages/contact\">contact us about your order</a>.</p>",
+                        "text": "<p>The fabric is described by our supplier as anti-static, moisture-wicking, cooling and hair-repellent.</p><p>These features are intended for everyday wear with pets. Hair-repellent does not mean fur-proof; performance can vary with use and care.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -461,19 +459,58 @@
                     "content"
                   ]
                 },
-                "features": {
+                "shipping": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Fabric Features",
+                    "heading": "US Shipping",
                     "open_by_default": false,
-                    "icon": "none",
+                    "icon": "truck",
                     "width": 20
                   },
                   "blocks": {
                     "content": {
                       "type": "text",
                       "settings": {
-                        "text": "<p>The fabric is described by our supplier as anti-static, moisture-wicking, cooling and hair-repellent.</p><p>These features are intended for everyday wear with pets. Hair-repellent does not mean fur-proof; performance can vary with use and care.</p>",
+                        "text": "<p>Free standard shipping to the United States. Personalized products require preparation before dispatch.</p><p><a href=\"/pages/shipping-policy\">View our shipping policy</a> for delivery details.</p>",
+                        "width": "100%",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "text_color": "",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "content"
+                  ]
+                },
+                "returns": {
+                  "type": "_accordion-row",
+                  "settings": {
+                    "heading": "Returns & Order Help",
+                    "open_by_default": false,
+                    "icon": "chat_bubble",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "content": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>Personalized and made-to-order items are excluded from change-of-mind returns. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View our return policy</a> or <a href=\"/pages/contact\">contact us about your order</a>.</p>",
                         "width": "100%",
                         "max_width": "normal",
                         "alignment": "left",
@@ -592,7 +629,10 @@
                       "type": "icon",
                       "settings": {
                         "icon": "heart",
-                        "width": 24
+                        "width": 24,
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "icon_color": ""
                       },
                       "blocks": {}
                     },
@@ -670,7 +710,10 @@
                       "type": "icon",
                       "settings": {
                         "icon": "truck",
-                        "width": 24
+                        "width": 24,
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "icon_color": ""
                       },
                       "blocks": {}
                     },
@@ -748,7 +791,10 @@
                       "type": "icon",
                       "settings": {
                         "icon": "chat_bubble",
-                        "width": 24
+                        "width": 24,
+                        "link": "",
+                        "open_in_new_tab": false,
+                        "icon_color": ""
                       },
                       "blocks": {}
                     },
@@ -789,31 +835,6 @@
                 "delivery",
                 "support"
               ]
-            },
-            "zena_guarantee": {
-              "type": "text",
-              "settings": {
-                "text": "<h3>30-Day Money-Back Guarantee</h3><p><strong>Eligible non-personalized items only.</strong> Personalized and made-to-order items, including this personalized tee, are excluded from change-of-mind returns.</p><p>For eligible standard items, contact us within 30 calendar days of delivery. Items must be unused, unworn and unwashed, with original tags and packaging, and in resalable condition. Customers pay return shipping for change-of-mind returns.</p><p>Email <a href=\"mailto:info@zena-c.com\">info@zena-c.com</a> for approval and return instructions before sending your item back. Your rights for damaged, defective or incorrect items remain protected.</p><p><a href=\"/pages/refund-policy\">View full return policy</a></p>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "text_color": "",
-                "background": true,
-                "background_color": "#f5f4ef",
-                "corner_radius": 12,
-                "padding-block-start": 20,
-                "padding-block-end": 20,
-                "padding-inline-start": 20,
-                "padding-inline-end": 20
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -983,10 +1004,56 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "1794908563acbd2562": {
+      "type": "_blocks",
+      "blocks": {
+        "judge_me_reviews_review_widget_Pm638z": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_Pm638z"
+      ],
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "background_media": "none",
+        "background_color": "",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_color": "",
+        "border_radius": 0,
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq"
+    "product_recommendations_qggXJq",
+    "1794908563acbd2562"
   ]
 }
