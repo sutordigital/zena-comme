@@ -203,6 +203,32 @@
               },
               "blocks": {}
             },
+            "text_Pg6MYe": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>$49 USD per tee · Free standard shipping to all 50 US states. Sales tax shown at checkout.</p><p>Blank model photos show color and fit, not the finished personalized print. Online photo customization is unavailable: contact us before ordering to confirm artwork, placement and inclusions. Backgrounds print as supplied; no automatic background removal.</p><p>Personalized timing: estimated 13–20 business days (6–10 preparation + 7–10 delivery). Not guaranteed; excludes holidays.</p><p>Quick fit guide · garment chest circumference in inches: S 40 / M 42 / L 44 / XL 46 / 2XL 49. Compare a tee you own. Open Size & Fit below for shoulder, length and measuring instructions.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "text_color": "",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "variant_picker_R3rGDr": {
               "type": "variant-picker",
               "settings": {
@@ -849,6 +875,7 @@
           "block_order": [
             "group_icgrde",
             "divider_VJhene",
+            "text_Pg6MYe",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
             "zena_return_summary",
@@ -997,7 +1024,7 @@
       ],
       "name": "ZC Split",
       "settings": {
-        "bg_color": "#F5F0E8",
+        "bg_color": "#f5f0e8",
         "media_position": "right",
         "image": "shopify://shop_images/exec-0c995a46-af78-4e55-8808-8d003ee2c196.png",
         "eyebrow": "FILE & PRINT GUIDE",
