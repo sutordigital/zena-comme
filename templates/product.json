@@ -992,6 +992,9 @@
     },
     "zc_split_qbYRcR": {
       "type": "zc-split",
+      "custom_css": [
+        ".zc-split__img {object-fit: contain; height: auto; aspect-ratio: 3 / 2;}"
+      ],
       "name": "ZC Split",
       "settings": {
         "bg_color": "#F5F0E8",
