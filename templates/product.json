@@ -1011,7 +1011,7 @@
         "image": "shopify://shop_images/zena-comme-custom-pet-photo-tshirt-ordering-steps_90259128-1aca-4a42-8e40-03c44d944120.jpg",
         "eyebrow": "PORTRAIT CONFIDENCE",
         "heading": "Not Just Any Dog. Not Just Any Cat. Yours.",
-        "body": "<p>It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p><p>A great custom tee isn't just about putting a pet on fabric. It's about celebrating your pet.</p><p>Illustrative portrait and styling imagery. Online photo customization is currently unavailable; contact us before ordering a personalized design.</p>",
+        "body": "<p>Personalize your tee using the image options above. Artwork prints as supplied.It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: <em>That's my baby.</em></p><p>A great custom tee isn't just about putting a pet on fabric. It's about celebrating your pet.</p><p>Illustrative portrait and styling imagery. Online photo customization is currently unavailable; contact us before ordering a personalized design.It's the tilted head. The little smile. The markings around their eyes. The tiny details that make you think: That's my baby.<br/><br/>A great custom tee isn't just about putting a pet on fabric. It's about celebrating your pet.<br/><br/>Illustrative portrait and styling imagery. Personalize your tee using the image options above. Artwork prints as supplied.</p>",
         "button_label": "Back to Tee Options",
         "button_link": "#MainContent",
         "padding_top": 48,
@@ -1030,9 +1030,9 @@
         "image": "shopify://shop_images/exec-0c995a46-af78-4e55-8808-8d003ee2c196.png",
         "eyebrow": "FILE & PRINT GUIDE",
         "heading": "Your File Determines Your Print.",
-        "body": "<p>If your image has a background, that background prints on your T-shirt too. We print artwork as supplied and do not automatically remove backgrounds. For the clean cutout look, send a genuinely transparent PNG with the background already removed. A white background is not transparent, and saving a JPG as PNG does not remove it. Check the edges and export with transparency enabled. The checkerboard shown here represents transparency, not printed artwork. Illustrative examples. Online photo customization is currently unavailable; contact us before ordering.</p>",
-        "button_label": "Contact Us About Your Artwork",
-        "button_link": "/pages/contact",
+        "body": "<p>If your image has a background, that background prints on your T-shirt too. We print artwork as supplied and do not automatically remove backgrounds. For the clean cutout look, send a genuinely transparent PNG with the background already removed. A white background is not transparent, and saving a JPG as PNG does not remove it. Check the edges and export with transparency enabled. The checkerboard shown here represents transparency, not printed artwork. Illustrative examples. Upload your prepared artwork using the image options above. Front and back image uploads each add $10 USD.</p>",
+        "button_label": "Personalize Your Tee",
+        "button_link": "#pplr-15422982881646",
         "padding_top": 64,
         "padding_bottom": 64
       }
@@ -1060,7 +1060,7 @@
           "settings": {
             "number": "01",
             "title": "Your Photo Matters",
-            "text": "Online photo customization is currently unavailable. Contact us before ordering a personalized design."
+            "text": "Choose your size and color, then add your artwork using the front and/or back image options. Each image upload adds $10 USD."
           }
         },
         "i2": {
@@ -1117,7 +1117,7 @@
           "type": "item",
           "settings": {
             "question": "How can I arrange my pet portrait?",
-            "answer": "<p>Online photo customization is currently unavailable. <a href=\"/pages/contact\">Contact us</a> before ordering a personalized design. A clear, well-lit photo with your pet’s face and eyes visible is the best starting point.</p>"
+            "answer": "<p>Online photo customization is currently unavailable. <a href=\"/pages/contact\">Contact us</a> before ordering a personalized design. A clear, well-lit photo with your pet’s face and eyes visible is the best starting point.Choose your size and color on this page, then upload your artwork using the front and/or back image options. Each image upload adds $10 USD. Artwork prints as supplied, including any background. For a cutout result, upload a genuinely transparent PNG. Contact us if you need help preparing your file.</p>"
           }
         },
         "q5": {
