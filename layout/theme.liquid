@@ -186,5 +186,17 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+{% if request.page_type == 'product' %}
+<style>
+#zena-inline-preview{width:100%;margin:20px 0;position:relative;overflow:hidden;border:1px solid #e5e2df;border-radius:12px;background:#faf9f7;}
+#zena-inline-preview > div{width:100%;position:relative;aspect-ratio:1;}
+#zena-inline-preview > div>img{display:block;width:100%;height:auto;}
+</style>
+<script>
+/* Zena original interactive preview placement adapter. */
+(()=>{let active=null;let staleCanvas=null;document.addEventListener('change',event=>{if(!event.target.matches('input[type="radio"]')||event.target.closest('.product-personalizer'))return;staleCanvas=document.querySelector('#pplr_canvas');if(active){active.placeholder.replaceWith(active.media);active.host.remove();active=null;}},true);function mount(){document.querySelectorAll('.product-personalizer .oindexlabel').forEach(label=>{if(label.textContent.includes('scroll up to the large shirt preview'))label.textContent=label.textContent.replace('After confirming the crop, scroll up to the large shirt preview. Click your artwork, then drag it to move or drag a corner to resize.','After confirming the crop, select Front or Back to view that side below. Select your artwork, then drag it to move or drag a corner to resize.');});document.querySelectorAll('a').forEach(link=>{if(link.textContent.trim()==='view your shirt preview ↑')link.closest('p').textContent='After upload, select Front or Back and adjust your artwork in the preview below.';});const app=document.querySelector('.product-personalizer');const canvas=document.querySelector('#pplr_canvas');const media=canvas?.parentElement?.closest('.pplr');if(active&&(!canvas||!active.media.contains(canvas))){active.placeholder.replaceWith(active.media);active.host.remove();active=null;}if(!app||!media||active||canvas===staleCanvas)return;const host=document.createElement('div');host.id='zena-inline-preview';host.setAttribute('aria-label','Editable shirt preview');const placeholder=media.cloneNode(true);placeholder.classList.remove('pplr');placeholder.querySelectorAll('.pplr_preview_wrapper,canvas').forEach(el=>el.remove());media.replaceWith(placeholder);app.append(host);host.append(media);active={media,placeholder,host};window.dispatchEvent(new Event('resize'));}const observer=new MutationObserver(mount);observer.observe(document.body,{childList:true,subtree:true});mount();})();
+</script>
+{% endif %}
   </body>
 </html>
